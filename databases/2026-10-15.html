@@ -48,7 +48,6 @@ Related: https://github.com/ClickHouse/ClickHouse/pull/124595</p>
 </ul>
 <h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
 <p>Avoid building the parallel replicas candidate plan when cached statistics already show the query should stay on a single replica.</p>
-<p>&lt;!-- CI automatic block start :ci_links: --&gt;</p>
 <hr />
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/124983" rel="noreferrer">本日合并 PR #124983｜主线 / master｜2026-10-14T20:31:04Z</a></p>
@@ -70,7 +69,6 @@ Related: https://github.com/ClickHouse/ClickHouse/pull/124595</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
 Reduced the peak memory usage of <code>RESTORE</code> and of incremental <code>BACKUP</code>: the metadata file of a backup is now parsed while it is read, instead of being read into memory whole first. For backups of millions of files this saves gigabytes.</p>
 <p>🤖 Generated with Claude Code (https://claude.com/claude-code)</p>
-<p>&lt;!-- CI automatic block start :ci_links: --&gt;</p>
 <hr />
 <p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=125712&amp;sha=latest&amp;name_0=PR)]</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
@@ -82,7 +80,6 @@ Reduced the peak memory usage of <code>RESTORE</code> and of incremental <code>B
 <h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
 <p>With short-circuit evaluation, a cheap argument of <code>and</code>/<code>or</code> is now evaluated before a heavy one, so that the heavy one (for example, JSON parsing in <code>WHERE JSONExtractString(json, 'a') = 'x' AND id &lt; 100</code>) is evaluated only on the rows where the result is not decided yet. Lazily evaluated arguments that cannot throw are ordered by their measured cost and selectivity. The order never changes in a way that can introduce an exception. Controlled by the new setting <code>short_circuit_function_evaluation_reorder_arguments</code>, enabled by default.</p>
 <p>🤖 Generated with Claude Code (https://claude.com/claude-code)</p>
-<p>&lt;!-- CI automatic block start :ci_links: --&gt;</p>
 <hr />
 <p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=122508&amp;sha=latest&amp;name_0=PR)]</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
