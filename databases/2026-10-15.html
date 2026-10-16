@@ -1,18 +1,39 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="d02b594d22a67107c3134c705665b361b733c5982c84081cd2fddc5a2a58204a"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-15（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}</style></head><body><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-10-15.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-15（北京时间）</h1><div class="meta">北京时间 2026-10-15</div></header><h2>摘要</h2>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="d02b594d22a67107c3134c705665b361b733c5982c84081cd2fddc5a2a58204a"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-15（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125672">PR #125672｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124880">PR #124880｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124983">PR #124983｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125665">PR #125665｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125712">PR #125712｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-122508">PR #122508｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125001">PR #125001｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124819">PR #124819｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124955">PR #124955｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-121209">PR #121209｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-96225">PR #96225｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-114822">PR #114822｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-120596">PR #120596｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-108191">PR #108191｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-121383">PR #121383｜主线 / master</a></li><li class="toc-level-3"><a href="#digest-section-21">重大新功能</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-119443">PR #119443｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-110613">PR #110613｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124763">PR #124763｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-25">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-26">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80714">PR #80714｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80715">PR #80715｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-78628">PR #78628｜回移／维护分支 / branch-4.1</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80718">PR #80718｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80785">PR #80785｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80371">PR #80371｜主线 / main</a></li><li class="toc-level-3"><a href="#digest-section-33">重大新功能</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-79328">PR #79328｜主线 / main</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-10-15.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-15（北京时间）</h1><div class="meta">北京时间 2026-10-15</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125672">PR #125672｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124880">PR #124880｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124983">PR #124983｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125665">PR #125665｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125712">PR #125712｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-122508">PR #122508｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125001">PR #125001｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124819">PR #124819｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124955">PR #124955｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-121209">PR #121209｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-96225">PR #96225｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-114822">PR #114822｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-120596">PR #120596｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-108191">PR #108191｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-121383">PR #121383｜主线 / master</a></li><li class="toc-level-3"><a href="#digest-section-21">重大新功能</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-119443">PR #119443｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-110613">PR #110613｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124763">PR #124763｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-25">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-26">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80714">PR #80714｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80715">PR #80715｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-78628">PR #78628｜回移／维护分支 / branch-4.1</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80718">PR #80718｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80785">PR #80785｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80371">PR #80371｜主线 / main</a></li><li class="toc-level-3"><a href="#digest-section-33">重大新功能</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-79328">PR #79328｜主线 / main</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
 <p>2026-10-15（北京时间）三库聚焦更新：筛选后 25 项，只关注性能优化、重大新功能及有官方明确修复证据的安全修复。合并记录不等于已发布；回移与原始改动关联展示，正式发布和预发布以官方公告为准。分类统计：安全修复 0 项、性能优化 21 项、重大新功能 4 项。</p>
 <p>DuckDB：当日所检查官方来源未发现符合筛选边界的更新。</p>
 <p>ClickHouse：启用链接器标志 -z keep-text-section-prefix，将静态初始化段独立分组，使 clickhouse 启动时冷页缓存下顺序读取。x86-64、二进制被逐出页缓存、10轮交替测试：clickhouse local 从0.344 s降至0.246 s，1.40x更快。；新增基于WORKLOAD的动态查询溢出：可设置max_memory_before_spill和max_memory_to_spill_ratio，内存达软限制后自动为ORDER BY、GROUP BY、IN、DISTINCT及grace_hash JOIN启动溢出。</p>
 <p>StarRocks：在FE thrift RPC断连重试前加入随机退避：按200、400、800、1000毫秒区间的上半段随机等待，先等待再重连；超时和最后一次尝试不等待。新增thrift_client_retries_total指标。优化对象是并发重试造成的FE间RPC重试风暴与服务器饱和。；新增原生 SQL 权限 USAGE ON AI FUNCTION 与 USAGE ON AI PROVIDER 及 ALL 变体，并在表达式分析阶段对已解析的 AI 调用进行授权，绑定执行计划时再次校验 Provider UUID；复用现有 GRANT/REVOKE、角色与权限表。</p>
-<h2>范围与证据</h2>
+<h2 id="digest-section-2">范围与证据</h2>
 <p>统计前一完整自然日：PR 按实际 merged_at；Release 与公开安全公告按 published_at。公开安全公告不覆盖未披露漏洞；GitHub Releases 不包含仅有 tag 或独立官网文章。模型仅依据标题与正文，未读取完整 diff；性能适用条件以所链官方证据为准。</p>
-<h2>DuckDB</h2>
+<h2 id="digest-section-3">DuckDB</h2>
 <p>来源读取成功：22 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
 <p>当日未发现符合性能优化、重大新功能或官方已确认安全修复边界的更新；不列普通功能、小修复、CI 或文档变化。</p>
-<h2>ClickHouse</h2>
+<h2 id="digest-section-4">ClickHouse</h2>
 <p>来源读取成功：145 条已合并 PR、4 条发布公告、0 条公开安全公告；开发默认分支 master。</p>
-<h3>性能优化</h3>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/125672" rel="noreferrer">PR #125672｜主线 / master</a></p>
+<h3 id="digest-section-5">性能优化</h3>
+<p class="pr-title" id="digest-pr-clickhouse-125672"><a href="https://github.com/ClickHouse/ClickHouse/pull/125672" rel="noreferrer">PR #125672｜主线 / master</a></p>
 <p>启用链接器标志 -z keep-text-section-prefix，将静态初始化段独立分组，使 clickhouse 启动时冷页缓存下顺序读取。x86-64、二进制被逐出页缓存、10轮交替测试：clickhouse local 从0.344 s降至0.246 s，1.40x更快。</p>
 <p>重要性与适用范围：面向进程启动阶段的运行时优化，适用于 Linux 上使用 lld 或 mold 链接器的构建，Darwin 和 WebAssembly 会跳过；冷页缓存启动场景收益最明显，高延迟存储如 EBS 可能获得更大改善。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -25,7 +46,7 @@ te random read of the binary. https://github.com/ClickHouse/ClickHouse/issues/12
 <p>The flag is supported by lld (Linux on all architectures, musl, FreeBSD) and by mold, which the s390x build uses (documented in the 2.40.4 release used by the CI image). It is skipped on Darwin and WebAssembly, like <code>-z separate-code</code>, since ld64 and wasm-ld have no <code>-z</code> options. Moving the 1 MiB of <code>.text.unlikely</code> out of the way slightly changes the layout of the remaining code, so the performance comparison may show a one-time step.</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/125672" rel="noreferrer">本日合并 PR #125672｜主线 / master｜2026-10-14T16:42:12Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124880" rel="noreferrer">PR #124880｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-124880"><a href="https://github.com/ClickHouse/ClickHouse/pull/124880" rel="noreferrer">PR #124880｜主线 / master</a></p>
 <p>优化同时使用文本索引和其他PREWHERE条件的查询性能，包括ORDER BY ... LIMIT查询的动态过滤器场景，从而加速此类联合过滤路径。</p>
 <p>重要性与适用范围：该优化针对文本索引与PREWHERE条件联合过滤的运行时路径，适用于相关查询，尤其是ORDER BY ... LIMIT动态过滤器场景，可减少此类过滤开销。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -38,7 +59,7 @@ Related: https://github.com/ClickHouse/ClickHouse/pull/124595</p>
 <p>Speed up queries that filter by a text index together with other <code>PREWHERE</code> conditions, such as the dynamic filter of <code>ORDER BY ... LIMIT</code> queries.</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/124880" rel="noreferrer">本日合并 PR #124880｜主线 / master｜2026-10-14T17:54:04Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124983" rel="noreferrer">PR #124983｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-124983"><a href="https://github.com/ClickHouse/ClickHouse/pull/124983" rel="noreferrer">PR #124983｜主线 / master</a></p>
 <p>在并行副本查询规划中，若缓存统计已表明本地计划更优，则不再构建并行副本候选计划，避免无谓的计划构建开销，使此类查询直接留在单副本执行路径上。</p>
 <p>重要性与适用范围：针对并行副本与缓存统计可用的查询规划场景，通过跳过注定不采用的候选计划来减少规划阶段开销；适用范围限于本地计划胜出的情况，不改变结果正确性。</p>
 <p>官方原文证据（保留基准及适用条件）：</p>
@@ -51,7 +72,7 @@ Related: https://github.com/ClickHouse/ClickHouse/pull/124595</p>
 <hr />
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/124983" rel="noreferrer">本日合并 PR #124983｜主线 / master｜2026-10-14T20:31:04Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/125665" rel="noreferrer">PR #125665｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-125665"><a href="https://github.com/ClickHouse/ClickHouse/pull/125665" rel="noreferrer">PR #125665｜主线 / master</a></p>
 <p>优化 DateLUT 表构建并移除 lut_saturated；Europe/Madrid 时区构建快 2.4x，UTC 快 5.6x；每加载时区内存从 4.6 MiB 降至 2.3 MiB，并延迟构建 QueryFuzzer 等表、移除 numactl。</p>
 <p>重要性与适用范围：该改动针对 clickhouse-local 等工具启动路径，减少每次进程启动的 NUMA 查询、静态初始化与时区表构建/内存开销。收益适用于频繁调用短查询；时区表构建在 Europe/Madrid 为 2.4x、UTC 为 5.6x，每时区内存减半。</p>
 <p>官方原文证据（保留基准及适用条件）：</p>
@@ -63,7 +84,7 @@ Related: https://github.com/ClickHouse/ClickHouse/pull/124595</p>
 </ul>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/125665" rel="noreferrer">本日合并 PR #125665｜主线 / master｜2026-10-14T21:18:51Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/125712" rel="noreferrer">PR #125712｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-125712"><a href="https://github.com/ClickHouse/ClickHouse/pull/125712" rel="noreferrer">PR #125712｜主线 / master</a></p>
 <p>将备份元数据文件改为边读边流式解析，不再先整体读入内存，降低 RESTORE 与增量 BACKUP 打开备份时的峰值内存；对包含数百万文件的备份可节省数 GB。</p>
 <p>重要性与适用范围：适用于 RESTORE 和增量 BACKUP 路径，尤其文件数量达数百万的备份；元数据按块解析后，峰值内存不再包含整个元数据文件，可节省数 GB，且不改变解析结果。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -73,7 +94,7 @@ Reduced the peak memory usage of <code>RESTORE</code> and of incremental <code>B
 <p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=125712&amp;sha=latest&amp;name_0=PR)]</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/125712" rel="noreferrer">本日合并 PR #125712｜主线 / master｜2026-10-14T21:30:39Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/122508" rel="noreferrer">PR #122508｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-122508"><a href="https://github.com/ClickHouse/ClickHouse/pull/122508" rel="noreferrer">PR #122508｜主线 / master</a></p>
 <p>短路求值中让 and/or 的廉价参数先于重参数执行，重参数如 JSON 解析仅对未决行求值；不能抛异常的惰性参数按实测代价和选择性排序，排序不会引入新异常，新设置 short_circuit_function_evaluation_reorder_arguments 默认启用。</p>
 <p>重要性与适用范围：适用于启用短路求值的 and/or 过滤表达式，重参数在前、廉价参数在后的场景可让重参数少执行并降低开销；排序仅移动不会抛异常、无状态且无副作用的惰性参数，默认开启且不引入新异常。</p>
 <p>官方原文证据（保留基准及适用条件）：</p>
@@ -84,7 +105,7 @@ Reduced the peak memory usage of <code>RESTORE</code> and of incremental <code>B
 <p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=122508&amp;sha=latest&amp;name_0=PR)]</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/122508" rel="noreferrer">本日合并 PR #122508｜主线 / master｜2026-10-14T23:40:19Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/125001" rel="noreferrer">PR #125001｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-125001"><a href="https://github.com/ClickHouse/ClickHouse/pull/125001" rel="noreferrer">PR #125001｜主线 / master</a></p>
 <p>ClickHouse 为两级 GROUP BY、uniqExact、JOIN 哈希表引入负载因子更高、Robin Hood 有序冲突链的增长器，每桶 2^16 单元后切换；96 核全线程下 GROUP BY UInt64 由 8.43 秒降至 5.59 秒，内存 52→31 GB。</p>
 <p>重要性与适用范围：该改动作用于大表多线程聚合、uniqExact 与 JOIN 的哈希表随机访存路径，可同时降低内存与耗时；测试机器负载很高，最后两行耗时数据属噪声，内存数据稳定，实际收益取决于表规模与线程数。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -137,7 +158,7 @@ Reduced the peak memory usage of <code>RESTORE</code> and of incremental <code>B
 <p>Caveats from microbenchmarks of <code>TwoLevelHashMap&lt;UInt64&gt;</code>:</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/125001" rel="noreferrer">本日合并 PR #125001｜主线 / master｜2026-10-15T02:29:21Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124819" rel="noreferrer">PR #124819｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-124819"><a href="https://github.com/ClickHouse/ClickHouse/pull/124819" rel="noreferrer">PR #124819｜主线 / master</a></p>
 <p>在 Aggregator::prepareAggregateInstructions 中不再按值复制块内列和递增引用计数，只持有由 Const 或 Replicated 转换产生的列，减少每块聚合准备开销；在 max_block_size=1 的简单聚合查询中，该开销约占总时间的 3.5%。</p>
 <p>重要性与适用范围：优化聚合函数指令准备阶段的每块运行时开销，适用于频繁处理小额块并调用聚合的场景；max_block_size=1 时收益更明显，内存限制检查和进度报告未在此改动。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -153,7 +174,7 @@ Related: https://github.com/ClickHouse/ClickHouse/issues/124791</p>
 <p>Slightly reduce the per-block overhead of aggregation by not copying the columns of the block when preparing the aggregate function instructions.</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/124819" rel="noreferrer">本日合并 PR #124819｜主线 / master｜2026-10-15T04:11:24Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124955" rel="noreferrer">PR #124955｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-124955"><a href="https://github.com/ClickHouse/ClickHouse/pull/124955" rel="noreferrer">PR #124955｜主线 / master</a></p>
 <p>将按序列化键聚合的键序列化与哈希从整块多趟预计算改为按能装入CPU缓存的连续行分块惰性处理，未请求行不再序列化，且保持键在整块内有效，改动限于HashMethodSerialized路径。</p>
 <p>重要性与适用范围：该优化面向多键GROUP BY的序列化哈希聚合，适用于线程多、块大且缓存压力明显的场景；在ClickBench hits 100M行、aarch64 Neoverse-V2 96核、服务端查询耗时、16次最佳条件下，Q18从75 ms降至47 ms。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -193,7 +214,7 @@ The keys are serialized, and their hashes computed, lazily, in chunks of consecu
 </table></div>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/124955" rel="noreferrer">本日合并 PR #124955｜主线 / master｜2026-10-15T04:35:27Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/121209" rel="noreferrer">PR #121209｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-121209"><a href="https://github.com/ClickHouse/ClickHouse/pull/121209" rel="noreferrer">PR #121209｜主线 / master</a></p>
 <p>将 HashJoin 的探测延续保留在 HashJoin 内部，用 ContinuationResult 直接消费 selector 后缀，避免 JoiningTransform、GraceHashJoin 和 ConcurrentHashJoin 反复物化并重新提交剩余行。</p>
 <p>重要性与适用范围：修复 ON 含非等值条件或多个 OR 条件时 join_algorithm='hash' 的二次方慢查询，保持 max_joined_block_size_rows 上限，适用于受影响 hash join 查询。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -203,7 +224,7 @@ Previously, this continuation was returned to <code>JoiningTransform</code>, whe
 <p>The existing additional-filter regression test and <code>04102_hash_join_stress_test</code> now verify that each left row is accounted for exactly once. A regression case for multi-disjunct <code>ON</code> conditions compares its result with the same query at the default block limit, and <code>parallel_hash</code> cases cover the <code>joinScatteredBlock</code> path. `tests/performance/hash_join_probe_continuati</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/121209" rel="noreferrer">本日合并 PR #121209｜主线 / master｜2026-10-15T06:53:53Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/96225" rel="noreferrer">PR #96225｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-96225"><a href="https://github.com/ClickHouse/ClickHouse/pull/96225" rel="noreferrer">PR #96225｜主线 / master</a></p>
 <p>该 PR 让索引分析时单个条件可约束多个主键键列，而不是只用一个键列；主键为 (toYYYYMM(dt), toDate(dt), toStartOfHour(dt), dt) 的示例中，查询的 granules 由 960/960 降至 2/960。新设置 analyze_index_with_multiple_key_columns_per_condition 默认启用。</p>
 <p>重要性与适用范围：对多列或表达式主键且过滤条件可同时约束多个键列的查询，该优化能显著减少需读取的 granules；设置 analyze_index_with_multiple_key_columns_per_condition 默认启用，禁用后每个条件最多约束一个键列，恢复变更前行为。仅影响索引分析/主键裁剪路径。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -241,7 +262,7 @@ SELECT count() FROM test WHERE dt = toDateTime('2026-01-10 00:00:00');
 <p>Closes: https://github.com/ClickHouse/ClickHouse/issues/33056</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/96225" rel="noreferrer">本日合并 PR #96225｜主线 / master｜2026-10-15T07:42:40Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/114822" rel="noreferrer">PR #114822｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-114822"><a href="https://github.com/ClickHouse/ClickHouse/pull/114822" rel="noreferrer">PR #114822｜主线 / master</a></p>
 <p>启用 distributed_plan_join_runtime_filters 后，跨阶段的构建侧任务通过 exchange 层发送 join 运行时过滤器部分结果，probe 侧扫描在 shuffle 前应用合并并集，减少跨网络行数；过滤器丢失或迟到不会改变结果。</p>
 <p>重要性与适用范围：该优化针对分布式 join 中跨阶段运行时过滤器不可见、跨网络行数偏多的问题；仅当构建者与消费者位于不同阶段时传输，同阶段保持本地，过滤器失败开放，结果不依赖交付。</p>
 <p>官方原文证据（保留基准及适用条件）：</p>
@@ -255,7 +276,7 @@ SELECT count() FROM test WHERE dt = toDateTime('2026-01-10 00:00:00');
 </ol>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/114822" rel="noreferrer">本日合并 PR #114822｜主线 / master｜2026-10-15T07:43:32Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/120596" rel="noreferrer">PR #120596｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-120596"><a href="https://github.com/ClickHouse/ClickHouse/pull/120596" rel="noreferrer">PR #120596｜主线 / master</a></p>
 <p>将 Nullable 键 null-safe 连接（&lt;=&gt;）从 tuple(a)=tuple(b) 的通用序列化键路径，改为 isNull 比较加默认值填充，使可空 UInt64 等定宽键走定宽哈希键。10M 可空 UInt64 每侧内连接在 16 线程下从 0.44s 降至 0.28s，30M 每侧半连接从 1.24s 降至 0.93s。</p>
 <p>重要性与适用范围：这是运行时哈希连接路径的性能优化，影响 null-safe 连接 Nullable 键的查询；适用于 number 和 FixedString 键，String、Nullable 下复合类型、Nullable(Nothing)、Join 表引擎及键值存储仍走 tuple 路径。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -264,7 +285,7 @@ Related: https://github.com/ClickHouse/ClickHouse/pull/120479</p>
 <p>A null-safe comparison of nullable keys (<code>a &lt;=&gt; b</code>) was joined through <code>tuple(a) = tuple(b)</code>, which sends fixed-width keys down the generic serialized-key path of the hash join. The keys are now <code>isNull(a) = isNull(b)</code> and <code>if(isNull(a), d, assumeNotNull(a)) = if(isNull(b), d, assumeNotNull(b))</code> with <code>d</code> the default of the nested type: <code>NULL</code> matches <code>NULL</code> through the first key, the second one is not nullable, and a nullable <code>UInt64</code> key packs into a 128-bit fixed key. An inner join of 10M nullable <code>UInt64</code> rows per side goes from 0.44s to 0.28s with 16 threads, a semi join of 30M rows per side from 1.24s to 0.93s. The split applies to number and <code>FixedString</code> keys. <code>String</code> keys, compound types under <code>Nullable</code> (which only a function such as <code>if</code> produces), <code>Nullable(Nothing)</code>, the <code>Join</code> table engine, and key-value storages keep the tuple.</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/120596" rel="noreferrer">本日合并 PR #120596｜主线 / master｜2026-10-15T10:50:01Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/108191" rel="noreferrer">PR #108191｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-108191"><a href="https://github.com/ClickHouse/ClickHouse/pull/108191" rel="noreferrer">PR #108191｜主线 / master</a></p>
 <p>修复哈希连接列修剪门槛：仅设置溢出阈值时，原先因 maxBytesBeforeExternalJoin 大于零而不修剪未出现在连接输出中的左侧列，现改为只移除该条件，保留 auto 与 grace_hash 判断，使这些列不再流经管道并避免额外 ColumnPermuteTransform。</p>
 <p>重要性与适用范围：适用于使用哈希连接且设置了溢出阈值的查询，默认设置下未输出左侧列可被提前修剪；优化运行时数据流，减少无用列传递和额外列置换，结果结构保持一致，不改变连接算法选择。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -274,7 +295,7 @@ Left-side columns absent from a hash join's output (for example the join key in 
 <p>Fix: drop only the <code>maxBytesBeforeExternalJoin() &gt; 0</code> term from this gate, keeping the <code>auto</code> / <code>grace_hash</code> membership tests master already has (<code>auto</code> can build a <code>JoinSwitcher</code> that switches to <code>MergeJoin</code>, which keeps all left columns). A spill threshold alone selects <code>SpillingHashJoin</code>, which only ever switches <code>HashJoin</code> -&gt; <code>GraceHashJoin</code>; both produce results through the same <code>HashJoinResult</code> path with identical pruning, so the result structure stays consistent. `isUsedByAnotherAlgorithm</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/108191" rel="noreferrer">本日合并 PR #108191｜主线 / master｜2026-10-15T12:21:24Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/121383" rel="noreferrer">PR #121383｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-121383"><a href="https://github.com/ClickHouse/ClickHouse/pull/121383" rel="noreferrer">PR #121383｜主线 / master</a></p>
 <p>更新 fast_float 至 v8.3.2，readFloatTextPrecise 自行解析短十进制数；clang 22 下 ASCII 输入每浮点周期数减少 1.17x 到 1.32x（canada、mesh、HIGGS，AMD Ryzen 9 7950X3D）。</p>
 <p>重要性与适用范围：浮点文本解析处于 CSV、JSON 等文本格式读取热路径，短十进制数最常见；本次升级与本地快路径降低解析开销，收益在 clang 22 及所列基准与 CPU 上测得，适用于依赖 readFloatTextPrecise 的文本读取场景。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -289,18 +310,18 @@ v8.3.x adds ECMAScript <code>chars_format::javascript</code> parsing and wide-ch
 <p>In <code>src/IO/readFloatText.cpp</code>, <code>readFloatTextPrecise</code> parses short <code>digits[.digits]</code> tokens (up to 15 digits for <code>Float64</code>, 7 for <code>Float32</code>) itself with a 16-byte classification and Clinger's fast path, and strips the sign before parsing. Everything else goes to <code>fast_float</code> directly. <code>contrib/fast_float-cmake/CMakeLists.txt</code> needs no change: it is an INTER</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/121383" rel="noreferrer">本日合并 PR #121383｜主线 / master｜2026-10-15T15:53:58Z</a></p>
-<h3>重大新功能</h3>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/119443" rel="noreferrer">PR #119443｜主线 / master</a></p>
+<h3 id="digest-section-21">重大新功能</h3>
+<p class="pr-title" id="digest-pr-clickhouse-119443"><a href="https://github.com/ClickHouse/ClickHouse/pull/119443" rel="noreferrer">PR #119443｜主线 / master</a></p>
 <p>新增基于WORKLOAD的动态查询溢出：可设置max_memory_before_spill和max_memory_to_spill_ratio，内存达软限制后自动为ORDER BY、GROUP BY、IN、DISTINCT及grace_hash JOIN启动溢出。</p>
 <p>重要性与适用范围：面向内存压力下执行大查询的用户，按WORKLOAD自动溢出可提升查询成功率；演示条件为1GiB RAM、50并发、max_memory=16Gi、max_memory_before_spill=8Gi，启用溢出100/100成功，未启用27/282成功。</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/119443" rel="noreferrer">本日合并 PR #119443｜主线 / master｜2026-10-14T16:39:11Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/110613" rel="noreferrer">PR #110613｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-110613"><a href="https://github.com/ClickHouse/ClickHouse/pull/110613" rel="noreferrer">PR #110613｜主线 / master</a></p>
 <p>新增 PCO 压缩编解码器（Beta），链接 pcodec 库，支持 1/2/4/8 字节定宽数值及其衍生类型，需通过 enable_pco_codec 设置按列启用，仅注册于包含该库的构建。</p>
 <p>重要性与适用范围：为定宽数值列增加新的列级压缩选择，处于 Beta 阶段；因需列类型，在 TTL RECOMPRESS、默认压缩、marks 压缩、主键压缩等无类型解析上下文中被拒绝。</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/pull/110613" rel="noreferrer">本日合并 PR #110613｜主线 / master｜2026-10-15T02:20:01Z</a></p>
-<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124763" rel="noreferrer">PR #124763｜主线 / master</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-124763"><a href="https://github.com/ClickHouse/ClickHouse/pull/124763" rel="noreferrer">PR #124763｜主线 / master</a></p>
 <p>在ClickHouse常规SQL中支持部分Trino方言：新增TRY_CAST(x AS T)并解析为accurateCastOrNull，新增ARRAY[...]数组构造器，接受ARRAY(T)与MAP(K, V)类型名，并在不改变原有查询语义的前提下补充Trino函数别名。</p>
 <p>重要性与适用范围：面向从Trino迁移及跨方言查询的用户，无需再启用实验性dialect='trino'即可使用常见Trino惯用法；解析层把新语法重写为既有函数与类型名，因此发往旧版远程服务器的查询仍可正常工作，适用范围为语法与函数别名兼容。</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
@@ -309,10 +330,10 @@ v8.3.x adds ECMAScript <code>chars_format::javascript</code> parsing and wide-ch
 <p><a href="https://github.com/ClickHouse/ClickHouse/releases/tag/v26.7.31.12-stable" rel="noreferrer">本日官方发布来源：v26.7.31.12-stable（正式发布）</a></p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/releases/tag/v26.3.52.9-lts" rel="noreferrer">本日官方发布来源：v26.3.52.9-lts（正式发布）</a></p>
 <p><a href="https://github.com/ClickHouse/ClickHouse/releases/tag/v26.9.19.9-stable" rel="noreferrer">本日官方发布来源：v26.9.19.9-stable（正式发布）</a></p>
-<h2>StarRocks</h2>
+<h2 id="digest-section-25">StarRocks</h2>
 <p>来源读取成功：98 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
-<h3>性能优化</h3>
-<p><a href="https://github.com/StarRocks/starrocks/pull/80714" rel="noreferrer">PR #80714｜主线 / main</a></p>
+<h3 id="digest-section-26">性能优化</h3>
+<p class="pr-title" id="digest-pr-starrocks-80714"><a href="https://github.com/StarRocks/starrocks/pull/80714" rel="noreferrer">PR #80714｜主线 / main</a></p>
 <p>在FE thrift RPC断连重试前加入随机退避：按200、400、800、1000毫秒区间的上半段随机等待，先等待再重连；超时和最后一次尝试不等待。新增thrift_client_retries_total指标。优化对象是并发重试造成的FE间RPC重试风暴与服务器饱和。</p>
 <p>重要性与适用范围：适用于FE间thrift RPC调用。服务器饱和并快速断连时，避免所有调用方同时重连，降低同步重试波次对服务端的持续冲击；断连重试路径增加随机等待，可能增加首次重连延迟，需结合thrift_rpc_retry_times等参数评估。</p>
 <p>官方原文证据（保留基准及适用条件）：</p>
@@ -329,7 +350,7 @@ v8.3.x adds ECMAScript <code>chars_format::javascript</code> parsing and wide-ch
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/80714" rel="noreferrer">本日合并 PR #80714｜主线 / main｜2026-10-14T23:50:10Z</a></p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/80743" rel="noreferrer">本日合并 PR #80743｜回移／维护分支 / branch-4.1｜2026-10-15T02:59:50Z</a></p>
-<p><a href="https://github.com/StarRocks/starrocks/pull/80715" rel="noreferrer">PR #80715｜主线 / main</a></p>
+<p class="pr-title" id="digest-pr-starrocks-80715"><a href="https://github.com/StarRocks/starrocks/pull/80715" rel="noreferrer">PR #80715｜主线 / main</a></p>
 <p>FE thrift 连接池在借用时若连接空闲超过 thrift_client_timeout_ms 的80%（默认4000ms）则替换，避免空闲超5秒后首个FE-to-FE调用使用已关闭连接并触发执行器重试。</p>
 <p>重要性与适用范围：仅影响 frontendPool，backendPool 与 broker 连接池不变；适用于 FE 间转发语句等空闲后首次调用。其他 FE 超时更短时连接仍可能失效并走重试路径。</p>
 <p>官方原文证据（保留基准及适用条件）：</p>
@@ -343,7 +364,7 @@ v8.3.x adds ECMAScript <code>chars_format::javascript</code> parsing and wide-ch
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/80715" rel="noreferrer">本日合并 PR #80715｜主线 / main｜2026-10-14T23:51:02Z</a></p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/80744" rel="noreferrer">本日合并 PR #80744｜回移／维护分支 / branch-4.1｜2026-10-15T02:59:31Z</a></p>
-<p><a href="https://github.com/StarRocks/starrocks/pull/78628" rel="noreferrer">PR #78628｜回移／维护分支 / branch-4.1</a></p>
+<p class="pr-title" id="digest-pr-starrocks-78628"><a href="https://github.com/StarRocks/starrocks/pull/78628" rel="noreferrer">PR #78628｜回移／维护分支 / branch-4.1</a></p>
 <p>为按列 min/max 统计采集增加节流：getStats 只窥视缓存而不强制加载，仅当距上次触发超过 min_max_stats_collect_interval_sec（默认60）才重新触发 MetaScan，间隔内跳过该优化，时间戳存于有界 LRU 缓存，设0可禁用，getStatsSync 不节流。</p>
 <p>重要性与适用范围：避免频繁导入表在 min()/max() 或数值、日期列 group-by 查询时每次导入都重扫 segment zone-map 元数据并争用元数据缓存，节流只损失该优化不影响正确性；适用于频繁导入且频繁用此类统计的查询场景，属回移到4.1分支的改动。</p>
 <p>官方原文证据（保留基准及适用条件）：<br />
@@ -352,7 +373,7 @@ Add a per-column collection throttle: getStats now peeks the cache without forci
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/78628" rel="noreferrer">本日合并 PR #78628｜回移／维护分支 / branch-4.1｜2026-10-15T06:15:07Z</a></p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/78544" rel="noreferrer">关联原始 PR #78544（历史合并 2026-09-03T07:11:38Z，不是本日新功能）</a></p>
-<p><a href="https://github.com/StarRocks/starrocks/pull/80718" rel="noreferrer">PR #80718｜主线 / main</a></p>
+<p class="pr-title" id="digest-pr-starrocks-80718"><a href="https://github.com/StarRocks/starrocks/pull/80718" rel="noreferrer">PR #80718｜主线 / main</a></p>
 <p>为 OptimizeJobV2 与 MergePartitionJob 的 rewrite task 设置创建时间加作业超时加 task_ttl_second 的过期时间，让 TaskManager 能像清理过期 SUBMIT TASK 一样移除它们，避免任务在 FE 内存、image 和 information_schema.tasks 中无限累积。</p>
 <p>重要性与适用范围：该修复针对 FE TaskManager 中常驻 rewrite task 的资源泄漏，适用于使用 OptimizeJobV2 或 MergePartitionJob 的表；任务过期后会被移除，旧版本已注册的 0 过期时间任务仍需 DROP TASK 清理。OnlineOptimizeJobV2 不受影响。</p>
 <p>官方原文证据（保留基准及适用条件）：</p>
@@ -365,7 +386,7 @@ Add a per-column collection throttle: getStats now peeks the cache without forci
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/80718" rel="noreferrer">本日合并 PR #80718｜主线 / main｜2026-10-15T06:40:07Z</a></p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/80811" rel="noreferrer">本日合并 PR #80811｜回移／维护分支 / branch-4.1｜2026-10-15T07:19:48Z</a></p>
-<p><a href="https://github.com/StarRocks/starrocks/pull/80785" rel="noreferrer">PR #80785｜主线 / main</a></p>
+<p class="pr-title" id="digest-pr-starrocks-80785"><a href="https://github.com/StarRocks/starrocks/pull/80785" rel="noreferrer">PR #80785｜主线 / main</a></p>
 <p>将SparseRange::intersection()与operator|=从逐对比较、反复add()的O(n×m)实现改为双指针线性合并，并增加基于数据的升序校验；迭代器交集复用同一合并，修复碎片化范围交集导致的扫描初始化性能退化。</p>
 <p>重要性与适用范围：该改动针对共享数据主键表大量删除后扫描范围碎片化时PrecomputedRangeFilter与SegmentInit耗时剧增的运行时路径，使预计算物理分片扫描恢复；排序输入结果与旧实现逐范围一致，非排序回退旧路径，适用于使用SparseRange交并集的扫描过滤场景。</p>
 <p>官方原文证据（保留基准及适用条件）：</p>
@@ -377,7 +398,7 @@ Add a per-column collection throttle: getStats now peeks the cache without forci
 </ul>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/80785" rel="noreferrer">本日合并 PR #80785｜主线 / main｜2026-10-15T08:11:47Z</a></p>
-<p><a href="https://github.com/StarRocks/starrocks/pull/80371" rel="noreferrer">PR #80371｜主线 / main</a></p>
+<p class="pr-title" id="digest-pr-starrocks-80371"><a href="https://github.com/StarRocks/starrocks/pull/80371" rel="noreferrer">PR #80371｜主线 / main</a></p>
 <p>为精确21字节XY POINT增加直接解码快路径，并让ST_GeogFromWKB在校验坐标后直接拷贝已规范化小端POINT字节，减少H3_FromGeo每行临时几何构造与序列化；其他输入保留原有解析路径。</p>
 <p>重要性与适用范围：该改动优化GEO表达式内部运行时路径，适用于使用H3_FromGeo和ST_GeogFromWKB处理POINT的查询；保留NULL、SRID、输出元数据和字节规范化语义，属于主线性能增强。</p>
 <p>官方原文证据（保留基准及适用条件）：</p>
@@ -393,10 +414,10 @@ Add a per-column collection throttle: getStats now peeks the cache without forci
 </ul>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/80371" rel="noreferrer">本日合并 PR #80371｜主线 / main｜2026-10-15T10:29:11Z</a></p>
-<h3>重大新功能</h3>
-<p><a href="https://github.com/StarRocks/starrocks/pull/79328" rel="noreferrer">PR #79328｜主线 / main</a></p>
+<h3 id="digest-section-33">重大新功能</h3>
+<p class="pr-title" id="digest-pr-starrocks-79328"><a href="https://github.com/StarRocks/starrocks/pull/79328" rel="noreferrer">PR #79328｜主线 / main</a></p>
 <p>新增原生 SQL 权限 USAGE ON AI FUNCTION 与 USAGE ON AI PROVIDER 及 ALL 变体，并在表达式分析阶段对已解析的 AI 调用进行授权，绑定执行计划时再次校验 Provider UUID；复用现有 GRANT/REVOKE、角色与权限表。</p>
 <p>重要性与适用范围：为 AI 函数与外部模型服务提供细粒度访问控制，管理员可按函数族或 Provider 授予或撤销权限，非管理员升级后需显式授权；public 角色无隐式 AI 权限，Provider 管理仍需 SYSTEM OPERATE。</p>
 <p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
 <p><a href="https://github.com/StarRocks/starrocks/pull/79328" rel="noreferrer">本日合并 PR #79328｜主线 / main｜2026-10-15T02:04:34Z</a></p>
-<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></body></html>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
