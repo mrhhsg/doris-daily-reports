@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="282b6c8e9781600bc6613b1614be33a3f121437bc29b9929c6d3aa633893f4a1"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-18（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125706">PR #125706｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126374">PR #126374｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124531">PR #124531｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126253">PR #126253｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124907">PR #124907｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-11">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-12">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80960">PR #80960｜回移／维护分支 / branch-4.1</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80396">PR #80396｜主线 / main</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-10-18.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-18（北京时间）</h1><div class="meta">北京时间 2026-10-18</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125706">PR #125706｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126374">PR #126374｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124531">PR #124531｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126253">PR #126253｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124907">PR #124907｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-11">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-12">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80960">PR #80960｜回移／维护分支 / branch-4.1</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-80396">PR #80396｜主线 / main</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>2026-10-18（北京时间）三库聚焦更新：筛选后 7 项，只关注性能优化、重大新功能及有官方明确修复证据的安全修复。合并记录不等于已发布；回移与原始改动关联展示，正式发布和预发布以官方公告为准。分类统计：安全修复 0 项、性能优化 7 项、重大新功能 0 项。</p>
+<p>DuckDB：当日所检查官方来源未发现符合筛选边界的更新。</p>
+<p>ClickHouse：PipelineExecutor 构建执行图失败时仅在 LOGICAL_ERROR 情况下附加 printPipeline 转储，内存分配失败等其它异常不再携带该转储，避免处理器数量很多时异常文本被复制进每一行 processors_profile_log。</p>
+<p>StarRocks：在刷新阶段加守卫，使带有 partition_refresh_strategy='force' 或命中 mv_refresh_force_partition_type 的 INCREMENTAL、AUTO 物化视图按增量模式维护，不再每次刷新都全量重物化；PCT 视图和显式 FORCE 关键字不受影响。</p>
+<h2 id="digest-section-2">范围与证据</h2>
+<p>统计前一完整自然日：PR 按实际 merged_at；Release 与公开安全公告按 published_at。公开安全公告不覆盖未披露漏洞；GitHub Releases 不包含仅有 tag 或独立官网文章。模型仅依据标题与正文，未读取完整 diff；性能适用条件以所链官方证据为准。</p>
+<h2 id="digest-section-3">DuckDB</h2>
+<p>来源读取成功：11 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<p>当日未发现符合性能优化、重大新功能或官方已确认安全修复边界的更新；不列普通功能、小修复、CI 或文档变化。</p>
+<h2 id="digest-section-4">ClickHouse</h2>
+<p>来源读取成功：32 条已合并 PR、3 条发布公告、0 条公开安全公告；开发默认分支 master。</p>
+<h3 id="digest-section-5">性能优化</h3>
+<p class="pr-title" id="digest-pr-clickhouse-125706"><a href="https://github.com/ClickHouse/ClickHouse/pull/125706" rel="noreferrer">PR #125706｜主线 / master</a></p>
+<p>PipelineExecutor 构建执行图失败时仅在 LOGICAL_ERROR 情况下附加 printPipeline 转储，内存分配失败等其它异常不再携带该转储，避免处理器数量很多时异常文本被复制进每一行 processors_profile_log。</p>
+<p>重要性与适用范围：减少了执行图构建失败路径上的异常文本拷贝与处理开销，适用于处理器数量很多的大管道在内存受限或构建失败场景；正常查询路径不受影响，属错误处理路径的运行时开销优化。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+w of the query, so the copied text is quadratic in the number of processors: 25,902 rows x 2.13 MB, about 55 GB per query here. Not all of it is resident at once, but enough is to get the server OOM-killed: <code>Stress test (amd_debug)</code> on #100377 (report (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=100377&amp;sha=c5546386c8b6d702268a86fcd56565974b09d312&amp;name_0=PR&amp;name_1=Stress%20test%20%28amd_debug%29)), the same 25,902-processor query.</p>
+<p>The dump is now attached only to a <code>LOGICAL_ERROR</code>; that case is unchanged. A new failpoint <code>executing_graph_build_fail</code> raises <code>MEMORY_LIMIT_EXCEEDED</code> from the <code>ExecutingGraph</code> constructor, and the new test checks that the error carries no dump (it fails without the change).</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/125706" rel="noreferrer">本日合并 PR #125706｜主线 / master｜2026-10-17T20:59:08Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-126374"><a href="https://github.com/ClickHouse/ClickHouse/pull/126374" rel="noreferrer">PR #126374｜主线 / master</a></p>
+<p>受限GROUP BY（LIMIT或any/break溢出）的哈希表统计键与无上限聚合分离，避免预分配污染；40M行、8M个Nullable(UInt64)键、max_threads=16时，LIMIT 5000由159-161ms、1.44GiB降至94-108ms、30MiB。</p>
+<p>重要性与适用范围：该改动修正聚合哈希表统计缓存键，使LIMIT及any/break上限的GROUP BY不再与无上限聚合同享预分配，主要惠及反复执行受限与无上限GROUP BY的场景，不影响结果；throw上限仍共享无上限条目。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+aced the entry with its own small sizes (<code>sum_of_sizes=50</code> for <code>LIMIT 10</code> over 1M keys), so the next uncapped run preallocated nothing. Results are not affected.</p>
+<p><code>setAggregationHashTableCacheKeys</code> now mixes <code>max_rows_to_group_by</code>, the overflow mode and whether it is the <code>LIMIT</code> cutoff (which keeps exactly the cap, not whole blocks) of the aggregation and of every aggregation below it into the key stamped on the <code>AggregatingStep</code> when any of them can stop admitting keys (<code>any</code> or <code>break</code>); without such a cap the key is unchanged. The node hashes of <code>calculateHashTableCacheKeys</code>, which automatic parallel replicas and join keys use, do not change. A <code>throw</code> cap keeps sharing the uncapped entry: such a run either throws or keeps every group.</p>
+<p>Release build, 40M rows over 8M <code>Nullable(UInt64)</code> keys, <code>count()</code>, <code>max_threads = 16</code>, <code>GROUP BY k LIMIT 5000</code> alternating with <code>GROUP BY k</code>:</p>
+<ul>
+<li>the <code>LIMIT 5000</code> run: 159-161 ms and 1.44 GiB peak memory before, 94-108 ms and 30 MiB after;</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/126374" rel="noreferrer">本日合并 PR #126374｜主线 / master｜2026-10-17T21:05:49Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-124531"><a href="https://github.com/ClickHouse/ClickHouse/pull/124531" rel="noreferrer">PR #124531｜主线 / master</a></p>
+<p>将列缓存扩展到 Parquet 文件读取：本地文件、S3/Azure 等对象存储和数据湖表经元数据感知创建器的读取可使用缓存；缓存项保存一个 row group 的完整输出列，重复查询热点数据时跳过列块的读取、解压和解码。</p>
+<p>重要性与适用范围：对重复读取热点 Parquet 的查询可减少列块读取、解压和解码开销，适用于本地文件、对象存储及数据湖表；属于实验特性，收益取决于列缓存命中、列写入条件和每查询缓存预算。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Extends the columns cache (#96844) to <code>Parquet</code> files: local files (<code>file</code>, <code>File</code>), object storages (<code>s3</code>, <code>azureBlobStorage</code> and their engines) and data lake tables, i.e. every read that goes through the metadata-aware <code>Parquet</code> creator. Repeated queries over hot Parquet data no longer pay for reading, decompressing and decoding the column chunks.</p>
+<p>How it works:</p>
+<ul>
+<li>An entry holds a whole output column of one row group, in the same <code>ColumnsCache</code> as <code>MergeTree</code> (the row group index is the stripe). So it shares the size limit, admission control, <code>system.columns_cache</code> and <code>SYSTEM DROP COLUMNS CACHE</code>.</li>
+<li>The key is: the path of the file among all storages (with the bucket or container, the connection and the read source index, from <code>getUniqueStoragePathIdentifier</code>; the absolute path of a local file), its version (ETag of an object, or the version token of a local file) and its size; the format settings that change decoded values; the file columns the output column is read from; and the decoded and output types. A local file is cached only once its version token has settled, the same rule the q</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124531" rel="noreferrer">本日合并 PR #124531｜主线 / master｜2026-10-18T01:23:01Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-126253"><a href="https://github.com/ClickHouse/ClickHouse/pull/126253" rel="noreferrer">PR #126253｜主线 / master</a></p>
+<p>利用ColumnCompressed保留的压缩部件，让Memory表读取String的size、Array的size0、Nullable的null、Tuple元素及Map的keys、values和size0子列时仅解压对应部件；同一列与其子列同查时每块只解压一次。</p>
+<p>重要性与适用范围：面向使用compress=true的Memory表且查询只读取上述子列的场景，避免整列解压并减少重复解压；其它子列仍回退整列，收益取决于查询是否命中这些子列。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+<code>ColumnCompressed</code> now keeps the compressed parts it was built from (<code>getParts</code>). They share its data, so <code>byteSize</code> and <code>system.tables.total_bytes</code> do not change. <code>tryGetSubcolumnFromBlock</code> maps the subcolumns listed above to parts and falls back to the whole column for anything else. The mapping takes the type instead of being a <code>ColumnCompressed::decompressSubcolumn(name)</code>, because only <code>DataTypeTuple</code> knows the element names. The <code>Nested</code> sizes path decompresses only the offsets of the stored sibling.</p>
+<p>Master also decompressed a column once per requested name, so <code>s, s.size</code> decompressed <code>s</code> twice. Such a column is now decompressed once per block.</p>
+<p>The setup from the issue (8M URLs from <code>hits_0.parquet</code>), Release build, best of 5, <code>max_threads = 8</code>:</p>
+<div class="table-scroll" role="region" aria-label="数据表格" tabindex="0"><table>
+<thead>
+<tr>
+<th>query</th>
+<th>master</th>
+<th>this PR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>avg(length(URL))</code></td>
+<td>0.031 s</td>
+<td>0.009 s</td>
+</tr>
+<tr>
+<td><code>count() WHERE empty(URL)</code></td>
+<td>0.030 s</td>
+<td>0.010 s</td>
+</tr>
+<tr>
+<td><code>avg(cityHash64(URL))</code></td>
+<td>0.042 s</td>
+<td>0.042 s</td>
+</tr>
+<tr>
+<td><code>count() WHERE NOT ignore(URL, URL.size)</code></td>
+<td>0.057 s</td>
+<td>0.031 s</td>
+</tr>
+</tbody>
+</table></div>
+<p>The same table with <code>compress = 0</code> takes 0.003 s for <code>avg(length(URL))</code>. On synthetic data <code>n.null</code>, <code>t.x</code> and <code>m.keys</code> go from 0.010, 0.019 and 0.037 s to 0.003, 0.011 and 0.024 s.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/126253" rel="noreferrer">本日合并 PR #126253｜主线 / master｜2026-10-18T01:41:57Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-124907"><a href="https://github.com/ClickHouse/ClickHouse/pull/124907" rel="noreferrer">PR #124907｜主线 / master</a></p>
+<p>优化外部 IN 子查询的磁盘集合：按值顺序保存数值、日期、短 FixedString 和元组，打包邻近键，合并读取邻近块且不解压，用 Bloom 过滤跳过块，缓存查找块，并对每块不同键只探测一次。</p>
+<p>重要性与适用范围：适用于使用 IN 子查询且集合可能溢写到磁盘的查询；max_bytes_ratio_before_external_set 默认 0.5，使集合在查询内存超过服务器或用户限制剩余内存一半时落盘。本改动提升此类集合的构建和查找性能，并提供 Bloom 过滤与缓存的内存上限设置。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Sets of <code>IN</code> with a subquery spill to disk by default: <code>max_bytes_ratio_before_external_set</code> now defaults to <code>0.5</code>, so a set spills once query memory exceeds half of the memory that the server or user memory limits leave. Set it to <code>0</code> to keep such sets in memory. Sets on disk are built and looked up several times faster: they keep numbers, dates, short <code>FixedString</code> values and tuples of them in order, pack close keys, read neighboring blocks together without decompression, skip blocks with Bloom filters, cache the blocks that lookups read, and look up each distinct key of a block of rows once. The new settings <code>max_bytes_for_external_set_bloom_filter</code> and <code>max_bytes_for_external_set_cache</code>, 128 MiB each by default, limit the memory of the Bloom filters and of the cache.</p>
+<hr />
+<p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=124907&amp;sha=latest&amp;name_0=PR)]</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124907" rel="noreferrer">本日合并 PR #124907｜主线 / master｜2026-10-18T08:50:29Z</a></p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/releases/tag/v26.7.34.3-stable" rel="noreferrer">本日官方发布来源：v26.7.34.3-stable（正式发布）</a></p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/releases/tag/v26.3.55.2-lts" rel="noreferrer">本日官方发布来源：v26.3.55.2-lts（正式发布）</a></p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/releases/tag/v26.9.21.9-stable" rel="noreferrer">本日官方发布来源：v26.9.21.9-stable（正式发布）</a></p>
+<h2 id="digest-section-11">StarRocks</h2>
+<p>来源读取成功：34 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<h3 id="digest-section-12">性能优化</h3>
+<p class="pr-title" id="digest-pr-starrocks-80960"><a href="https://github.com/StarRocks/starrocks/pull/80960" rel="noreferrer">PR #80960｜回移／维护分支 / branch-4.1</a></p>
+<p>在刷新阶段加守卫，使带有 partition_refresh_strategy='force' 或命中 mv_refresh_force_partition_type 的 INCREMENTAL、AUTO 物化视图按增量模式维护，不再每次刷新都全量重物化；PCT 视图和显式 FORCE 关键字不受影响。</p>
+<p>重要性与适用范围：适用于刷新模式为 INCREMENTAL 或 AUTO、且被视图级 force 属性或前端级 mv_refresh_force_partition_type 覆盖的物化视图，修复后这些视图恢复增量维护，避免长期全量重物化开销，但会改变已有视图的刷新行为。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+<code>REFRESH MATERIALIZED VIEW... FORCE</code> is rejected on a view whose refresh mode is <code>INCREMENTAL</code> or <code>AUTO</code>, with a message telling the user to drop and re-create it instead. Two other settings reach the same code without that check:</p>
+<div class="table-scroll" role="region" aria-label="数据表格" tabindex="0"><table>
+<thead>
+<tr>
+<th>setting</th>
+<th>scope</th>
+<th>effect on such a view</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>partition_refresh_strategy = 'force'</code></td>
+<td>one view</td>
+<td>every refresh re-materializes, for the life of the view rather than once</td>
+</tr>
+<tr>
+<td><code>mv_refresh_force_partition_type</code></td>
+<td>the whole frontend</td>
+<td>every matching view does, and whoever set it cannot see which</td>
+</tr>
+</tbody>
+</table></div>
+<p>The second is the one that motivated this. An administrator enabling force refresh for the partition types they care about silently turns every incremental view of those types into a full re-materialization.</p>
+<p>The reason columns added in are what made this visible. Before them the view simply never went incremental and nothing said why.</p>
+<h2>What I'm doing:</h2>
+<p>Scoping both settings away from a view that is maintained incrementally, at the refresh rather than at the DDL.</p>
+<p><strong>Why not reject it where it is set.</strong> The config cannot be: it is legitimate for pct views, and its operator cannot know which views are incremental. The property could be, but covering both orderings — set the property then switch the mode, or the reverse — takes hooks at CREATE, at <code>ALTER... SET partition_refresh_strategy</code> and at <code>ALTER... SET refresh_mode</code>, and all three share `mo</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/80960" rel="noreferrer">本日合并 PR #80960｜回移／维护分支 / branch-4.1｜2026-10-17T16:08:35Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/79366" rel="noreferrer">关联原始 PR #79366（历史合并 2026-10-17T03:29:41Z，不是本日新功能）</a></p>
+<p class="pr-title" id="digest-pr-starrocks-80396"><a href="https://github.com/StarRocks/starrocks/pull/80396" rel="noreferrer">PR #80396｜主线 / main</a></p>
+<p>优化H3_PolygonToCells：≥128顶点、纬度绝对值≤70度且经度跨度≤90度的分量改用递归中心填充，其余走标准路径；单环POLYGON用纯GEO helper复用S2校验，免去构造被丢弃的S2Loop/S2Polygon；单分量就地紧凑输出并批量追加。</p>
+<p>重要性与适用范围：运行时性能优化，针对H3_PolygonToCells处理高顶点复杂多边形的填充与单环校验路径，减少S2Loop/S2Polygon构造与输出去重开销；递归填充仅用于满足顶点数、纬度与经度跨度阈值的分量，其余走标准polygonToCells。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Use recursive center filling from pinned H3 4.5.0 for components with at least 128 input vertices, absolute vertex latitude at most 70 degrees, and longitude span at most 90 degrees. Small, polar, wide and antimeridian-crossing components use standard <code>polygonToCells</code>. Preserve the standard <code>maxPolygonToCellsSize</code> preflight and output slab; <code>E_MEMORY_BOUNDS</code> clears the slab and falls back to standard <code>polygonToCells</code>.</p>
+<p>For a nonempty single-ring POLYGON, validate the same mapped coordinates, mapped closure and adjacent-duplicate cleanup through a pure GEO helper. It applies S2's unit-length/duplicate/antipodal checks and official robust self-intersection validator using a polygonal S2LaxLoopShape. This avoids constructing, normalizing and bounding a discarded S2Loop/S2Polygon. Holes and every MULTIPOLYGON retain spherical_is_valid. Existing GeoPolygon construction preserves its preparation, parse statuses, IsValid and Normalize behavior.</p>
+<p>For a sole nonempty component, move and compact its output slab in place and avoid redundant single-component deduplication. Preserve ordered union deduplication for multiple nonempty components. Do not redundantly re-validate cells returned by H3 for a validated polygon; compact <code>H3_NULL</code> slots. Append polygon cells in bulk through <code>H3ArrayBuilder::append</code>, retaining the cumulative array-offset check.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/80396" rel="noreferrer">本日合并 PR #80396｜主线 / main｜2026-10-18T08:48:48Z</a></p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
