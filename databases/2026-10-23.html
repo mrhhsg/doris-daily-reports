@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="ce9fcdad7da3c6816ed7aae57425d2bfd22d9833552d4efe674b8176e445c416"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-23（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-3"><a href="#digest-section-4">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27441">PR #27441｜主线 / main</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-10-23.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-23（北京时间）</h1><div class="meta">北京时间 2026-10-23</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-3"><a href="#digest-section-4">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27441">PR #27441｜主线 / main</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>2026-10-23（北京时间）三库聚焦更新：筛选后 27 项，只关注性能优化、重大新功能及有官方明确修复证据的安全修复。合并记录不等于已发布；回移与原始改动关联展示，正式发布和预发布以官方公告为准。分类统计：安全修复 0 项、性能优化 25 项、重大新功能 2 项。</p>
+<p>DuckDB：将 Optimizer 的构造改为惰性初始化，避免每条语句在 Planner::CreatePlan 与 Planner::Optimize 中重复构建约38条表达式重写规则及其匹配树，尤其减少跳过内置优化器的事务、PRAGMA 和 SET 等语句的固定开销。；为COPY ... TO新增RETURN_COLUMN_TYPES选项，使结果额外返回columns列，类型为STRUCT(name VARCHAR, type TYPE)[]，逐列给出写入时的列名与类型；可与RETURN_FILES、RETURN_STATS组合，未设置该选项时行为不变。</p>
+<p>ClickHouse：将sipHash128对String和FixedString列、以及字符串非radix uniqExact改用sipHash128Padded，避免最后部分字长跳转。Darwin arm64单线程5M行、长度1至60的基准中，sipHash128(String)由115ms降至104ms，uniqExact(String)由379ms降至366ms。</p>
+<p>StarRocks：将ImmutableIndex::check_not_exist改为复用get()做存在性检查，按键长布局分组探测，沿用Bloom过滤、配置化页面读取和整分片回退，并保留墓碑与定长守卫，删除重复分片检查辅助函数。；为Iceberg v3的ORC数据文件新增读取_row_id和_last_updated_sequence_number行血缘列，按保留字段ID解析已存储列并在读取后填入继承值，移除FE对ORC不支持行血缘的限制。</p>
+<h2 id="digest-section-2">范围与证据</h2>
+<p>统计前一完整自然日：PR 按实际 merged_at；Release 与公开安全公告按 published_at。公开安全公告不覆盖未披露漏洞；GitHub Releases 不包含仅有 tag 或独立官网文章。模型仅依据标题与正文，未读取完整 diff；性能适用条件以所链官方证据为准。</p>
+<h2 id="digest-section-3">DuckDB</h2>
+<p>来源读取成功：26 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<h3 id="digest-section-4">性能优化</h3>
+<p class="pr-title" id="digest-pr-duckdb-27441"><a href="https://github.com/duckdb/duckdb/pull/27441" rel="noreferrer">PR #27441｜主线 / main</a></p>
+<p>将 Optimizer 的构造改为惰性初始化，避免每条语句在 Planner::CreatePlan 与 Planner::Optimize 中重复构建约38条表达式重写规则及其匹配树，尤其减少跳过内置优化器的事务、PRAGMA 和 SET 等语句的固定开销。</p>
+<p>重要性与适用范围：该优化直接改变语句规划路径，对高频空事务、BEGIN/COMMIT、预处理语句执行等场景降低每语句构造开销，适用范围为所有语句规划；不改变SQL语义，但收益取决于语句是否跳过优化器。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Hi team, I was doing some benchmarks on DuckDB transaction and found we could reduce transaction overhead a lot via lazy optimizer construction.</p>
+<p>In the current implementation, every statement (including <code>BEGIN</code>, <code>COMMIT</code> and <code>EXECUTE</code> of a prepared statement) constructs the <code>Optimizer</code> twice: once in <code>Planner::CreatePlan</code> only to call <code>OptimizeStatement</code> (<a href="https://github.com/duckdb/duckdb/blob/16917f94f9e0c0a0fc8be84d55edc10e712e4666/src/planner/planner.cpp#L290-L293" rel="noreferrer">code ref 1</a>), and once in <code>Planner::Optimize</code> (<a href="https://github.com/duckdb/duckdb/blob/16917f94f9e0c0a0fc8be84d55edc10e712e4666/src/planner/planner.cpp#L65" rel="noreferrer">code ref 2</a>). The <code>Optimizer</code> constructor (<a href="https://github.com/duckdb/duckdb/blob/16917f94f9e0c0a0fc8be84d55edc10e712e4666/src/optimizer/optimizer.cpp#L73-L118" rel="noreferrer">code ref 3</a>) eagerly builds all ~38 expression rewrite rules and their matcher trees (706 heap allocations, ~22 KB per construction), even though the first instance never uses them, and the second doesn't either for statements that skip the built-in optimizers (transactions, <code>PRAGMA</code>, <code>SET</code>, ...).</p>
+<p>&lt;details&gt;<br>
+&lt;summary&gt;Benchmark driver (click to expand)&lt;/summary&gt;</p>
+<pre><code class="language-cpp">#include &quot;duckdb.hpp&quot;
+#include &lt;algorithm&gt;
+#include &lt;chrono&gt;
+#include &lt;cstdio&gt;
+#include &lt;dlfcn.h&gt;
+#include &lt;functional&gt;
+#include &lt;random&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+using namespace duckdb;
+using clk = std::chrono::steady_clock;
+
+typedef void (*stats_fn_t)(uint64_t *, uint64_t *);
+static stats_fn_t stats_fn;
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #27441｜主线 / main｜2026-10-22T16:02:59Z](https://github.com/duckdb/duckdb/pull/27441)
+
+[PR #27686｜主线 / main](https://github.com/duckdb/duckdb/pull/27686)
+
+读取端 Parquet 元数据缓存和写入端文件元数据改由 ArenaAllocator 管理，缓存内存估算改用 arena 实际大小，页头读取复用小型 arena。
+
+重要性与适用范围：面向列和行组很多、元数据沉重的 Parquet 文件；基准中10文件 count(*) 从0.61 s降到0.48 s，100文件从约3.3 s降到约1.6 s，极端场景峰值RSS从1.05 GB升到1.24 GB。
+
+官方原文证据（保留基准及适用条件）：
+- Reader: `ParquetFileMetadataCache` owns the `ArenaAllocator` (declared before the metadata, so it outlives it) and its cache memory estimate uses the arena size. `ColumnReader` has a small arena that is reset for each page header.
+- Writer: `ParquetWriter` has a `metadata_arena` next to `file_meta_data`; `FinalizeSchema` builds schema elements in place with `emplace_back`.
+
+## Benchmarks
+
+Release builds of this branch vs. its merge-base, on a loaded shared 96-core box (so absolute numbers are noisy). Files have 2000 TINYINT/BIGINT columns and 49 row groups, i.e. ~98k column chunks of metadata each.
+
+| Benchmark | before | after |
+|---|---|---|
+| `SELECT count(*) FROM read_parquet(&lt;10 such files&gt;)` (best of 7) | 0.61 s | 0.48 s |
+| same with 100 files | ~3.3 s | ~1.6 s |
+| `COPY` 2000 cols x 200k rows to Parquet (best of 3) | 11.0 s | 10.5 s |
+| `OBJECT_CACHE` estimate after reading the 10 files with `parquet_metadata_cache=true` | 116 MB | 1.42 GB |
+| peak RSS of the 10-file read | 1.05 GB | 1.24 GB |
+
+The old estimate (116 MB) is roughly an order of magnitude below the real footprint (the process holds on the order of 1 GB while reading these files), which is why the cache would never have evicted in time. The new estimate is in the right range.
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #27686｜主线 / main｜2026-10-23T08:45:19Z](https://github.com/duckdb/duckdb/pull/27686)
+
+[PR #27738｜主线 / main](https://github.com/duckdb/duckdb/pull/27738)
+
+将物化执行路径遇到 NO_TASKS_AVAILABLE 时的处理改为与其他执行循环一致，使用现有 WaitForTask 等待任务，避免收集线程在最后流水线阶段空转并反复争用 executor_lock 与生产者队列锁。
+
+重要性与适用范围：消除物化查询收集线程的忙等与锁争用，降低其 CPU 占用，适用于以物化结果返回的查询；代价是极短查询和含大量短流水线阶段的负载会多付条件变量唤醒开销。
+
+官方原文证据（保留基准及适用条件）：
+| `ClientContext::CompleteDelegatedInternal` | re-loops at once |
+
+In the two loops that re-loop, the collecting thread spins at 100% CPU while the workers finish the last pipelines. On every pass it takes `executor_lock` (in `Executor::IdleState`) and the producer queue lock, which the workers also need. I couldn't find a reason for materialization to behave differently from the other paths. It looks like these two loops were never updated when the others started waiting.
+
+The change adds `NO_TASKS_AVAILABLE` to the wait condition of these two loops. It is one condition per loop, using the existing `WaitForTask`, with no new synchronization. If the difference is intentional, I'd like to understand why. In that case, the numbers below may still help decide which behavior should be the standard.
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #27738｜主线 / main｜2026-10-23T13:57:50Z](https://github.com/duckdb/duckdb/pull/27738)
+
+### 重大新功能
+
+[PR #26650｜主线 / main](https://github.com/duckdb/duckdb/pull/26650)
+
+为COPY ... TO新增RETURN_COLUMN_TYPES选项，使结果额外返回columns列，类型为STRUCT(name VARCHAR, type TYPE)[]，逐列给出写入时的列名与类型；可与RETURN_FILES、RETURN_STATS组合，未设置该选项时行为不变。
+
+重要性与适用范围：面向用COPY TO导出数据并需预先获知写出列类型的用户：CSV不保存类型，Arrow/Parquet会把多种DuckDB类型映射为同一物理类型，此前只能另发DESCRIBE或prepare语句重复绑定；新选项默认不改变既有行为。
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #26650｜主线 / main｜2026-10-22T19:56:22Z](https://github.com/duckdb/duckdb/pull/26650)
+
+## ClickHouse
+
+来源读取成功：157 条已合并 PR、2 条发布公告、0 条公开安全公告；开发默认分支 master。
+
+### 性能优化
+
+[PR #127224｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/127224)
+
+将sipHash128对String和FixedString列、以及字符串非radix uniqExact改用sipHash128Padded，避免最后部分字长跳转。Darwin arm64单线程5M行、长度1至60的基准中，sipHash128(String)由115ms降至104ms，uniqExact(String)由379ms降至366ms。
+
+重要性与适用范围：这是运行时哈希路径优化，适用于对变长字符串调用sipHash128，或在禁用radix分区时对字符串使用uniqExact的场景；收益受字符串长度分布和平台影响。
+
+官方原文证据（保留基准及适用条件）：
+Use `sipHash128Padded` for the strings of `sipHash128` (unkeyed, `String` and `FixedString` columns) and for the non-radix `uniqExact` on strings. It returns the same hash as `sipHash128` for data that is followed by at least 7 readable bytes, which holds for the padded columns, and it avoids the mispredicted jump on the length of the last partial word.
+
+Measured on Darwin arm64 (Apple silicon), 1 thread, 5M rows, best of 7 runs, both binaries built with the same compiler from the same tree. Strings have random lengths from 1 to 60.
+
+| Query | Before | After | Speedup |
+|---|---|---|---|
+| `sum(cityHash64(sipHash128(s)))`, `String` | 115 ms | 104 ms | 1.10x |
+| `sum(cityHash64(sipHash128(f)))`, `FixedString(13)` | 62 ms | 60 ms | 1.03x |
+| `uniqExact(s)`, `String`, `optimize_uniq_exact_radix_partitioning = 0` | 379 ms | 366 ms | 1.03x |
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #127224｜主线 / master｜2026-10-22T17:29:02Z](https://github.com/ClickHouse/ClickHouse/pull/127224)
+
+[PR #123788｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/123788)
+
+为 Memory 引擎增加惰性物化：执行 ORDER BY ... LIMIT n 时，仅过滤和排序所需列参与主读取，其他延迟列只为 LIMIT 后存活的行读取；主读取生成全局行索引以定位快照中的行。
+
+重要性与适用范围：优化 Memory 表带 ORDER BY ... LIMIT 查询的运行时读取路径，减少延迟列的读取量，适用于内存表大结果集取前 n 行场景；延迟分支按连续范围并行读取并保持块顺序。
+
+官方原文证据（保留基准及适用条件）：
+Lazy materialization for the `Memory` engine. For `ORDER BY ... LIMIT n`, the columns that are not needed for filtering and sorting are read only for the `n` rows that survive the `LIMIT`. This already works for `MergeTree`, Parquet files and object storage.
+
+This PR includes the commits of https://github.com/ClickHouse/ClickHouse/pull/123787 (TopN dynamic filtering for `Memory`), because both change `ReadFromMemoryStorageStep`. Only the last commit and the merge are new.
+
+How it works:
+- `ReadFromMemoryStorageStep::keepOnlyRequiredColumnsAndCreateLazyReadStep` removes the deferred columns from the main read. Columns used by the in-source filters stay in the main read: the row policy, the `PREWHERE` steps and the TopN filter.
+- The main read produces `__global_row_index`: the number of the row in the storage snapshot (the rows of the preceding blocks plus the row in its block). Both branches read the same immutable snapshot, so the number identifies the row without a registry.
+- The lazy branch (`LazilyReadFromMemoryStorage`) creates its readers at run time, when `LazyMaterializingTransform` starts pulling, as `LazyReadFromFileSource` does. With `compress = true` every block decompresses each deferred column as a whole, and the result rows usually come from different blocks. So the blocks are split into contiguous ranges, read by parallel sources, and their chunks are passed on in order. A first sequential version made Q24 2x slower instead of faster.
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #123788｜主线 / master｜2026-10-22T18:47:34Z](https://github.com/ClickHouse/ClickHouse/pull/123788)
+
+[PR #124874｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/124874)
+
+为通过URL表引擎读取的Parquet文件接入查询条件缓存：StorageURLSource在读取后记录不匹配过滤条件的row group，相同过滤条件重跑时跳过这些row group或整个文件，并可在glob中继续下一URL。
+
+重要性与适用范围：运行时优化，适用于经URL引擎读取的Parquet文件；缓存以Last-Modified和大小作版本，仅在修改时间距请求超过一分钟、且为无额外查询参数或请求体的普通GET时使用。
+
+官方原文证据（保留基准及适用条件）：
+The query condition cache worked for Parquet files read through `File`, object storage and data lakes, but not through the `URL` engine. `StorageURLSource` now consults and populates it the same way: when a Parquet file has been read, the row groups without a row matching the filter are recorded, and a rerun of a query with the same filter skips them - or the whole file, going to the next URL of a glob. This PR is based on https://github.com/ClickHouse/ClickHouse/pull/124861 (TopN dynamic filtering for `URL`); only the last commit is new.
+
+- **Key.** HTTP reads carry no `ETag` here, so the version of a file is its `Last-Modified` and size; the entries of a file are keyed by a hash of its URL, the URL it was read from after the redirects and the credentials of the requests, and by this version. `Last-Modified` has a precision of a second, so a rewrite that keeps the size and lands in the same second would keep the version. As for local files (`StorageFileSource`, 3 seconds), the cache is used only once the modification is comfortably in the past; the window is a minute. As `Last-Modified` comes from the clock of the web server, which can be off from the clock of this server, the age of the modification is measured against the `Date` of the same response (as RFC 9110, section 8.8.2.2, does to decide whether `Last-Modified` is a strong validator). Without `Last-Modified`, `Date` or the size, the cache is not used. Only a table with a UUID has entries (as everywhere), and only a 
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #124874｜主线 / master｜2026-10-22T18:47:34Z](https://github.com/ClickHouse/ClickHouse/pull/124874)
+
+[PR #127211｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/127211)
+
+XRay 构建中 system.symbols 仅在查询读取 symbol_demangled 或 function_id 列时才反混淆符号，避免扫描时反混淆约 740K 个符号；SELECT max(address_end) FROM system.symbols 在 release 构建下从约 1 秒降至几毫秒。
+
+重要性与适用范围：仅影响启用 XRay 且不读取 XRay 列的 system.symbols 查询，属运行时扫描路径优化，可明显缩短符号表读取耗时；读取相关列的查询行为不变。
+
+官方原文证据（保留基准及适用条件）：
+Related: https://github.com/ClickHouse/ClickHouse/pull/109239
+
+With XRay, `SymbolsBlockSource::generate` demangled every symbol of the binary to look it up in the instrumentation map, even when the query read neither `symbol_demangled` nor `function_id`. Demangling about 740K symbols dominates the scan: `SELECT max(address_end) FROM system.symbols` drops from about 1 s to a few milliseconds in a release build. Under MSan it took about three minutes, so `05175_system_stack_trace_file_offsets` (two such scalar subqueries) timed out in the flaky check.
+
+CI report: https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=109239&amp;sha=3e57da99946995113b40749c82cf2e470c1aef45&amp;name_0=PR&amp;name_1=Stateless%20tests%20(amd_msan%2C%20flaky%20check)
+
+### Changelog category (leave one):
+- Performance Improvement
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #127211｜主线 / master｜2026-10-22T20:28:24Z](https://github.com/ClickHouse/ClickHouse/pull/127211)
+
+[PR #127212｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/127212)
+
+T64解压的reverseTransposeImpl将栈上512字节位矩阵按自身大小对齐以避免跨页，AVX2下每个平面用一次select填充，编译为掩码加载和对齐整宽存储；无掩码加载的AArch64仍保留标量循环拷贝。
+
+重要性与适用范围：消除T64解压对栈矩阵地址的偶然依赖，使性能不随二进制布局波动；仅影响T64解码路径，AVX2平台通过掩码加载与对齐存储受益，AArch64无掩码加载时退回原拷贝方式，不改变解码结果。
+
+官方原文证据（保留基准及适用条件）：
+Align the matrix to its size, so it never straddles a page, and with AVX2 fill it with one select per plane, which compiles to masked loads and aligned full-width stores. A full matrix keeps a constant-size copy. Without masked loads (AArch64) the select is a scalar loop over all planes, so the copy stays there.
+
+User cycles of 50 single-threaded scans of 20M `UInt64` with `T64`, local static build, before -&gt; after (CI master binary for reference): seq 3.70e9 -&gt; 2.72e9 (2.63e9), mon 4.00e9 -&gt; 3.00e9 (2.44e9), rnd 3.69e9 -&gt; 3.66e9 (3.31e9). Decoded values were checked against master for all integer types in both `T64` modes.
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #127212｜主线 / master｜2026-10-22T21:27:28Z](https://github.com/ClickHouse/ClickHouse/pull/127212)
+
+[PR #127328｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/127328)
+
+移除 predictXGBoost 预测路径上的每模型互斥锁，利用 XGBoost 对已训练 gbtree/dart booster 的线程安全预测，使同一模型上的并发预测不再串行化；并将 XGBOOST 字典的 verbosity 限制为 0、1、2。
+
+重要性与适用范围：该优化改变运行时预测路径，适用于使用 predictXGBoost 且存在多线程或并发查询共享同一模型的场景；gblinear 的调试并发限制使 verbosity 3 被拒绝，适用范围有限。
+
+官方原文证据（保留基准及适用条件）：
+A query with `predictXGBoost` used only one CPU core, regardless of `max_threads`: `XGBoostModel::predict` held a per-model mutex around `XGBoosterPredictFromDMatrix`, so all the streams of a query (and all concurrent queries) were serialized on the shared model.
+
+The mutex is not needed. Since XGBoost 1.4, prediction on a trained `gbtree`/`dart` booster is thread-safe (see `doc/prediction.rst` in the bundled XGBoost 3.3.0): the prediction output is kept in a thread-local buffer (`Learner::GetThreadLocal`), and the shared state of the learner — lazy configuration and the prediction cache — is protected by locks inside XGBoost. The other calls on the prediction path, `XGBRegisterLogCallback` (thread-local registry) and `XGBoosterBoostedRounds`, are safe as well. The model is fully trained in `finalizeTraining` before the dictionary is published, so training and prediction never overlap.
+
+The `gblinear` booster is not covered by that guarantee only because `GBLinear::PredictBatch` updates the booster's timing `Monitor` without locking when debug logging is enabled. The verbosity of XGBoost is per thread and stays on a pooled thread after it trained a model, so the `verbosity` training parameter now accepts only `0`, `1` and `2`; debug verbosity `3
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #127328｜主线 / master｜2026-10-22T22:25:28Z](https://github.com/ClickHouse/ClickHouse/pull/127328)
+
+[PR #127214｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/127214)
+
+在musl构建下用-fno-builtin-sincos保留sincos调用，链接llvm-libc的sincos，升级h3让cagnoli使用_sincos，新增sinCos用于geoToUTM、UTMToGeo和colorOKLCHToSRGB，以共享角度归约。
+
+重要性与适用范围：这是针对aarch64 musl构建的运行时性能优化，避免同一角度分别调用sin与cos，影响h3面积函数及geoToUTM、UTMToGeo、colorOKLCHToSRGB；仅在musl目标下需要额外编译与链接处理，结果与改动前一致。
+
+官方原文证据（保留基准及适用条件）：
+Related: https://github.com/ClickHouse/ClickHouse/pull/109239
+
+`h3_functions` #4 (`h3CellAreaM2`) was 20% slower on aarch64 in the musl build: in the glibc build LLVM merges `sin(x)` and `cos(x)` into one `sincos` call, which shares the argument reduction, but it assumes `sincos` only in glibc, Fuchsia and Android, so the musl build made both calls. An explicit `sincos` call does not help on its own: Clang turns it into the `llvm.sincos` intrinsic, and for a musl target LLVM lowers that to `sin` and `cos` again.
+
+- Compile with `-fno-builtin-sincos` under musl, so that `sincos` stays a call.
+- Link llvm-libc's correctly rounded `sincos`, which gives the same bits as its `sin` and `cos`.
+- Bump `contrib/h3` so that its `_sincos` helper really calls `sincos` (its `__builtin_sincos` is split back into `sin` and `cos` for musl targets) and use it in `cagnoli`, the cell area functions: merged into `ClickHouse/v4.5.0` in https://github.com/ClickHouse/h3/pull/14.
+- Add `sinCos` and use it in `geoToUTM`, `UTMToGeo` and `colorOKLCHToSRGB`.
+
+The results of these functions over 200000 inputs are identical before and after.
+
+Perf report where it was found: https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=109239&amp;sha=a685010407d544ee0b02294d34118bd48f46ff84&amp;name_0=PR&amp;name_1=Performance%20Comparison%20%28arm_release%2C%20master_head%2C%201%2F6%29
+
+### Changelog category (leave one):
+- Performance Improvement
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #127214｜主线 / master｜2026-10-22T22:45:18Z](https://github.com/ClickHouse/ClickHouse/pull/127214)
+
+[PR #117802｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/117802)
+
+新增 isExpensive 虚拟函数标记昂贵函数，含 AI 函数的条件被移到 PREWHERE 末尾并独占读取步骤，只对通过较廉价条件的行调用 AI 函数。
+
+重要性与适用范围：适用于在过滤条件中使用 AI 函数并同时存在其他条件的查询，可减少 AI 函数调用次数；设置 allow_reorder_prewhere_conditions=0 或显式写 PREWHERE 时顺序不变，无基准数据。
+
+官方原文证据（保留基准及适用条件）：
+An AI function issues one request per row, and `MergeTreeWhereOptimizer` prices a condition only by the size of the columns it reads, so a condition with an AI function could be moved to PREWHERE ahead of cheaper conditions and called on every row read.
+
+A new virtual function `isExpensive` is added to `IFunction` / `IFunctionBase`, defaulting to `false`. All AI functions set it to `true`; `FunctionCapture` and `FunctionExpression` report it for a lambda whose body is expensive.
+
+A condition containing an expensive function is moved to PREWHERE after all other conditions and is not grouped with other conditions on the same columns. Each PREWHERE read step sees only the rows that passed the previous steps, so the AI function is called only for rows passing the cheaper conditions, and PREWHERE still saves reading the remaining columns for rows it rejects. `MergeTreeSplitPrewhereIntoReadSteps` gives an expensive condition its own step with filtered input.
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #117802｜主线 / master｜2026-10-23T00:05:19Z](https://github.com/ClickHouse/ClickHouse/pull/117802)
+
+[PR #117153｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/117153)
+
+为带键聚合的大 uniqExact 状态合并在聚合线程池上按目标状态并行化：mergeDataImpl 增加延迟合并模式，超过两级阈值的状态对先收集，再对每个目标与全部来源做一次并行合并；仅在线程池有空闲线程时启用，小状态仍按原方式合并。
+
+重要性与适用范围：改变带键 uniqExact/COUNT(DISTINCT) 聚合的运行时合并路径，让多核机器上的大分组重新随核数扩展；仅当聚合线程池有空闲线程时启用，池繁忙或多组并发合并时退回串行，小状态合并行为不变。
+
+官方原文证据（保留基准及适用条件）：
+l has been flat (~0.25–0.30 s) since 2022 while Q4 (without-key `COUNT(DISTINCT)`) got 20x faster from the parallel merge of PR #43072 / #50748.
+
+What this PR does:
+
+- `mergeDataImpl` gets a deferral mode (new `IAggregateFunction::mergeAndDestroyBatchOrDefer`): for functions that can parallelize their merge, pairs of states past the two-level threshold (`UniqExactSet::worthMergingInParallel`) are collected instead of merged in place. Small states merge exactly as before.
+- After all sources of a single-level result / of a two-level bucket are processed, the deferred pairs are grouped by destination and each destination is merged with **all** of its sources in one `parallelizeMergeMulti` pass on the aggregator's thread pool: the keys of single-level partial states are grouped by sub-bucket into flat arrays in parallel (they are not converted to `TwoLevelHashSet`, which costs at least 256 hash tables of the initial size per state, far more than a small per-thread state itself), then all 256 sub-buckets of the destination absorb their share of all sources in parallel.
+- This scattered merge runs only when the aggregator's pool has idle threads. When the pool is already busy, e.g. many groups of similar size are merged concurrently by the bucket workers, the sources are merged serially as before: the extra pass over the keys would not pay off.
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #117153｜主线 / master｜2026-10-23T02:08:59Z](https://github.com/ClickHouse/ClickHouse/pull/117153)
+
+[PR #127475｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/127475)
+
+启用列缓存时，PREWHERE过滤后的Parquet缓存列改为每64个过滤字节生成位掩码并遍历置位行，分批收集通过行，替代逐字节分支判断，分配方式不变。
+
+重要性与适用范围：该优化作用于缓存Parquet列在PREWHERE选择性过滤后的行收集路径；ClickBench Parquet（100文件）、max_threads=4、列缓存全扫描预热、RelWithDebInfo、10轮配对下，Q31由368 ms降至261 ms，降29.6%。
+
+官方原文证据（保留基准及适用条件）：
+With `use_columns_cache = 1`, a cached `Parquet` column read for a row subgroup that `PREWHERE` has filtered is copied with `IColumn::index` by the numbers of the passing rows (`Reader::getOrFormOutputColumn`). They were collected by testing every filter byte, a branch that mispredicts on irregular filters. Now the filter is converted 64 bytes at a time with `bytes64MaskToBits64Mask` and the set bits are walked with `countr_zero`, as in `ColumnVector::filter`; the allocation and the gathered rows are unchanged. The function's share of Q31's CPU samples drops from 26.5% to 5.7%.
+
+ClickBench Parquet (100 files), `max_threads = 4`, columns cached by a full scan, RelWithDebInfo, 10 paired rounds:
+
+| Query | master | this PR | change [95% CI] |
+|---|---:|---:|---|
+| Q31 | 368 ms | 261 ms | -29.6% [-32.5, -26.6] |
+| Q32 | 467 ms | 359 ms | -25.8% [-29.9, -21.5] |
+| Q12 | 118 ms | 101 ms | -17.5% [-21.5, -13.2] |
+| Q15 | 498 ms | 453 ms | -10.9% [-14.9, -6.6] |
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #127475｜主线 / master｜2026-10-23T02:20:13Z](https://github.com/ClickHouse/ClickHouse/pull/127475)
+
+[PR #123085｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/123085)
+
+为 Iceberg 表读取增加基于 manifest 数据文件 record_count 的行数估算，考虑分区和 min/max 过滤裁剪，供 join 重排序使用；无需读取数据，需启用默认关闭的 use_iceberg_manifest_statistics。
+
+重要性与适用范围：这是面向 Iceberg 表查询规划的运行时优化，行数估算用于 join 重排序；估算在分区及 min/max 裁剪后进行且不读数据，默认关闭，需显式启用 use_iceberg_manifest_statistics，适用范围为 Iceberg 数据源。
+
+官方原文证据（保留基准及适用条件）：
+### Changelog entry (a [user-readable short description](https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md) of the changes that goes into CHANGELOG.md):
+Join reordering can now estimate the rows of an Iceberg table from the `record_count` of its data files in the manifest files, after partition and min/max pruning by the query filter, without reading data. Enable it with the new setting `use_iceberg_manifest_statistics` (disabled by default).
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #123085｜主线 / master｜2026-10-23T08:30:58Z](https://github.com/ClickHouse/ClickHouse/pull/123085)
+
+[PR #125528｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/125528)
+
+对本地Parquet glob的过滤读取，在元数据已缓存且文件版本稳定后缓存键列的min/max统计，后续查询打开文件前先排除不可能匹配的文件，并新增跳过计数；不跳过时多一次元数据缓存查找。
+
+重要性与适用范围：适用File引擎和file()表函数的本地Parquet过滤读取；100文件ClickBench hits基准中Q37-Q43由11-13 ms降至8-10 ms，仅打开3个文件而非100个，元数据缓存增2.2%，其他查询和冷查询不变。
+
+官方原文证据（保留基准及适用条件）：
+After a read of a settled file version (the query condition cache's gate) whose metadata was already cached, the converted min/max ranges of the key condition columns are kept in the file's cache cell, keyed by column, type and the format settings that affect the conversion, and counted in its weight at once. A read that inserts the cell keeps nothing, so one-off scans do not move cold files in the cache. A later read of that version evaluates the same key condition on them before opening the file and skips it if no row group can match. Skipped files count in `ParquetPrunedRowGroups` and in the new `ParquetFilesSkippedByCachedStatistics`. `use_parquet_metadata_cache = 0` disables it. A file that is not skipped costs one more metadata cache lookup.
+
+On 100 files with the ClickBench `hits` schema (release, medians of 7 alternating rounds): Q37-Q43 matching 3 files take 8-10 ms instead of 11-13 ms (3 files opened instead of 100); Q1, Q2, Q3, Q8, Q20, Q24, Q30 and the cold first query are unchanged; the metadata cache grows by 2.2%.
+
+A differential oracle of 1000 random filters over 13 column types matched master; a mutant skipping on any excluded row group failed it.
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #125528｜主线 / master｜2026-10-23T09:44:38Z](https://github.com/ClickHouse/ClickHouse/pull/125528)
+
+[PR #117627｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/117627)
+
+Parquet 原生读取器处理 Array/Map 列时，将 repetition/definition level 的循环改为单次遍历，避免逐值更新 offsets 和 null map 容器元数据；在 x86_64、1M 行下，Array(Tuple(...)) CPU 降低14%，Map(String, Tuple(...)) 降低19%。
+
+重要性与适用范围：优化仅作用于 Parquet 中带 repetition level 的 Array/Map 读取路径，嵌套数组仍走通用路径，不改变读取结果；对含单层数组的 Parquet 分析查询有直接运行时收益。
+
+官方原文证据（保留基准及适用条件）：
+Reading `Array` and `Map` columns from Parquet is faster. The repetition and definition level loops in the native Parquet reader no longer update their output containers once per value, and a column with a single array level now produces its offsets, null map and encoded value count in one pass over the levels instead of two. Measured on x86_64 at 1M rows: 14% less CPU on `Array(Tuple(...))` and 19% less on `Map(String, Tuple(...))`.
+
+### Description
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #117627｜主线 / master｜2026-10-23T13:35:21Z](https://github.com/ClickHouse/ClickHouse/pull/117627)
+
+[PR #127423｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/127423)
+
+在分布式查询计划中，将join的生产者阶段按build侧优先于probe侧排序，并递归用于多层join；执行器仍按存储顺序启动且消费者先运行。
+
+重要性与适用范围：可减少远程worker逐个分发时build侧被probe侧任务阻塞的等待，改善分布式hash join的启动调度；适用于make_distributed_plan生成的分布式计划，不改变单机执行器逻辑。
+
+官方原文证据（保留基准及适用条件）：
+A hash join reads no probe rows until its build side is complete, but the coordinator of a distributed query plan started the producer stages of a join stage in hash-map order. With remote workers the tasks of a stage are sent one by one, so the build side waited behind the whole probe-side dispatch (about 4.4 s in the trace of the issue), while the probe readers that had already started could only wait.
+
+The producers of a stage are now a `std::vector&lt;StageDependency&gt;` (stage and exchange) in the order to start them. When `makeDistributedPlan` returns from the build input of a `JoinStepLogical`, it puts that input's producers in front of the probe input's. This applies at every level: if the build side of a join is itself a join, all stages of that inner join start first, and inside it the build side again starts before the probe side. For example, in `C ⋈ (B ⋈ A)`, where the right input of each join is its build side, the stages that read `A`, `B` and `C` start in that order. `JoinStepLogical::getBuildSide`, `getProbeSide` and `getInputIndex` name the inputs instead of a hard-coded child index. The executor is unchanged: it starts the producers in the stored order, after their consumer as before (a streaming exchange needs its consumer running first).
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #127423｜主线 / master｜2026-10-23T15:59:17Z](https://github.com/ClickHouse/ClickHouse/pull/127423)
+
+[本日官方发布来源：v26.3.60.2-lts（正式发布）](https://github.com/ClickHouse/ClickHouse/releases/tag/v26.3.60.2-lts)
+
+[本日官方发布来源：v26.9.25.15-stable（正式发布）](https://github.com/ClickHouse/ClickHouse/releases/tag/v26.9.25.15-stable)
+
+## StarRocks
+
+来源读取成功：62 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。
+
+### 性能优化
+
+[PR #81307｜主线 / main](https://github.com/StarRocks/starrocks/pull/81307)
+
+将ImmutableIndex::check_not_exist改为复用get()做存在性检查，按键长布局分组探测，沿用Bloom过滤、配置化页面读取和整分片回退，并保留墓碑与定长守卫，删除重复分片检查辅助函数。
+
+重要性与适用范围：该优化作用于索引存在性检查与重建路径；默认100MiB L0限制、BIGINT 12M行和混合VARCHAR 5M行的索引重建基准中，重建耗时分别从209.389秒降至9.833秒、从103.018秒降至9.613秒，主要受益于复用get的Bloom过滤和页面读取。
+
+官方原文证据（保留基准及适用条件）：
+Seed a single-bucket, single-replica PK table with persistent indexing disabled, enable it, then time the first marker INSERT that rebuilds the index. BIGINT keys are sequential; variable keys mix short strings and strings longer than 64 bytes. Match the exact tablet's timed rebuild log and final L1 key count; collect PKINDEX filesystem I/O counters around that rebuild.
+
+Three complete runs per scenario per build (24 measured samples). Internal rebuild time and requested read bytes below are medians; each group's rebuild-time span is below 3% of its median.
+
+| L0 limit | Key type / seed rows | Parent time | PR time | Speedup | Parent read GB | PR read GB |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| 100 MiB (default) | BIGINT / 12M | 209.389 s | 9.833 s | 21.29x | 129.108 | 0.749 |
+| 100 MiB (default) | mixed VARCHAR / 5M | 103.018 s | 9.613 s | 10.72x | 130.427 | 0.997 |
+| 4 MiB (stress) | BIGINT / 5M | 55.742 s | 9.644 s | 5.78x | 29.090 | 1.955 |
+| 4 MiB (stress) | mixed VARCHAR / 2M | 31.652 s | 5.873 s | 5.39x | 32.456 | 0.911 |
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #81307｜主线 / main｜2026-10-22T21:04:05Z](https://github.com/StarRocks/starrocks/pull/81307)
+
+[本日合并 PR #81385｜回移／维护分支 / branch-4.1｜2026-10-23T07:23:29Z](https://github.com/StarRocks/starrocks/pull/81385)
+
+[PR #81272｜主线 / main](https://github.com/StarRocks/starrocks/pull/81272)
+
+将ST_CoverageSimplify分区处理中R树插入查询、节点式容器改为按数据自适应的网格索引、扁平数组和预分配哈希表，并保留R树回退及256位/动态算术回退，算法、检查与输出不变。
+
+重要性与适用范围：面向ST_CoverageSimplify的分区计算路径，适用于覆盖简化中大量坐标和边的索引与容器操作；自适应网格与R树回退降低运行时开销，输出和窗口观测不变。
+
+官方原文证据（保留基准及适用条件）：
+## Why I'm doing:
+
+Part of #78693. After #81216, most of ST_CoverageSimplify's time went into R-tree inserts and queries, map lookups for coordinates and edges, and ~1.1 million small allocations. Rebased onto main after #81330 and #81343 (no custom allocators, no checkpoint logic).
+
+## What I'm doing:
+
+The algorithm, the checks and the output stay the same (byte-identical WKB). Only the data structures change:
+- grid indexes for points and edges. If the data does not suit a grid (many long edges, crowded cells, or queries covering too many cells), the partition uses an R-tree instead, built by insertion as on main; dead chords are removed from it;
+- flat arrays and a pre-sized hash map instead of node-based containers;
+- 128-bit exact arithmetic when a bound for the whole partition allows it (one templated kernel, with 256-bit and dynamic fallbacks).
+
+Benchmark query (count/sum, paired main/new runs, median ratio with 95% CI):
+
+| Case | main | this PR | new/main |
+|---|---:|---:|---:|
+| coverage_10k, false | 1678 ms | 434 ms | 0.260 [0.250, 0.264] |
+| coverage_10k, true | 1699 ms | 436 ms | 0.259 [0.251, 0.267] |
+| coverage_10k, default | 1695 ms | 432 ms | 0.253 [0.242, 0.257] |
+| rings 2048, false | 61.5 ms | 30.3 ms | 0.494 [0.484, 0.508] |
+| rings 2048, true | 82.7 ms | 32.3 ms | 0.392 [0.377, 0.398] |
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #81272｜主线 / main｜2026-10-23T02:46:51Z](https://github.com/StarRocks/starrocks/pull/81272)
+
+[PR #81349｜主线 / main](https://github.com/StarRocks/starrocks/pull/81349)
+
+为单环GEOGRAPHY多边形新增ST_IsValid快速路径，直接检查边对至多512个顶点，避免构建S2Polygon和形状索引；更大环及其他形状仍走原路径。基准SQL polygons_100k从557.2 ms降至138.6 ms，约4x。
+
+重要性与适用范围：该优化改变GEOGRAPHY ST_IsValid单环多边形的运行时路径，减少小环构建S2索引的开销；适用于最多512顶点的单环多边形，较大环和其他形状不适用，EMPTY不变。基准SQL polygons_100k从557.2 ms降至138.6 ms、约4x。
+
+官方原文证据（保留基准及适用条件）：
+## Why I'm doing:
+
+Part of #78693. ST_IsValid(GEOGRAPHY) was ~3.4x slower than PostGIS in our geo benchmark. Most of the time went into building a full S2Polygon and an S2 shape index for every ring, even for small rings (on polygons_100k rings have 8-64 vertices).
+
+## What I'm doing:
+
+- Use a fast path for single-ring polygons, checking edge pairs directly up to 512 vertices with the same S2 predicates. Larger rings and other shapes keep the existing path.
+- Same answers for every input: same coordinate preparation and the same exact S2 checks, just without building the index.
+- EMPTY, the column loop and the existing ring checker used by H3 are unchanged.
+
+Diff: 6 files, +321/-1 (most of it tests). Result: ~4x faster than main on the benchmark query and faster than PostGIS.
+
+Main → this PR; 20 paired SQL runs / 40 native pairs per case. Ratio is the median of adjacent pairs, with 95% CI.
+
+| Case | main | this PR | new/main |
+|---|---:|---:|---:|
+| SQL polygons_100k | 557.2 ms | 138.6 ms | 0.247 [0.239, 0.252] |
+| Native 32 vertices | 18.356 µs/row | 1.237 µs/row | 0.067 [0.066, 0.068] |
+| Native 256 vertices | 137.922 µs/row | 32.490 µs/row | 0.236 [0.233, 0.240] |
+| Native 2048 vertices | 1170.772 µs/row | 907.146 µs/row | 0.768 [0.763, 0.781] |
+| Native EMPTY | 25.767 ns/row | 25.976 ns/row | 1.008 [0.996, 1.017] |
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #81349｜主线 / main｜2026-10-23T03:11:22Z](https://github.com/StarRocks/starrocks/pull/81349)
+
+[PR #77910｜主线 / main](https://github.com/StarRocks/starrocks/pull/77910)
+
+主键部分更新发布的行模式读取基段时，改为通过 TabletManager::load_segment 读取，使已缓存段打开成为空操作，避免每次发布重复打开同一基段；新增可变配置 lake_pk_partial_update_use_segment_cache 控制，默认开启。
+
+重要性与适用范围：该改动适用于主键部分更新发布的行模式路径，通过段元缓存复用已打开基段，减少重复打开开销，并提供运行时回退开关；收益取决于缓存命中情况。
+
+官方原文证据（保留基准及适用条件）：
+**Row mode** — route the base-segment read through `TabletManager::load_segment`. `Segment::open()` is `_open_once` guarded, so a cached entry turns the open into a no-op. Gated by the new mutable `lake_pk_partial_update_use_segment_cache` (default `true`), which is both a runtime rollback valve and the knob used for the A/B below.
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #77910｜主线 / main｜2026-10-23T05:03:15Z](https://github.com/StarRocks/starrocks/pull/77910)
+
+[PR #81080｜主线 / main](https://github.com/StarRocks/starrocks/pull/81080)
+
+修复垂直 compaction 在多次列组读取间复用 column_access_paths 导致后续 JSON 列不推导 flat 布局的问题；改为对尚无路径的每个 JSON 列分别推导，使其按 flat 子列流式读取，而非合并整 JSON 并缓冲整段输出。
+
+重要性与适用范围：适用于 shared-data 与 shared-nothing 的垂直 compaction，尤其默认每组 5 列且含多个 JSON 列的表；恢复后续 JSON 列的 flat 读取和流式 compaction，降低整段 JSON 合并与重扁平化开销。
+
+官方原文证据（保留基准及适用条件）：
+The flat JSON compactor of that column then never gets flat chunks. It cannot stream (#80470), and it buffers the whole output segment as JSON, rebuilding and re-flattening every row. On a table with several JSON columns, every JSON column after the first one has missed the compaction optimizations of #80295 and #80470.
+
+## What I'm doing:
+
+Collect the columns that already have a path in the list. Derive a path for every JSON column of this read that has none yet, instead of returning once the list is non-empty. The lake reader's early exit before loading segments also counts only the JSON columns still without a path.
+
+`LakeFlatJsonColumnsInGroupsCompactionTest.test_every_json_column_streams` covers this. It builds a table `c0 INT | c1 JSON | c2 INT | c3 JSON` with one column per group, loads three flat rowsets and runs a vertical compaction. It checks that both JSON columns stream (`flat_json_compaction_streaming_total` +2) and that every value reads back unchanged. Without the fix only one streams.
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #81080｜主线 / main｜2026-10-23T06:13:13Z](https://github.com/StarRocks/starrocks/pull/81080)
+
+[关联原始 PR #80295（历史合并 2026-10-09T02:31:01Z，不是本日新功能）](https://github.com/StarRocks/starrocks/pull/80295)
+
+[PR #81436｜主线 / main](https://github.com/StarRocks/starrocks/pull/81436)
+
+新增可选的TABLET_HASH备份路由策略，以tablet键和节点ID做rendezvous哈希选择备份节点，使不可用节点的tablet分散到存活节点并保持查询间备份稳定，默认仍为CIRCULAR。
+
+重要性与适用范围：在共享数据模式下，该策略通过哈希把不可用节点的tablet分散到存活节点，并让同一tablet的备份在查询间保持一致以集中缓存；它作为可选值加入，默认CIRCULAR不变。
+
+官方原文证据（保留基准及适用条件）：
+- `CIRCULAR` (default) makes the backup a function of the primary node only. Every tablet of the down node lands on the next node of the sorted id ring, which doubles that node's load regardless of cluster size.
+- `RANDOM` spreads the load, but the same tablet goes to a different node on every query and on every FE. All the other nodes end up fetching and caching the down node's tablets.
+
+## What I'm doing:
+
+Fixes https://StarRocks-inc.atlassian.net/browse/
+
+Add a third policy, `TABLET_HASH`, that makes the backup a deterministic function of the data being routed, using rendezvous (highest random weight) hashing:
+
+`backup(key, primary) = argmax over eligible nodes n of H(key, n)`
+
+- The down node's tablets spread evenly over the other nodes: each survivor goes from 2x load to about `1 + 1/(N-1)`.
+- A tablet keeps the same backup across queries, and across FEs that see the same eligible nodes, so its cache warms on one node only.
+- When a backup also becomes ineligible, only the tablets it served move, each to its next-ranked node; when it comes back, they move back.
+
+### The pieces
+
+- `SessionVariableConstants.BlacklistBackupRoutingPolicy` gains `TABLET_HASH`. The session variable setter already derives its legal values from the enum. The default stays `CIRCULAR`, so routing does not change on upgrade.
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #81436｜主线 / main｜2026-10-23T13:07:47Z](https://github.com/StarRocks/starrocks/pull/81436)
+
+[本日合并 PR #81443｜回移／维护分支 / branch-4.1｜2026-10-23T13:56:37Z](https://github.com/StarRocks/starrocks/pull/81443)
+
+[PR #81437｜主线 / main](https://github.com/StarRocks/starrocks/pull/81437)
+
+Iceberg 等值删除扫描改为按标识分区列与数据侧做 &lt;=&gt; 匹配，并把内连接或左半连接的运行时过滤下推到删除侧，跳过被拒绝分区的删除文件；分区规格变更、非标识变换、时间戳列与 DML 目标不启用。
+
+重要性与适用范围：适用于按分区过滤且存在等值删除的 Iceberg 表；SSB 100（1 FE+3 BE，DataCache 预热）13 条查询在分区表 10% 删除时由 58.86 秒降至 31.31 秒，日期过滤查询 4.6x-6.2x，未分区表无明显收益。
+
+官方原文证据（保留基准及适用条件）：
+- BE needs no new mechanism: `HiveDataSource` already skips a scan range whose identity partition values a conjunct or an arrived runtime filter rejects. A filter that has not arrived prunes nothing.
+- Never applied: tables that changed their partition spec (including global deletes), non-identity transforms, timestamp columns, columns named like the extended columns, DML targets (DELETE/UPDATE/MERGE read row locators). The scan range source fails the query rather than build a delete range without the partition value.
+- Session variable `enable_iceberg_eq_delete_runtime_filter_pruning`, default true, documented in `System_variable.md` (en/zh/ja); the new counter is documented in `query_profile_operator_metrics.md`.
+- Observability: reviewed the connector scan counters (`ScanRanges`, `ScanRangesSize`); added `ScanRangesPrunedByPartitionValue` for ranges skipped at open, and an explain line `Runtime filter pruning columns: [...]` on the equality-delete scan.
+
+SSB 100 on 1 FE + 3 BE (16c64g), DataCache warm, 13 queries, switch off → on (total seconds):
+
+| table | off | on | speedup |
+|---|---|---|---|
+| partitioned, 10% deleted | 58.86 | 31.31 | 1.88x (date-filtered queries 4.6x-6.2x) |
+| partitioned, 1% deleted | 26.10 | 19.84 | 1.32x |
+| partitioned, 20 delete commits | 40.91 | 31.97 | 1.28x |
+| unpartitioned, 10% deleted | 34.13 | 34.18 | 1.00x |
+
+Results match the source tables on every query and delete step of these tables.
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #81437｜主线 / main｜2026-10-23T13:54:32Z](https://github.com/StarRocks/starrocks/pull/81437)
+
+[本日合并 PR #81449｜回移／维护分支 / branch-4.1｜2026-10-23T15:36:28Z](https://github.com/StarRocks/starrocks/pull/81449)
+
+[PR #81438｜主线 / main](https://github.com/StarRocks/starrocks/pull/81438)
+
+在Iceberg扫描范围规划中，addPartition先查分区缓存，仅未命中时构建PartitionKey和分区ID；按分区spec复用StructLikeWrapper，删除referencedPartitions及每次未命中的URLDecoder和Path，并按分区ID缓存thrift分区值供buildScanRange共享。
+
+重要性与适用范围：针对含大量小文件的Iceberg表，FE规划扫描范围时减少重复分区键计算、URI解码和thrift转换，缓解DeployScanRanges成为关键路径的问题；适用于使用非恒等分区变换的场景，分区ID分配、发送给BE的分区值和分区数限制不变。
+
+官方原文证据（保留基准及适用条件）：
+`buildScanRange()` also converted the partition key to thrift for every file, although the scheduler sends a partition value only once per fragment instance and drops it from later ranges (`FragmentInstance.removeDuplicatedPartitionValues`).
+
+## What I'm doing:
+
+All changes are in `IcebergConnectorScanRangeSource`, FE only:
+
+- `addPartition()` looks up the cache first. The `PartitionKey` and partition id are built only on a miss.
+- It reuses one `StructLikeWrapper` per partition spec (`copyFor()` shares the comparator).
+- It drops the `referencedPartitions` map, and with it the `URLDecoder` + `Path` work per cache miss. The map's only reader was `buildScanRange()`, which turned the stored key into the thrift partition value; the stored path was never read.
+- `addPartition()` builds that thrift partition value once per partition id, when it first meets the id. Several bucket keys map to one partition id. `buildScanRange()` shares the value across the partition's files.
+
+Partition id assignment, the partition values sent to the BE and the partition-count limit are unchanged.
+
+Measured on 1 FE + 3 BE (16c64g), DataCache warm, 13 SSB queries on the 77k-file table, median of 8 runs (with only the first commit):
+
+| | before | after |
+|---|---|---|
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #81438｜主线 / main｜2026-10-23T14:15:04Z](https://github.com/StarRocks/starrocks/pull/81438)
+
+[本日合并 PR #81450｜回移／维护分支 / branch-4.1｜2026-10-23T14:59:35Z](https://github.com/StarRocks/starrocks/pull/81450)
+
+### 重大新功能
+
+[PR #81440｜主线 / main](https://github.com/StarRocks/starrocks/pull/81440)
+
+为Iceberg v3的ORC数据文件新增读取_row_id和_last_updated_sequence_number行血缘列，按保留字段ID解析已存储列并在读取后填入继承值，移除FE对ORC不支持行血缘的限制。
+
+重要性与适用范围：影响使用Iceberg v3且数据文件为ORC格式的用户：FE移除了对ORC行血缘的限制，ORC扫描器可按保留字段ID读取_row_id和_last_updated_sequence_number并在读取后填入继承值，与Parquet路径一致；不扫描这些列的普通Hive ORC表不受影响。
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #81440｜主线 / main｜2026-10-23T13:43:01Z](https://github.com/StarRocks/starrocks/pull/81440)
+
+[本日合并 PR #81448｜回移／维护分支 / branch-4.1｜2026-10-23T14:30:27Z](https://github.com/StarRocks/starrocks/pull/81448)</code></pre>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
