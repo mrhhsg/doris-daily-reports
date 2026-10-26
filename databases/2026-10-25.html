@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="e85a8186f88c25e9a6c111f9443b5f49cfb283e41415d39c9105f92faa6841b5"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-25（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127287">PR #127287｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126353">PR #126353｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127100">PR #127100｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-9">StarRocks</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-10-25.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-25（北京时间）</h1><div class="meta">北京时间 2026-10-25</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127287">PR #127287｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126353">PR #126353｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127100">PR #127100｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-9">StarRocks</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>2026-10-25（北京时间）三库聚焦更新：筛选后 3 项，只关注性能优化、重大新功能及有官方明确修复证据的安全修复。合并记录不等于已发布；回移与原始改动关联展示，正式发布和预发布以官方公告为准。分类统计：安全修复 0 项、性能优化 3 项、重大新功能 0 项。</p>
+<p>DuckDB：当日所检查官方来源未发现符合筛选边界的更新。</p>
+<p>ClickHouse：让列缓存对 MergeTree 紧凑 part 生效：MergeTreeReaderCompact 可按列独立从缓存服务 granule，未命中列从 part 读取，并按 stripe 对齐读写和共享整块数据，不再仅限宽 part。</p>
+<p>StarRocks：当日所检查官方来源未发现符合筛选边界的更新。</p>
+<h2 id="digest-section-2">范围与证据</h2>
+<p>统计前一完整自然日：PR 按实际 merged_at；Release 与公开安全公告按 published_at。公开安全公告不覆盖未披露漏洞；GitHub Releases 不包含仅有 tag 或独立官网文章。模型仅依据标题与正文，未读取完整 diff；性能适用条件以所链官方证据为准。</p>
+<h2 id="digest-section-3">DuckDB</h2>
+<p>来源读取成功：0 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<p>当日未发现符合性能优化、重大新功能或官方已确认安全修复边界的更新；不列普通功能、小修复、CI 或文档变化。</p>
+<h2 id="digest-section-4">ClickHouse</h2>
+<p>来源读取成功：44 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 master。</p>
+<h3 id="digest-section-5">性能优化</h3>
+<p class="pr-title" id="digest-pr-clickhouse-127287"><a href="https://github.com/ClickHouse/ClickHouse/pull/127287" rel="noreferrer">PR #127287｜主线 / master</a></p>
+<p>让列缓存对 MergeTree 紧凑 part 生效：MergeTreeReaderCompact 可按列独立从缓存服务 granule，未命中列从 part 读取，并按 stripe 对齐读写和共享整块数据，不再仅限宽 part。</p>
+<p>重要性与适用范围：重要性在于此前缓存是否加速取决于用户不可见的 part 格式，紧凑 part 覆盖新插入、轻量更新补丁和小表等常见小 part；此次扩大 use_columns_cache 适用范围，但属实验特性且未提供性能数字。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+The columns cache was implemented only in <code>MergeTreeReaderWide</code>, so data in compact parts was never served from it or written to it. Compact parts are the format of every small part - fresh inserts, patch parts of lightweight updates, small tables - so whether a query was accelerated depended on the part format, which is invisible to the user.</p>
+<p>Every granule of every column of a compact part is serialized on its own, with its own prefix, and is read after a seek to its mark. So a granule of a column can be served from the cache or read from the part independently of the other granules and columns, and there are no stream positions to restore, unlike in wide parts. <code>MergeTreeReaderCompact</code> now does this:</p>
+<ul>
+<li>a column whose entry covers the granule is served from it, the others are read from the part;</li>
+<li>a column served from the cache for the whole block is served stripe by stripe, and a block that is a whole entry is shared with the cache without a copy;</li>
+<li>the granules read from the part are accumulated per column into runs of granules of one stripe and written; a block that is a whole stripe (or the beginning of one where the range ends) becomes the entry without a copy;</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/127287" rel="noreferrer">本日合并 PR #127287｜主线 / master｜2026-10-25T11:22:16Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-126353"><a href="https://github.com/ClickHouse/ClickHouse/pull/126353" rel="noreferrer">PR #126353｜主线 / master</a></p>
+<p>Cascades 优化器的 DISTINCT 支持多节点执行：初步 DISTINCT 改为分发透传步骤，在输入所在节点去重，gather 仅搬运去重后行；最终 DISTINCT 新增按 DISTINCT 列切分的 shuffle 策略，输入已按该列切分时无需额外交换。</p>
+<p>重要性与适用范围：仅影响实验性 Cascades 优化器的分布式查询计划，解除 DISTINCT 输入被迫汇聚到单节点的限制；传统优化器路径及未启用 Cascades 的用户不受影响。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ul>
+<li>The preliminary <code>DISTINCT</code> deduplicates each stream on its own, so it is now a distribution passthrough step: it runs wherever its input is. Before a gather it runs on every node, and the gather moves only the distinct rows.</li>
+<li>A new implementation rule for the final <code>DISTINCT</code> adds, next to the local strategy, a shuffle strategy: the input is split by all <code>DISTINCT</code> columns or by any single one of them, so each node deduplicates its own share of the values. A split the input already has, e.g. by a join key, needs no extra exchange. A <code>DISTINCT</code> that keeps its input order stays local.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/126353" rel="noreferrer">本日合并 PR #126353｜主线 / master｜2026-10-25T13:46:42Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-127100"><a href="https://github.com/ClickHouse/ClickHouse/pull/127100" rel="noreferrer">PR #127100｜主线 / master</a></p>
+<p>将Iceberg清单文件改为在IO线程池预读最多64个（64 MiB），由读取表线程解析，并移除解码线程池及相关设置；在16 CPU、200个清单、每次读取400 ms的冷场景下耗时由5.32 s降至1.65 s。</p>
+<p>重要性与适用范围：适用于含大量Iceberg清单的冷读，通过预读并行重叠往返提升吞吐；移除相关设置会影响既有调优，且max_threads=1或单线程读取时解析串行，冷读可能由0.118 s增至0.469 s。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+As proposed in #127061: fetch manifests on the IO thread pool without decoding there, and remove the decode pool and its settings.</p>
+<p>Before, fetching a manifest and parsing it were one task on a dedicated pool, capped at <code>iceberg_manifest_decode_concurrency</code> (16), so a walk over N uncached manifests cost about N / 16 round trips.</p>
+<p>Now the IO tasks only read, up to 64 manifests (64 MiB) ahead, through <code>getOrSetManifestFile</code>, so concurrent queries still share one read per manifest. The cached cell parses its bytes on first use. Parsing costs about 2 ms per manifest, which caps a single parsing thread at ~500 manifests/s, so the threads reading the table do it: each continues an idle partially read manifest or parses the next one. With one reading thread the order is unchanged. Delete manifests are parsed the same way before the first data file is returned.</p>
+<p>Release build, 200 manifests, 16 CPUs (base / this PR):</p>
+<ul>
+<li>cold, 400 ms per read (failpoint): 5.32 s / 1.65 s</li>
+<li>cold, local: 0.122 s / 0.117 s; warm: 0.016 s / 0.015 s; 100 delete manifests: 0.100 s / 0.100 s</li>
+<li><code>max_threads = 1</code>, cold: 0.118 s / 0.469 s (parsing is serial on one reading thread; the initiator of the <code>*Cluster</code> table functions also reads the iterator from one thread)</li>
+<li>4 identical cold queries at once read each manifest once on both builds.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/127100" rel="noreferrer">本日合并 PR #127100｜主线 / master｜2026-10-25T15:01:49Z</a></p>
+<h2 id="digest-section-9">StarRocks</h2>
+<p>来源读取成功：7 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<p>当日未发现符合性能优化、重大新功能或官方已确认安全修复边界的更新；不列普通功能、小修复、CI 或文档变化。</p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
