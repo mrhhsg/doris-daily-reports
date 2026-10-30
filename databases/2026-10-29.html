@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="c96a1f38a454758543e30d57e7ef95e0efb280eec2efc02a98d2600aa860e2f8"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-29（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-3"><a href="#digest-section-4">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28013">PR #28013｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27383">PR #27383｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28000">PR #28000｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28021">PR #28021｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28059">PR #28059｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27326">PR #27326｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27690">PR #27690｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28046">PR #28046｜主线 / main</a></li><li class="toc-level-2"><a href="#digest-section-13">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-14">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-114165">PR #114165｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-120635">PR #120635｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127389">PR #127389｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-18">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-19">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81771">PR #81771｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81781">PR #81781｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81796">PR #81796｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81756">PR #81756｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81855">PR #81855｜主线 / main</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-10-29.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-29（北京时间）</h1><div class="meta">北京时间 2026-10-29</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-3"><a href="#digest-section-4">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28013">PR #28013｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27383">PR #27383｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28000">PR #28000｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28021">PR #28021｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28059">PR #28059｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27326">PR #27326｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27690">PR #27690｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28046">PR #28046｜主线 / main</a></li><li class="toc-level-2"><a href="#digest-section-13">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-14">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-114165">PR #114165｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-120635">PR #120635｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127389">PR #127389｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-18">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-19">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81771">PR #81771｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81781">PR #81781｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81796">PR #81796｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81756">PR #81756｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81855">PR #81855｜主线 / main</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>2026-10-29（北京时间）三库聚焦更新：筛选后 17 项，只关注性能优化、重大新功能及有官方明确修复证据的安全修复。合并记录不等于已发布；回移与原始改动关联展示，正式发布和预发布以官方公告为准。分类统计：安全修复 0 项、性能优化 17 项、重大新功能 0 项。</p>
+<p>DuckDB：在原有总域概念之外引入当前域，用于更准确地估算 SEMI、ANTI 连接及 GROUP BY 的基数，改进优化器的估算逻辑。</p>
+<p>ClickHouse：移除单查询文件系统缓存写入限额及其计账逻辑，消除缓存空间预留热路径上每个查询维护第二个优先队列的开销；相关查询设置与缓存配置项废弃并被忽略。</p>
+<p>StarRocks：将 Parquet 预缓冲范围读取改为在调用扫描线程上执行并返回已完成的 Future，使读取并发跟随连接器扫描池，同时将读取缓冲区计入查询内存，并在查询取消后停止发起后续读取。</p>
+<h2 id="digest-section-2">范围与证据</h2>
+<p>统计前一完整自然日：PR 按实际 merged_at；Release 与公开安全公告按 published_at。公开安全公告不覆盖未披露漏洞；GitHub Releases 不包含仅有 tag 或独立官网文章。模型仅依据标题与正文，未读取完整 diff；性能适用条件以所链官方证据为准。</p>
+<h2 id="digest-section-3">DuckDB</h2>
+<p>来源读取成功：23 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<h3 id="digest-section-4">性能优化</h3>
+<p class="pr-title" id="digest-pr-duckdb-28013"><a href="https://github.com/duckdb/duckdb/pull/28013" rel="noreferrer">PR #28013｜主线 / main</a></p>
+<p>在原有总域概念之外引入当前域，用于更准确地估算 SEMI、ANTI 连接及 GROUP BY 的基数，改进优化器的估算逻辑。</p>
+<p>重要性与适用范围：适用于包含 SEMI、ANTI 连接或 GROUP BY 的查询，可为执行计划选择提供更准确的基数依据；输入未提供基准结果，不能量化性能收益。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+We only had the notion of &quot;total domain&quot;, but this PR introduces the notion of &quot;current domain&quot; to estimate the cardinality of <code>SEMI</code>/<code>ANTI</code> joins and <code>GROUP BY</code> more accurately.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28013" rel="noreferrer">本日合并 PR #28013｜主线 / main｜2026-10-28T16:08:28Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-27383"><a href="https://github.com/duckdb/duckdb/pull/27383" rel="noreferrer">PR #27383｜主线 / main</a></p>
+<p>将按行号取数从逐行解码改为按有序行窗口批量读取，按压缩格式使用选择向量或连续扫描，并在同一段内复用扫描状态，减少重复解码和初始化开销。</p>
+<p>重要性与适用范围：主要改善带主键或唯一约束表批量删除后，提交及延后清理阶段读取索引列的成本；对逐行取数需重复解码整组数据或字典的压缩格式尤其有价值。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+To remove the deleted rows from the indexes, the commit (and the later cleanup, when other transactions were active) fetches the indexed columns of each deleted vector by row id, and those fetches decode one row at a time. For common key encodings a single-row fetch costs far more than its share of a scan: a bitpacked DELTA_FOR fetch decodes every preceding value of its 2048-value group, and a DICT_FSST fetch unpacks the string lengths of the whole dictionary. Fetching a full vector row by row is therefore quadratic in the vector size.</p>
+<p><code>ColumnData::FetchRowsAtSegmentLevel</code> now reads the rows it fetches through the segment's scan instead of the compression's <code>fetch_row</code>. It groups the rows of a segment into windows of ascending rows that lie within a vector's length of the window's first row, and reads each window in one go: through <code>ColumnData::SelectVector</code> with a selection vector over the window when it has more than one row and the segment's compression has a <code>select</code> (uncompressed VARCHAR, FSST, DICT_FSST, RLE, constant), otherwise by scanning each run of consecutive rows in it with <code>ScanVector</code>. All windows of a fetch share one scan, which moves forward between them, so per-segment setup happens once per segment rather than once per window. Updates are applied afterwards as before, and validity takes the same path. A new <code>StringScanType</code> on the <code>ColumnScanState</code> makes the uncompressed, DICTIONARY and DICT_FSST scans and selects copy their strings into the result instead</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/27383" rel="noreferrer">本日合并 PR #27383｜主线 / main｜2026-10-29T09:19:00Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28000"><a href="https://github.com/duckdb/duckdb/pull/28000" rel="noreferrer">PR #28000｜主线 / main</a></p>
+<p>调整 JSON 表函数全局状态的线程上限，使逐行调用的 json_each 和 json_tree 能使用多线程执行管线，不再受默认单线程限制；常量参数调用仍保持单线程。</p>
+<p>重要性与适用范围：适用于通过 LATERAL 对表中每行 JSON 文档展开的查询，可利用多核资源缩短批量处理耗时；不改变常量参数调用的并行度，且增加线程可能提高总 CPU 消耗。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Per-row <code>json_each</code> and <code>json_tree</code> calls, such as <code>FROM j, LATERAL json_each(j.doc)</code>, used only one thread (duckdblabs/bot-issue-tracker#651). For 2M documents, <code>json_each</code> took about 3.15 s with either one or eight threads; v1.5.6 behaved the same.</p>
+<p>These calls run as in-out table functions, whose pipelines get their thread limit from the global state's <code>MaxThreads()</code>. <code>JSONTableInOutGlobalState</code> kept the default of one.</p>
+<p>We make <code>JSONTableInOutGlobalState::MaxThreads()</code> return <code>GlobalTableFunctionState::MAX_THREADS</code>, following <code>UnnestGlobalState</code> and duckdb-bot/duckdb#209 for <code>range</code> and <code>generate_series</code>. Sharing is safe because column indexes are fixed at initialization and progress counters use atomic <code>fetch_add</code> and <code>fetch_sub</code>; constant-argument calls remain single-threaded sources. Release timings for 2M documents with eight threads drop from 3.14–3.17 s to 0.67–1.11 s for <code>json_each</code>, and from 6.89–6.99 s to 1.37–1.59 s for <code>json_tree</code>. The new <code>benchmark/micro/json/lateral_json_each.benchmark</code>, registered in <code>.github/regression/micro.csv</code>, drops from 3.22 s to 1.10–1.27 s with four threads. User CPU time grows with thread count, about 39% at four threads, as with <code>unnest</code>. The 24 assertions in <code>test/sql/json/table/json_table_in_out_threads.test</code> check that task counts match <code>unnest</code> using logging context IDs, as in duckdb-bot/duckdb#209, and compare every row from both functions under four thre</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28000" rel="noreferrer">本日合并 PR #28000｜主线 / main｜2026-10-29T09:52:10Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28021"><a href="https://github.com/duckdb/duckdb/pull/28021" rel="noreferrer">PR #28021｜主线 / main</a></p>
+<p>在逻辑聚合的统计传播阶段，利用分组键的最小值、最大值或有限类型域，计算不同键组合数量的上界，并据此压低普通GROUP BY的基数估计，避免表达式分组键缺少去重统计时估计过大。</p>
+<p>重要性与适用范围：适用于具有数值范围统计或有限类型域的分组键，使逻辑优化阶段能够利用此前仅在物理聚合规划中使用的域信息。该改动优化规划所用的基数估计，不代表已有查询耗时收益证明；无有限上界时保持原估计。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+imated_cardinality`, so the logical estimate never benefits.</p>
+<h3>Change</h3>
+<p>Lift the same domain bound into statistics propagation (<code>StatisticsPropagator::PropagateStatistics(LogicalAggregate&amp;)</code>), where the propagated group statistics are available. A plain <code>GROUP BY</code>'s estimate is capped by an upper bound on the number of distinct group-key combinations: the saturating product over the group keys of a per-key distinct-count upper bound, which is</p>
+<ul>
+<li><code>max - min + 1</code> when the key has <code>NumericStats</code> (integer and temporal keys — reusing the perfect-hash logic), and</li>
+<li>the finite type domain otherwise — <code>BOOLEAN</code>, 1- and 2-byte integers by width, and <code>ENUM</code> by its dictionary size — with one extra slot for a possible <code>NULL</code> group.</li>
+</ul>
+<p>The estimate is <strong>only ever lowered</strong> (the min of the bound, the existing estimate and the input cardinality) and is left untouched when no key yields a finite bound, so this can never raise an estimate or over-tighten it. The cap is a provable upper bound on the number of groups (the included correctness test asserts the real group count never exceeds it).</p>
+<h3>Scope / what this does <em>not</em> cover</h3>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28021" rel="noreferrer">本日合并 PR #28021｜主线 / main｜2026-10-29T10:06:11Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28059"><a href="https://github.com/duckdb/duckdb/pull/28059" rel="noreferrer">PR #28059｜主线 / main</a></p>
+<p>改进连接过滤器下推，扩大支持下推的算子范围，并为 IS_NOT_DISTINCT_FROM 连接条件构造 OR 表达式，使此类连接也能进行过滤下推。</p>
+<p>重要性与适用范围：优化对象是连接执行时的过滤路径，适用于涉及新增支持算子或空值安全等值连接条件的查询，可扩大提前过滤输入数据的适用范围；原文未提供量化性能收益。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+I looked at the differences between the much more mature <code>FilterPushdown</code> and less mature <code>JoinFilterPushdown</code>, and found some opportunities to improve <code>JoinFilterPushdown</code>. The first improvement is mainly structure/readability (split up the big operator <code>switch</code> function), and then support more operators to push down. The second improvement is pushing down for <code>IS_NOT_DISTINCT_FROM</code> join condition, which requires creating an <code>OR</code> expression. I have some more plans in this direction, so I look f</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28059" rel="noreferrer">本日合并 PR #28059｜主线 / main｜2026-10-29T12:41:09Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-27326"><a href="https://github.com/duckdb/duckdb/pull/27326" rel="noreferrer">PR #27326｜主线 / main</a></p>
+<p>Parquet 扩展增加 ColumnIndex 与 OffsetIndex 页索引读写支持，读取时利用索引排除不可能满足过滤条件的数据页，减少无效扫描。</p>
+<p>重要性与适用范围：主要适用于带页索引的 Parquet 文件上的选择性过滤，尤其是 Spark 生成且缺少页头统计的文件，可使原先无法生效的页级裁剪发挥作用，减少排序列点查的读取范围。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Implements the Parquet page index (https://parquet.apache.org/docs/file-format/pageindex/) (<code>ColumnIndex</code> + <code>OffsetIndex</code> per column chunk) in the Parquet extension: DuckDB now writes it, and uses it when reading to skip the pages that cannot contain rows matching the filters.</p>
+<p>The main motivation is reading files written by Spark: parquet-mr writes a <code>ColumnIndex</code> by default and has stopped writing page-header statistics (PARQUET-1365 (https://issues.apache.org/jira/browse/PARQUET-1365)), so DuckDB's existing header-based page pruning never fires on Spark files. With this PR a point lookup on a sorted column of a Spark file reads one page per column instead of the whole row group.</p>
+<h3>Writer</h3>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/27326" rel="noreferrer">本日合并 PR #27326｜主线 / main｜2026-10-29T12:57:50Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-27690"><a href="https://github.com/duckdb/duckdb/pull/27690" rel="noreferrer">PR #27690｜主线 / main</a></p>
+<p>为无法挂起等待I/O的扫描增加并行执行阻塞任务的路径，使用结果所属线程池并让调用线程参与，替代逐个执行；覆盖Parquet单文件、多文件包装及表扫描的同步回退路径。</p>
+<p>重要性与适用范围：此优化针对扫描必须同步等待I/O的场景，可避免同一行组的多个载荷读取依次等待网络往返，尤其适用于远程Parquet读取；可挂起扫描原本已有并发执行机制，单任务仍内联执行。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+When a scan cannot park on its I/O, the tasks of a <code>BLOCKED</code> <code>AsyncResult</code> are run at the call site through <code>AsyncResult::ExecuteTasksSynchronously</code>, which executed them one after the other. The single-file Parquet scan (<code>read_single_parquet_file</code>, also used behind the multi-file wrapper) runs the payload reads of filter-first prefetch this way for every row group, so every registered read head cost a full round trip in sequence: one per payload column with whole-chunk reads, more with page-level reads (dictionary page, page runs). On S3 the HTTP log shows these GETs starting ~100 ms apart, long after the filter column arrived; @mustafahasankhan observed the same in https://github.com/duckdb/duckdb/pull/27326#issuecomment-6321516413 (&quot;the 12 payload GETs start in 8 waves over 500 ms&quot;).</p>
+<p>This PR adds <code>AsyncResult::ExecuteTasksSynchronously(ClientContext &amp;)</code> and <code>TableFunctionInput::HandleBlocked(ClientContext &amp;, AsyncResult &amp;)</code>, which run the tasks side by side on a <code>TaskExecutor</code> of the result's pool, with the calling thread working on them too and returning when all are done. The Parquet single-file scan, the multi-file wrapper, the table scan and <code>PhysicalTableScan</code>'s synchronous fallback use them. The existing overloads without a context stay as they are, so out-of-tree exte</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/27690" rel="noreferrer">本日合并 PR #27690｜主线 / main｜2026-10-29T13:29:56Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28046"><a href="https://github.com/duckdb/duckdb/pull/28046" rel="noreferrer">PR #28046｜主线 / main</a></p>
+<p>针对平坦向量的 AND/OR 值计算，将可空输入的结果有效性改为每批处理64行，通过位运算判断 NULL，仅在包含 NULL 的块中写入结果空值掩码。</p>
+<p>重要性与适用范围：适用于 SELECT 列表、聚合参数及 IN 列表等需要生成布尔值的场景，减少可空输入逐行判断的分支开销；常量、字典向量和 WHERE 过滤路径不受影响。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+When <code>AND</code> or <code>OR</code> produces a value instead of filtering rows, for example in a <code>SELECT</code> list, an aggregate argument or an <code>IN</code> list (which DuckDB evaluates as an <code>OR</code> of comparisons), DuckDB computes the result one row at a time whenever either side can be NULL. For each row it checks whether both inputs are NULL, works out the three-valued result with a few branches, and marks the result NULL or not.</p>
+<p>This PR handles 64 rows at once for flat inputs. It computes the 64 results first, then works out which of them are NULL with a single bitwise expression over the 64 validity bits. An <code>AND</code> result is known whenever both sides are known, or either side is a known <code>FALSE</code>. An <code>OR</code> is the same with <code>TRUE</code>. The NULL mask of the result is only written for blocks that actually contain a NULL. Inputs without NULLs use a plain loop and run as fast as before, constants and dictionary vectors take the existing paths, and <code>WHERE</code> filters are not affected.</p>
+<p>To measure it, I ran each query below five times on 50 million rows with one thread and took the median:</p>
+<pre><code class="language-sql">SET threads = 1;
+CREATE TABLE t AS SELECT
+    CASE WHEN i % 7 = 0 THEN NULL ELSE i % 2 = 0 END AS b,
+    CASE WHEN i % 5 = 0 THEN NULL ELSE i % 3 = 0 END AS c,
+    CASE WHEN i % 11 = 0 THEN NULL ELSE i % 5 &lt; 2 END AS nb,
+    i % 2 = 1 AS p, i % 3 = 1 AS q,
+    CASE WHEN i % 13 = 0 THEN NULL ELSE (i * 7919) % 1000 END AS v
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #28046｜主线 / main｜2026-10-29T13:45:55Z](https://github.com/duckdb/duckdb/pull/28046)
+
+[PR #28068｜主线 / main](https://github.com/duckdb/duckdb/pull/28068)
+
+优化 variant_typeof 处理 VARIANT 对象时的字符串生成路径：以 string_t 引用已有键字符串，直接追加到输出缓冲区，并跨行复用缓冲区和键向量。
+
+重要性与适用范围：适用于对 VARIANT 对象调用 variant_typeof 的查询，减少逐行复制对象键、拼接中间字符串及堆分配的开销；优化集中于类型描述字符串的生成，不涉及新增 SQL 能力。
+
+官方原文证据（保留基准及适用条件）：
+I'm checking some string-related performance issues and found there could be potential optimizations for `variant_typeof` function -- several heap allocations and copies per row are involved, just to produce one short string.
+
+This PR collects the keys as `string_t`, which point at the strings already stored in the VARIANT, and appends them straight into one output buffer. The buffer and the key vector are reused across rows.
+
+## Before / after
+
+Before (per row):
+```cpp
+keys = GetObjectKeys(variant, row)       // vector&lt;string&gt;: one copy per key
+sort(keys)
+joined = StringUtil::Join(keys, &quot;, &quot;)    // new string
+type_str = Format(&quot;OBJECT(%s)&quot;, joined)  // another new string
+write string_t(type_str.c_str())         // length taken from c_str()
+</code></pre>
+<p>After (buffers reused across rows):</p>
+<pre><code class="language-cpp">object_keys.clear()
+for each child:
+    object_keys.push_back(variant.GetKey(row, key_index))   // string_t, no copy
+sort(object_keys)
+type_str = &quot;OBJECT(&quot;
+append keys separated by &quot;, &quot;
+type_str += &quot;)&quot;
+write string_t(type_str.data(), type_str.size())
+</code></pre>
+<p>flamegraph before change<br />
+&lt;img width=&quot;1400&quot; height=&quot;998&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/ccd73483-f244-47f7-8547-98cafe7de72c&quot; /&gt;</p>
+<p>flamegraph after change<br />
+&lt;img width=&quot;1400&quot; height=&quot;918&quot; alt=&quot;image&quot; src=&quot;https://github.com/user-attachments/assets/64cbd532-c717-48de-b1d2-211c3910edf9&quot; /&gt;</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28068" rel="noreferrer">本日合并 PR #28068｜主线 / main｜2026-10-29T15:24:46Z</a></p>
+<h2 id="digest-section-13">ClickHouse</h2>
+<p>来源读取成功：43 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 master。</p>
+<h3 id="digest-section-14">性能优化</h3>
+<p class="pr-title" id="digest-pr-clickhouse-114165"><a href="https://github.com/ClickHouse/ClickHouse/pull/114165" rel="noreferrer">PR #114165｜主线 / master</a></p>
+<p>移除单查询文件系统缓存写入限额及其计账逻辑，消除缓存空间预留热路径上每个查询维护第二个优先队列的开销；相关查询设置与缓存配置项废弃并被忽略。</p>
+<p>重要性与适用范围：适用于使用文件系统缓存的查询，优化对象是缓存空间预留过程中的额外队列维护。原有限额计账无法反映实际写入量，移除后不再限制单查询缓存写入，原文建议改用SLRU缓存策略。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Removed the per-query filesystem cache write limit, which capped how much a single query could write into one filesystem cache. Its accounting never reflected what a query had actually written, and it cost a second priority queue per query on the cache reservation hot path. The settings <code>filesystem_cache_max_download_size</code> and <code>filesystem_cache_skip_download_if_exceeds_per_query_cache_write_limit</code> (with its alias <code>skip_download_if_exceeds_query_cache</code>), and the cache configuration setting <code>enable_filesystem_query_cache_limit</code>, are now obsolete and ignored, so queries and disk definitions that set them keep working. It is recommended to just use SLRU cache policy instead.</p>
+<p>🤖 Generated with Claude Code (https://claude.com/claude-code)</p>
+<hr />
+<p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=114165&amp;sha=latest&amp;name_0=PR)]</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/114165" rel="noreferrer">本日合并 PR #114165｜主线 / master｜2026-10-28T17:35:22Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-120635"><a href="https://github.com/ClickHouse/ClickHouse/pull/120635" rel="noreferrer">PR #120635｜主线 / master</a></p>
+<p>修正 Delta Lake 写入器的文件统计结构，以数值类型写入 numRecords，恢复 SELECT count() 利用日志行数直接计数的优化，避免读取数据文件。</p>
+<p>重要性与适用范围：适用于依赖新写入文件统计的 Delta Lake 计数查询，可减少不必要的数据文件读取；已有错误格式的提交不会重写，这些文件仍被视为缺少统计，无法获得该优化。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+SCHEMA<code>(which declares</code>numRecords<code>as a LONG). So</code>stats_json` became the committed key and the payload was encoded twice.</p>
+<p>The fix names the field what the protocol calls it, with the declared type: <code>Tuple(numRecords Int64)</code>, inserted as a number.</p>
+<p>Two user-visible consequences, both measured:</p>
+<ul>
+<li><code>SELECT count()</code> regains the trivial-count optimization. Unparseable stats made <code>getTotalRows()</code> return nothing, so the planner declined it and <code>count()</code> read the data files instead of the log.</li>
+<li>An <code>INSERT</code> into a table whose protocol merely supports <code>rowTracking</code> now succeeds. The kernel gates that path on feature support, not on <code>delta.enableRowTracking</code>, and its row-tracking visitor selects <code>stats.numRecords</code>; unfixed, the INSERT failed with <code>Column stats.numRecords not found in the data</code>. A control table with <code>minWriterVersion</code> 7 but no <code>rowTracking</code> accepted the INSERT unfixed, which isolates the trigger.</li>
+</ul>
+<p>Only <code>numRecords</code> is written today: the kernel documents this struct as the minimum structure, and per-column statistics are a separate feature. Commits already written with the old shape are not rewritten, so readers keep treating those files as stats-less, exactly as before.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/120635" rel="noreferrer">本日合并 PR #120635｜主线 / master｜2026-10-28T18:11:24Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-127389"><a href="https://github.com/ClickHouse/ClickHouse/pull/127389" rel="noreferrer">PR #127389｜主线 / master</a></p>
+<p>调整 WindowTransform 的窗口函数执行路径，引入基于滑动数据块的批量执行机制，并提供通用窗口函数接口。</p>
+<p>重要性与适用范围：适用于包含窗口函数的查询，优化对象是窗口计算的运行时执行方式，而非基准或测试维护；原文未提供基准结果，无法量化性能收益。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<h3>Changelog category (leave one):</h3>
+<ul>
+<li>Improvement</li>
+</ul>
+<h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
+<p>This patch changes how <code>WindowTransform</code> executes window functions by introducing batched execution over sliding blocks. Also, a general window function interface will be introduced in this patch.</p>
+<hr />
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/127389" rel="noreferrer">本日合并 PR #127389｜主线 / master｜2026-10-28T20:12:43Z</a></p>
+<h2 id="digest-section-18">StarRocks</h2>
+<p>来源读取成功：57 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<h3 id="digest-section-19">性能优化</h3>
+<p class="pr-title" id="digest-pr-starrocks-81771"><a href="https://github.com/StarRocks/starrocks/pull/81771" rel="noreferrer">PR #81771｜主线 / main</a></p>
+<p>将 Parquet 预缓冲范围读取改为在调用扫描线程上执行并返回已完成的 Future，使读取并发跟随连接器扫描池，同时将读取缓冲区计入查询内存，并在查询取消后停止发起后续读取。</p>
+<p>重要性与适用范围：适用于 FILES() 和 broker-load 的 Parquet 扫描路径，避免读取集中到 Arrow 全局 IO 线程池造成的并发瓶颈；同时改善查询内存归属与取消后的资源控制，不代表所有 Parquet 读取路径均受影响。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ul>
+<li><code>ParquetChunkFile::ReadAsync()</code> now does the read on the calling thread and returns an already-finished future. It calls <code>arrow::io::RandomAccessFile::ReadAt(position, nbytes)</code>, the same code the pool thread ran (lock, <code>Seek</code>, <code>Read(nbytes)</code>); only the thread changes. IO concurrency then follows the connector scan pool, and the read buffer is charged to the query's mem tracker.</li>
+<li><code>ParquetChunkFile</code> takes an optional <code>RuntimeState*</code>. <code>ReadAt()</code> returns <code>Cancelled</code> before starting another read once the query is cancelled, and before the read counters are bumped. <code>ParquetScanner</code> passes its <code>_state</code> at both construction sites (scan and schema inference).</li>
+<li><code>ParquetReaderWrap</code> maps that arrow <code>Cancelled</code> back to <code>Status::Cancelled</code> (with the filename) at every site that can trigger a range read: opening the file (footer), <code>GetRecordBatchReader()</code> (which reads the row group's column chunks) and <code>ReadNext()</code>. Before, every arrow failure there became <code>InternalError</code>, and on later row groups the arrow message was dropped, so a cancelled scan would be logged and reported as a failed read.</li>
+</ul>
+<p>Why this is safe:</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81771" rel="noreferrer">本日合并 PR #81771｜主线 / main｜2026-10-29T02:31:35Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81801" rel="noreferrer">本日合并 PR #81801｜回移／维护分支 / branch-4.1｜2026-10-29T03:27:43Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81800" rel="noreferrer">本日合并 PR #81800｜回移／维护分支 / branch-4.0｜2026-10-29T03:58:28Z</a></p>
+<p class="pr-title" id="digest-pr-starrocks-81781"><a href="https://github.com/StarRocks/starrocks/pull/81781" rel="noreferrer">PR #81781｜主线 / main</a></p>
+<p>调整CASE表达式代码组织后，编译器在CASE WHEN求值路径中增加内联，将整数结果使用的SIMD选择器由函数调用改为内联执行，改善定长结果的求值性能。</p>
+<p>重要性与适用范围：运行时收益有反汇编和微基准支持，但适用范围有限：测试采用非gcov的Release构建、单核及可空输入；VARCHAR结果不使用该选择器，测试反而出现轻微退化。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+| <code>case_expr_g2.cpp</code> | 248s | 111s (-55%) |<br />
+| <code>case_expr_g3.cpp</code> | 254s | 104s (-59%) |<br />
+| object size g1/g2/g3 | 141/125/131 MB | 63/52/49 MB |</p>
+<p><code>expr_test</code> shrinks by 30.7 MB.</p>
+<h3>Runtime</h3>
+<p>I added a throwaway microbenchmark (not part of this PR) to <code>expr_test</code>: 4096-row chunks, 4 WHEN branches plus ELSE, nullable inputs. It ran in a non-gcov Release build pinned to one core, with the two binaries alternated over 3 rounds of 7 measurements. Values are the mean of per-round medians in ns/row; run-to-run noise was about 0.5%.</p>
+<div class="table-scroll" role="region" aria-label="数据表格" tabindex="0"><table>
+<thead>
+<tr>
+<th>case</th>
+<th>path</th>
+<th>before</th>
+<th>after</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CASE WHEN b THEN int ... ELSE int END</code></td>
+<td><code>evaluate_no_case</code> (moved)</td>
+<td>24.22</td>
+<td>21.42 (-11.5%)</td>
+</tr>
+<tr>
+<td><code>CASE WHEN b THEN varchar ... ELSE varchar END</code></td>
+<td><code>evaluate_no_case</code> (moved)</td>
+<td>47.14</td>
+<td>47.70 (+1.2%)</td>
+</tr>
+<tr>
+<td><code>CASE i WHEN 0 THEN int ... END</code></td>
+<td><code>evaluate_case</code> (unchanged)</td>
+<td>20.78</td>
+<td>20.26 (-2.5%)</td>
+</tr>
+<tr>
+<td><code>CASE s WHEN 'k0' THEN varchar ... END</code></td>
+<td><code>evaluate_case</code> (unchanged)</td>
+<td>57.62</td>
+<td>56.88 (-1.3%)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The differences come from inlining, not from the moved code. Comparing the disassembly, GCC now inlines more into <code>evaluate_no_case</code>. Most notably, <code>SIMD_muti_selector&lt;TYPE_INT&gt;</code> was a call before and is inlined now, which explains the INT speedup. Fixed-length results benefit. The VARCHAR result does not use the SIMD selector, and only grows (775 -&gt; 1112 instructions, mostly inlined <code>std::vector</code> growth paths), which accounts for its small 1-2% slowdown. My guess is that the per-TU inlining bud</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81781" rel="noreferrer">本日合并 PR #81781｜主线 / main｜2026-10-29T03:35:51Z</a></p>
+<p class="pr-title" id="digest-pr-starrocks-81796"><a href="https://github.com/StarRocks/starrocks/pull/81796" rel="noreferrer">PR #81796｜主线 / main</a></p>
+<p>为 Iceberg 按 catalog 缓存已构建的删除文件索引，避免重复构建和排序；扫描范围部署的一致性哈希查找改用有序数组快照，保持原有节点映射不变。</p>
+<p>重要性与适用范围：可减少 Iceberg 查询规划中的删除索引处理与扫描范围部署开销。索引复用仅适用于快照无等值删除且匹配的删除清单均完整命中缓存的情况，否则沿用原有路径。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Delete file index: cache the built index per catalog (<code>DeleteFileIndexCache</code>, same TTL and weight budget as the delete file cache, invalidated with the table). <code>StarRocksIcebergTableScan</code> reuses it when:</p>
+<ul>
+<li>the snapshot has no equality deletes, and</li>
+<li>every matching delete manifest is complete in the delete file cache, so the index shares the cached delete file objects. Otherwise the scan falls back to the existing path, which fills the cache for the next query.</li>
+</ul>
+<p>The key is (table, scan schema id, table spec ids, matching delete manifest set). The index is built without the scan filter and fully sorted before it is published. This is exact for position deletes and DVs: they reach a data file only through its path or (spec, partition), and every delete for a data file the filter keeps lives in a delete manifest the filter keeps. Equality deletes are excluded because the filter prunes them by column bounds.</p>
+<p>Scan-range deploy:</p>
+<ul>
+<li><code>ConsistentHashRing.get()</code> walks a sorted array snapshot of the ring (rebuilt after the ring changes) for up to 8 distinct nodes. Virtual node hashes and walk order are unchanged, so every key gets the same nodes as before.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81796" rel="noreferrer">本日合并 PR #81796｜主线 / main｜2026-10-29T03:55:06Z</a></p>
+<p class="pr-title" id="digest-pr-starrocks-81756"><a href="https://github.com/StarRocks/starrocks/pull/81756" rel="noreferrer">PR #81756｜主线 / main</a></p>
+<p>为共享数据模式下的原生单表、多分区聚合新增显式并行扫描模式，将所选tablet分配到计算资源内的节点，并保留必要的聚合交换，默认仍使用colocate模式。</p>
+<p>重要性与适用范围：适用于选中多个分区和tablet的受支持聚合查询，通过改变扫描分布与流水线任务分配提供并行执行路径；并行模式可能增加数据重分布和聚合状态开销，不保证提速。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ul>
+<li>Add session-only <code>range_scan_execution_mode = colocate | parallel</code>, defaulting to <code>colocate</code>. Admit supported native shared-data single-table aggregates with multiple selected partitions/tablets; unsupported requests fail explicitly.</li>
+<li>Capture mode through operator identity, builders and dictionary rewrites. Use effective ANY scan distribution, preserve required aggregate exchanges, suppress colocate/bucket assumptions and use ordinary one-shot per-owner pipeline assignment.</li>
+<li>Use stable rendezvous homes within the captured compute resource, honoring worker-provider blacklist/availability policy and preserving native scan versions and cache controls. Validate explicit parallel requests before prepared point-plan cache reuse.</li>
+<li>Resolve the existing integration conflicts against current OSS APIs. Preserve native history/version guards; test the real native cached-point path and its cache identity/state. Include matching English/Chinese/Japanese docs and SQL coverage.</li>
+</ul>
+<p>This prerequisite introduces no grouped execution, tablet metadata, storage format or BE task protocol. Parallel mode can add shuffle/aggregate-state cost and does not guarantee a speedup.</p>
+<p>Local native target validation at the reviewed head: <strong>162 tests across 12 FE classes passed</strong>, zero failures/errors/skips, using JDK17 and the normal Maven reactor. This includes the five focused parallel/planner/placement/cache classes and seven existing default-colocate, exchange, mixed-join, scan-dispatc</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81756" rel="noreferrer">本日合并 PR #81756｜主线 / main｜2026-10-29T05:41:23Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81811" rel="noreferrer">本日合并 PR #81811｜回移／维护分支 / branch-4.2｜2026-10-29T06:13:14Z</a></p>
+<p class="pr-title" id="digest-pr-starrocks-81855"><a href="https://github.com/StarRocks/starrocks/pull/81855" rel="noreferrer">PR #81855｜主线 / main</a></p>
+<p>优化 Iceberg 扫描规划中的并行清单处理，将消费线程在队列为空时的固定休眠改为等待运行中任务完成，任务结束即可唤醒，同时保留等待上限和任务异常检查。</p>
+<p>重要性与适用范围：适用于前端节点核心较少、表包含大量小清单且清单已缓存的场景，可减少任务快速完成后消费线程仍在休眠造成的工作线程空闲，降低扫描规划等待开销。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<h2>Why I'm doing:</h2>
+<p>Planning an Iceberg table with thousands of small manifests is slow on FEs with few cores, even when every manifest is already cached. <code>ParallelIterable.hasNext()</code> sleeps a fixed 10ms whenever its queue is empty. A cached manifest task finishes in microseconds, so each pass of <code>2 x worker threads</code> tasks can end in that sleep:</p>
+<pre><code>consumer: submit 32 tasks -&gt; queue empty -&gt; sleep 10ms -&gt; drain -&gt; submit 32 -&gt; sleep 10ms -&gt;...
+workers: |done in us| idle |done| idle
+</code></pre>
+<p>Planning time grows as (manifests / slots) x 10ms. jstack on a 16-core FE planning a table with 2040 manifests: the query thread is in <code>Thread.sleep</code> at <code>ParallelIterable.hasNext</code> in 50 of 56 samples while no worker thread is busy. On a 104-core FE the same plan takes ~25ms, which hid the problem.</p>
+<h2>What I'm doing:</h2>
+<p>In our shadow copy of <code>org.apache.iceberg.util.ParallelIterable</code>, the consumer waits on the running task futures (<code>CompletableFuture.anyOf(...).get(10ms)</code>) instead of sleeping. It wakes as soon as a task finishes; 10ms stays the upper bound, so it never waits longer than before. A failed task is still rethrown by <code>checkTasks()</code>.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81855" rel="noreferrer">本日合并 PR #81855｜主线 / main｜2026-10-29T12:04:31Z</a></p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
