@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="37f56f7165788e412b73babcbfe46cf2ea59917fe930e15b77898996e3f8dc10"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-31（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-3"><a href="#digest-section-4">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28129">PR #28129｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27996">PR #27996｜主线 / main</a></li><li class="toc-level-2"><a href="#digest-section-7">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-8">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128248">PR #128248｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128127">PR #128127｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128134">PR #128134｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124454">PR #124454｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124827">PR #124827｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127213">PR #127213｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-15">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-16">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81943">PR #81943｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81971">PR #81971｜主线 / main</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-10-31.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-10-31（北京时间）</h1><div class="meta">北京时间 2026-10-31</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-3"><a href="#digest-section-4">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28129">PR #28129｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27996">PR #27996｜主线 / main</a></li><li class="toc-level-2"><a href="#digest-section-7">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-8">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128248">PR #128248｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128127">PR #128127｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128134">PR #128134｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124454">PR #124454｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-124827">PR #124827｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127213">PR #127213｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-15">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-16">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81943">PR #81943｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81971">PR #81971｜主线 / main</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>2026-10-31（北京时间）三库聚焦更新：筛选后 10 项，只关注性能优化、重大新功能及有官方明确修复证据的安全修复。合并记录不等于已发布；回移与原始改动关联展示，正式发布和预发布以官方公告为准。分类统计：安全修复 0 项、性能优化 10 项、重大新功能 0 项。</p>
+<p>DuckDB：压缩列段的数据复制到共享部分块后，立即改为读取块内副本并释放原有缓冲区，避免小段持续占用完整缓冲区；同时调整流水线任务释放本地状态的顺序。</p>
+<p>ClickHouse：调整 JOIN 重排序中的行数估算：对带元素过滤或外部过滤的 ARRAY JOIN，将行数估算保留为未知，输入估算为零时除外；无过滤时维持原估算策略。</p>
+<p>StarRocks：将共享数据模式下统一的元数据LRU拆为独立的tablet与segment元数据缓存，分别承载事务日志等小对象和segment等对象，并按进程内存比例设置容量。</p>
+<h2 id="digest-section-2">范围与证据</h2>
+<p>统计前一完整自然日：PR 按实际 merged_at；Release 与公开安全公告按 published_at。公开安全公告不覆盖未披露漏洞；GitHub Releases 不包含仅有 tag 或独立官网文章。模型仅依据标题与正文，未读取完整 diff；性能适用条件以所链官方证据为准。</p>
+<h2 id="digest-section-3">DuckDB</h2>
+<p>来源读取成功：9 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<h3 id="digest-section-4">性能优化</h3>
+<p class="pr-title" id="digest-pr-duckdb-28129"><a href="https://github.com/duckdb/duckdb/pull/28129" rel="noreferrer">PR #28129｜主线 / main</a></p>
+<p>压缩列段的数据复制到共享部分块后，立即改为读取块内副本并释放原有缓冲区，避免小段持续占用完整缓冲区；同时调整流水线任务释放本地状态的顺序。</p>
+<p>重要性与适用范围：适用于加载后可压缩为大量微小列段的数据，可减少无用缓冲区累积及临时目录溢写压力，降低无临时目录时内存不足的风险；优化重点是内存占用，而非加载速度。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Loading data that compresses to very small segments holds far more buffer memory than the data needs. It spills to the temp directory, or fails with an out of memory error without one.</p>
+<p>Each compressed segment is built in a full 256 KiB buffer. A small segment is then copied into a shared partial block, but keeps its own buffer until the partial block is written. With segments of a few dozen bytes, thousands of these dead buffers pile up per partial block.</p>
+<p>This PR adds <code>BlockPackable::UsePackedCopy</code>, which <code>PartialBlock::Store</code> calls right after the copy. A column segment then reads its copy in the partial block, which frees its own buffer. In-memory checkpoints did this before #27305 (<code>InMemoryPartialBlock::AddSegmentToTail</code>).</p>
+<p>This made an existing race easier to hit: a pipeline task reported that it finished before releasing its local state, so the sink could be finalized while the task still held buffer pins (<code>ConvertToPersistent in destructive mode ... multiple readers active</code> in <code>test_transaction_local_parallelism.test</code>). The task now releases its local state first.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28129" rel="noreferrer">本日合并 PR #28129｜主线 / main｜2026-10-30T17:04:24Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-27996"><a href="https://github.com/duckdb/duckdb/pull/27996" rel="noreferrer">PR #27996｜主线 / main</a></p>
+<p>调整缓存算子的运行时内存分配：缓存从较小容量起步并按需增长，刷出时改用引用以保留输出块自身向量，且仅在有数据待缓存时创建新缓存；可累积字典列仍保留标准容量。</p>
+<p>重要性与适用范围：适用于算子频繁产生小结果的查询，可减少缓存过度分配及实际驻留内存占用。单线程下，对含21个INTEGER列的单行表执行80次链式LEFT JOIN，峰值RSS由666 MiB降至169 MiB；缓存仍仅按行数控制，大值复制问题尚未解决。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+, but it shows up in RSS.</p>
+<p>This PR:</p>
+<ul>
+<li>starts the cache at <code>CACHE_THRESHOLD</code> rows and grows it with <code>ALLOW_RESIZE</code>. Caches with accumulable dictionary columns keep <code>STANDARD_VECTOR_SIZE</code>, because those columns are filled in place and can't grow</li>
+<li>flushes with <code>DataChunk::Reference</code> instead of Move, so the output chunk keeps its own vectors</li>
+<li>creates a new cache only when there is something to cache</li>
+</ul>
+<p>Peak RSS for 80 chained LEFT JOINs of a 1-row table with 21 INTEGER columns, threads=1:</p>
+<pre><code>┌──────────────────┬──────────┐
+│                  │ peak RSS │
+├──────────────────┼──────────┤
+│ main             │ 666 MiB  │
+├──────────────────┼──────────┤
+│ this PR          │ 169 MiB  │
+├──────────────────┼──────────┤
+│ caching disabled │ 142 MiB  │
+└──────────────────┴──────────┘
+</code></pre>
+<p><strong>Known limitation</strong>: As Max correctly pointed out in the stand up meeting, caching still only looks at row counts. When an operator emits small chunks of large values, for example a nested loop join repeating 1 MB build-side strings, the cache still copies all of them. A follow-up will add a byte limit on the cache.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/27996" rel="noreferrer">本日合并 PR #27996｜主线 / main｜2026-10-30T19:19:26Z</a></p>
+<h2 id="digest-section-7">ClickHouse</h2>
+<p>来源读取成功：42 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 master。</p>
+<h3 id="digest-section-8">性能优化</h3>
+<p class="pr-title" id="digest-pr-clickhouse-128248"><a href="https://github.com/ClickHouse/ClickHouse/pull/128248" rel="noreferrer">PR #128248｜主线 / master</a></p>
+<p>调整 JOIN 重排序中的行数估算：对带元素过滤或外部过滤的 ARRAY JOIN，将行数估算保留为未知，输入估算为零时除外；无过滤时维持原估算策略。</p>
+<p>重要性与适用范围：适用于过滤后数组展开结果较小的连接查询，可避免错误估算导致哈希表在较大输入侧构建，降低内存开销；但过滤选择性低时保留书写顺序，也可能使构建侧变大。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+The array-join branch of <code>estimateReadRowsCount</code> estimates its input without the filter, which is correct because the filter reads the array join output. But it then multiplied by 100 without checking either the filter passed from above (<code>query_plan_fuse_filter_into_array_join = 0</code>, or a filter the fuse pass does not take) or the step's own element filter (<code>ArrayJoinStep::hasElementFilter</code>). The MergeTree and sub-join branches of the function return no estimate for a filter they cannot account for.</p>
+<p>A filtered array join now has no row estimate, unless its input is estimated at 0 rows (the #126481 case). An unfiltered array join keeps the estimate of 100 rows per input row.</p>
+<p><code>05406_join_swap_array_join_estimate</code> gets four new cases: element filter, filter step, a non-lowered <code>arrayJoin</code> with a filter, and an empty input with an element filter. The first three fail on master. On a debug build, a 5,000,000-row table joined to an <code>ARRAY JOIN</code> over 100,000 rows filtered to 11 builds the hash table from 5,000,000 rows on master (344 MiB peak) and from 11 rows with this change (4.3 MiB). The result is the same.</p>
+<p>Trade-off: when the element filter is unselective and the array join is written on the right, the written order is kept, as on 26.10. A 1,000-row table joined to the same array join with <code>WHERE k &gt;= 0</code> builds 100,000 rows instead of 1,000.</p>
+<p>🤖 Generated with Claude Code (https://claude.com/claude-code)</p>
+<hr />
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/128248" rel="noreferrer">本日合并 PR #128248｜主线 / master｜2026-10-30T21:07:58Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-128127"><a href="https://github.com/ClickHouse/ClickHouse/pull/128127" rel="noreferrer">PR #128127｜主线 / master</a></p>
+<p>针对取值跨度超过1024且分布密集的Enum16，将值到名称的二分查找改为直接查找数组，每个值占用2字节，优化转换为String、文本输出及从数值转换的运行时路径。</p>
+<p>重要性与适用范围：适用于大型密集Enum16，例如system.metric_log的指标名称枚举；直接索引减少名称查找开销，可改善大量枚举值转换与文本输出的效率，收益范围不应泛化至稀疏枚举。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+<code>Enum16</code> types whose values span more than 1024 numbers looked up the name of a value with a binary search. Dense ones now use the direct lookup array, at 2 bytes per value. For the 2313 metric names of <code>system.metric_log</code>, <code>CAST</code> to <code>String</code> of 40M values on one thread takes 0.86 s instead of 3.29 s (3.8x faster), text output is 2.1x faster and casts from numbers are 11x faster.</p>
+<h3>Changelog category (leave one):</h3>
+<ul>
+<li>Performance Improvement</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/128127" rel="noreferrer">本日合并 PR #128127｜主线 / master｜2026-10-30T23:32:23Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-128134"><a href="https://github.com/ClickHouse/ClickHouse/pull/128134" rel="noreferrer">PR #128134｜主线 / master</a></p>
+<p>优化 Enum8 和 Enum16 转 String 的 CAST 运行时路径：不再为每个枚举名称调用虚拟 insertData，而是直接追加到结果列的字符和偏移数组。</p>
+<p>重要性与适用范围：适用于查询中将 Enum8、Enum16 转为字符串的场景，通过减少逐名称的虚函数调用开销提升转换效率；收益范围限于该类型转换路径，不能外推为整体查询性能提升。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+<code>CAST</code> from <code>Enum8</code> and <code>Enum16</code> to <code>String</code> inserted each name with a virtual <code>insertData</code> call. It now appends the names to the chars and offsets of the result, which makes the cast 1.24x faster: the <code>code_enum::String</code> query of <code>enum.xml</code> takes 0.095 s instead of 0.118 s.</p>
+<h3>Changelog category (leave one):</h3>
+<ul>
+<li>Performance Improvement</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/128134" rel="noreferrer">本日合并 PR #128134｜主线 / master｜2026-10-30T23:32:23Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-124454"><a href="https://github.com/ClickHouse/ClickHouse/pull/124454" rel="noreferrer">PR #124454｜主线 / master</a></p>
+<p>将混合 AND/OR 过滤条件的跳数索引联合评估上限由固定 32 个 RPN 元素改为可配置，默认提高至 128；中间结果位图改为按查询的过滤条件规模分配。</p>
+<p>重要性与适用范围：适用于包含较多混合逻辑条件、需联合多个跳数索引裁剪数据粒度的查询，使原先超出限制而无法有效裁剪的过滤条件也能参与联合评估；位图内存随过滤条件规模变化。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+<code>use_skip_indexes_for_disjunctions</code> combines the results of several skip indexes for filters with mixed <code>AND</code> and <code>OR</code> conditions. It applied only to filters with at most 32 RPN elements (hard-coded), e.g. at most 16 conditions on different columns connected by <code>OR</code>. Larger filters fell back to evaluating each skip index on its own, which cannot prune granules for such filters.</p>
+<p>This PR adds the setting <code>use_skip_indexes_for_disjunctions_max_rpn_elements</code> (default 128, 0 means no limit). With <code>compatibility</code> set to an older version, the limit is 32 as before. The partial results bitset is now sized per query (one bit per RPN element per mark) instead of a fixed width, so the memory follows the size of the filter.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124454" rel="noreferrer">本日合并 PR #124454｜主线 / master｜2026-10-31T07:36:22Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-124827"><a href="https://github.com/ClickHouse/ClickHouse/pull/124827" rel="noreferrer">PR #124827｜主线 / master</a></p>
+<p>优化 Parquet 文件的字符串排序限量查询：为 String 及其 Nullable、LowCardinality 类型建立阈值跟踪，按排序列统计信息重排并跳过行组，不安装逐行过滤器，也不强制使用偏移索引。</p>
+<p>重要性与适用范围：适用于字符串键的 ORDER BY LIMIT 查询，即使关闭变长类型的逐行动态过滤，也可利用行组统计信息减少读取；收益取决于数据分布和可跳过的行组，不适用于排序规则、Memory 表及 URL 读取。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+<code>ORDER BY &lt;String column&gt; LIMIT n</code> over <code>Parquet</code> files skips row groups by the min/max statistics of the sort column, as it already did for numeric keys, without the per-row filter that <code>use_top_k_dynamic_filtering_for_variable_length_types</code> controls: <code>SELECT Title FROM file('hits.parquet') ORDER BY Title DESC LIMIT 10</code> skips 203 of its 226 row groups and is about 10 times faster at 4 threads. Closes #124560.</p>
+<h3>Description</h3>
+<p>Proposed by @ snelheidai in #124560; numbers below are mine.</p>
+<p>With <code>use_top_k_dynamic_filtering_for_variable_length_types = 0</code> (the default since #104216), <code>tryTopKForFormatSource</code> returned before creating the threshold tracker for a <code>String</code> key, so Parquet reads skipped no row groups by statistics. The setting targets the per-row <code>__topKFilter</code>; the per-row-group check costs one comparison per row group.</p>
+<p><strong>Change.</strong> A <code>String</code> key (also <code>Nullable</code> / <code>LowCardinality</code>) gets the threshold with <code>FormatTopKFilterInfo::filter_rows = false</code>: the reader orders and skips row groups by statistics, but installs no per-row filter and does not force the offset index. Excluded: collations, <code>LIMIT + OFFSET &gt;= 1500</code> (there <code>PartialSortingTransform</code> filters rows itself, but not with a tracker), <code>Memory</code> tables (they would get a per-row filter) and <code>URL</code> reads (unchanged). If all row groups share the bound on the</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124827" rel="noreferrer">本日合并 PR #124827｜主线 / master｜2026-10-31T10:48:11Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-127213"><a href="https://github.com/ClickHouse/ClickHouse/pull/127213" rel="noreferrer">PR #127213｜主线 / master</a></p>
+<p>强制内联 DateTime64 和 Time64 的 add*/subtract* 时间间隔函数逐行变换，并以单次内联除法替代 std::div，避免内联启发式造成构建间差异。</p>
+<p>重要性与适用范围：适用于在 DateTime64 和 Time64 列上执行时间间隔加减的查询，优化直接作用于逐行计算路径，减少对编译器内联决策的依赖，避免循环中保留外部除法调用。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+The per-row transform of the <code>add*</code>/<code>subtract*</code> interval functions over <code>DateTime64</code> and <code>Time64</code> is always inlined and uses a single inline division instead of <code>std::div</code>, so it no longer depends on inliner heuristics that varied between builds.</p>
+<p>🤖 Generated with Claude Code (https://claude.com/claude-code)</p>
+<hr />
+<p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=127213&amp;sha=latest&amp;name_0=PR)]</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/127213" rel="noreferrer">本日合并 PR #127213｜主线 / master｜2026-10-31T13:54:39Z</a></p>
+<h2 id="digest-section-15">StarRocks</h2>
+<p>来源读取成功：11 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<h3 id="digest-section-16">性能优化</h3>
+<p class="pr-title" id="digest-pr-starrocks-81943"><a href="https://github.com/StarRocks/starrocks/pull/81943" rel="noreferrer">PR #81943｜主线 / main</a></p>
+<p>将共享数据模式下统一的元数据LRU拆为独立的tablet与segment元数据缓存，分别承载事务日志等小对象和segment等对象，并按进程内存比例设置容量。</p>
+<p>重要性与适用范围：适用于共享数据模式下查询与compaction频繁的节点，通过隔离缓存淘汰，减少segment周转挤出tablet元数据和事务日志造成的对象存储重复读取，同时使缓存容量随节点内存调整。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+In shared-data mode, tablet metadata, txn logs, segments, delete vectors and tablet schemas all share one <code>lake::Metacache</code> LRU, sized by the fixed <code>lake_metadata_cache_limit</code> (2 GiB by default, whatever the node size). Tablet metadata and txn logs are small, and every load, publish and scan starts from them. Segments are large and turn over with every query and compaction, so on a busy node they evict tablet metadata and txn logs, which then have to be read again from object storage. A fixed 2 GiB limit also does not scale with the node: a 46 GiB CN and a 500 GiB CN get the same cache. suggests switching to a percentage, as shared-nothing already does with <code>metadata_cache_memory_limit_percent</code>.</p>
+<h2>What I'm doing:</h2>
+<p>The single LRU is split into two independent LRUs behind the same <code>Metacache</code> interface. Call sites are unchanged; each object type is routed to its own LRU:</p>
+<div class="table-scroll" role="region" aria-label="数据表格" tabindex="0"><table>
+<thead>
+<tr>
+<th>LRU</th>
+<th>Holds</th>
+<th>Config (mutable)</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tablet metadata cache</td>
+<td>tablet metadata (including the latest-metadata <code>TL</code> keys), txn logs, combined txn logs, bundled-metadata markers</td>
+<td><code>lake_tablet_metadata_cache_limit_percent</code></td>
+<td>10 (% of process memory limit)</td>
+</tr>
+<tr>
+<td>segment metadata cache</td>
+<td>opened segments, delete vectors, tablet schemas</td>
+<td><code>lake_segment_metadata_cache_limit_percent</code></td>
+<td>20 (% of process memory limit)</td>
+</tr>
+</tbody>
+</table></div>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81943" rel="noreferrer">本日合并 PR #81943｜主线 / main｜2026-10-31T03:41:53Z</a></p>
+<p class="pr-title" id="digest-pr-starrocks-81971"><a href="https://github.com/StarRocks/starrocks/pull/81971" rel="noreferrer">PR #81971｜主线 / main</a></p>
+<p>将 TableFunctionOperator 的逐输入行跟踪日志及 MultiUnnest 的逐批次跟踪日志从 VLOG(2) 移至 VLOG_ROW，减少详细日志模式下 unnest 执行路径的日志开销。</p>
+<p>重要性与适用范围：适用于开启二级详细日志的 unnest 查询，避免高频行级及批次级跟踪拖慢执行，使查询级和文件级详细日志保持可用；收益限于相关日志开启场景，不能泛化为常规查询加速。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ul>
+<li>Separate commit: the per-input-row trace in <code>TableFunctionOperator</code> and the per-batch trace in <code>MultiUnnest</code> move from <code>VLOG(2)</code> to <code>VLOG_ROW</code>. At level 2 they made unnest many times slower whenever verbose logging was on.</li>
+</ul>
+<p>Observability: no new signals needed; the change only moves the two unnest traces to row level so that query/file-level verbose logging stays usable on unnest queries.</p>
+<h2>What type of PR is this:</h2>
+<ul>
+<li>[x] BugFix</li>
+<li>[ ] Feature</li>
+<li>[ ] Enhancement</li>
+<li>[ ] Refactor</li>
+<li>[ ] UT</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81971" rel="noreferrer">本日合并 PR #81971｜主线 / main｜2026-10-31T06:22:36Z</a></p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
