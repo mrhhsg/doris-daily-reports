@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="8f4913f7b026225089a88ea68b4cd5d7711a28ea1695359e3472c7184f2d7d2a"><title>Apache Doris 合并日报｜2026-10-31（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">合并概览</a></li><li class="toc-level-2"><a href="#digest-section-3">master 主线（5 条）</a></li><li class="toc-level-3"><a href="#digest-section-4">修复（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69872">PR #69872</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69874">PR #69874</a></li><li class="toc-level-3"><a href="#digest-section-7">测试（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69846">PR #69846</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69849">PR #69849</a></li><li class="toc-level-3"><a href="#digest-section-10">文档（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69514">PR #69514</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-10-31.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">Apache Doris 合并日报｜2026-10-31（北京时间）</h1><div class="meta">北京时间 2026-10-31</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">合并概览</a></li><li class="toc-level-2"><a href="#digest-section-3">master 主线（5 条）</a></li><li class="toc-level-3"><a href="#digest-section-4">修复（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69872">PR #69872</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69874">PR #69874</a></li><li class="toc-level-3"><a href="#digest-section-7">测试（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69846">PR #69846</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69849">PR #69849</a></li><li class="toc-level-3"><a href="#digest-section-10">文档（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-69514">PR #69514</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>本日 master 主线共涉及5项改动，以稳定性修复和测试、文档完善为主，未涉及新增功能或性能优化。Arrow 反序列化补齐不兼容数组类型及 STRUCT 字段数校验，遇到异常输入时返回错误而非导致 BE 崩溃；Stream Load 转换错误增加列名及源、目标类型，便于定位导入问题。ADBC Catalog 修复删除或修改时提前释放资源引发的 FE 崩溃风险，在不阻塞 DROP、ALTER 操作的同时，等待进行中的调用结束再释放资源。</p>
+<p>测试方面，补充上述修复的回归或单元测试，稳定强制删表场景下的文件缓存清理测试，并验证 s3()、hdfs() 对 Avro 格式的既有拒绝行为及报错顺序。文档将 Iceberg 写入 P0 测试覆盖矩阵译为英文，方便非中文贡献者维护，未改变覆盖内容或产品行为。本日无 release 回移及 other 其他分支改动；上述合并不代表已上线。</p>
+<h2 id="digest-section-2">合并概览</h2>
+<p>2026-10-31（北京时间）｜合并 PR：5。按实际 merged_at 筛选，主线与 release 回移分别统计。</p>
+<h2 id="digest-section-3">master 主线（5 条）</h2>
+<h3 id="digest-section-4">修复（2 条）</h3>
+<p class="pr-title" id="digest-pr-doris-69872"><a href="https://github.com/apache/doris/pull/69872" rel="noreferrer">PR #69872</a></p>
+<p>修复 Arrow 反序列化对不兼容数组类型及 STRUCT 字段数缺少校验的问题，使其返回错误而非导致 BE 崩溃，且不受输入校验配置影响。为 V1/V2 Stream Load 转换错误补充列名和源、目标类型，保留 V2 已支持的安全类型转换，并新增回归与单元测试。</p>
+<p class="pr-title" id="digest-pr-doris-69874"><a href="https://github.com/apache/doris/pull/69874" rel="noreferrer">PR #69874</a></p>
+<p>修复删除或修改 ADBC Catalog 时，提前释放原生资源导致并发查询或统计信息加载触发 FE 崩溃的问题。客户端关闭后拒绝新调用，待最后一个进行中的调用结束再释放数据库和 Arrow 分配器，DROP、ALTER CATALOG 仍无需等待，并新增相关单元测试。</p>
+<h3 id="digest-section-7">测试（2 条）</h3>
+<p class="pr-title" id="digest-pr-doris-69846"><a href="https://github.com/apache/doris/pull/69846" rel="noreferrer">PR #69846</a></p>
+<p>修复强制删表回归测试中文件缓存清理偶发超时的问题：在版本3数据加载后增加查询，确保各BE在删表前同步该版本，并断言行数为160000，验证数据可见，避免版本3缓存因未纳入回收范围而残留。</p>
+<p class="pr-title" id="digest-pr-doris-69849"><a href="https://github.com/apache/doris/pull/69849" rel="noreferrer">PR #69849</a></p>
+<p>新增 FE 回归测试及表函数构造器单元测试，覆盖 s3()、hdfs() 使用 avro 和 AVRO 格式时在分析阶段报错，验证格式检查先于存储属性校验或文件访问，并校验不再支持 Avro 读取的错误信息。本次仅补充测试，不改变现有行为。</p>
+<h3 id="digest-section-10">文档（1 条）</h3>
+<p class="pr-title" id="digest-pr-doris-69514"><a href="https://github.com/apache/doris/pull/69514" rel="noreferrer">PR #69514</a></p>
+<p>将 Iceberg 写入 P0 测试覆盖矩阵由中文翻译为英文，并与相邻矩阵的风险、编号、来源、影响和优先级等术语保持一致，方便非中文贡献者检查和扩展覆盖。原有风险项、覆盖行、用例、状态及测试套件名称均不变，不涉及行为变更。</p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
