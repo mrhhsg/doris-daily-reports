@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="4d1da659b43c2998369f8ef3e79101dd525cffd6aa19e5b6839cf7cbb5c0393b"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-11-01（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125615">PR #125615｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127038">PR #127038｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127058">PR #127058｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128277">PR #128277｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-118099">PR #118099｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-123553">PR #123553｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127690">PR #127690｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128375">PR #128375｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-14">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-15">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81978">PR #81978｜主线 / main</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-11-01.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-11-01（北京时间）</h1><div class="meta">北京时间 2026-11-01</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125615">PR #125615｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127038">PR #127038｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127058">PR #127058｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128277">PR #128277｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-118099">PR #118099｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-123553">PR #123553｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-127690">PR #127690｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128375">PR #128375｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-14">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-15">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81978">PR #81978｜主线 / main</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>2026-11-01（北京时间）三库聚焦更新：筛选后 10 项，只关注性能优化、重大新功能及有官方明确修复证据的安全修复。合并记录不等于已发布；回移与原始改动关联展示，正式发布和预发布以官方公告为准。分类统计：安全修复 0 项、性能优化 10 项、重大新功能 0 项。</p>
+<p>DuckDB：当日所检查官方来源未发现符合筛选边界的更新。</p>
+<p>ClickHouse：将集群表函数读取列上的确定性过滤条件及已准备好的IN集合序列化后发送给副本，由副本在读取后执行过滤，发起端仍执行完整过滤。</p>
+<p>StarRocks：统一共享事务日志查找、请求合并与插入使用的真实位置缓存键，并在日志删除、tablet 删除及 vacuum 时清理对应缓存，避免键不一致造成缓存未命中和重复条目。</p>
+<h2 id="digest-section-2">范围与证据</h2>
+<p>统计前一完整自然日：PR 按实际 merged_at；Release 与公开安全公告按 published_at。公开安全公告不覆盖未披露漏洞；GitHub Releases 不包含仅有 tag 或独立官网文章。模型仅依据标题与正文，未读取完整 diff；性能适用条件以所链官方证据为准。</p>
+<h2 id="digest-section-3">DuckDB</h2>
+<p>来源读取成功：0 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<p>当日未发现符合性能优化、重大新功能或官方已确认安全修复边界的更新；不列普通功能、小修复、CI 或文档变化。</p>
+<h2 id="digest-section-4">ClickHouse</h2>
+<p>来源读取成功：58 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 master。</p>
+<h3 id="digest-section-5">性能优化</h3>
+<p class="pr-title" id="digest-pr-clickhouse-125615"><a href="https://github.com/ClickHouse/ClickHouse/pull/125615" rel="noreferrer">PR #125615｜主线 / master</a></p>
+<p>将集群表函数读取列上的确定性过滤条件及已准备好的IN集合序列化后发送给副本，由副本在读取后执行过滤，发起端仍执行完整过滤。</p>
+<p>重要性与适用范围：适用于包含多张表且通过集群表函数读取数据的查询，可让副本提前剔除不符合条件的行，减少向发起端传输的数据，避免全部行汇集后才过滤。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+In a query with several tables, the replicas of a cluster function read the whole table and sent all rows to the initiator, which applied the filter only after receiving them. The initiator now serializes the deterministic conjuncts of the filter over the read columns as an <code>ActionsDAG</code>, together with the ready sets of <code>IN</code>, and sends it in the internal setting <code>cluster_table_function_pushed_down_filter</code>. The replicas add it as a <code>FilterStep</code> after reading. The initiator still applies the whole filter.</p>
+<p>Part 3: https://github.com/ClickHouse/ClickHouse/pull/124890</p>
+<h3>Changelog category (leave one):</h3>
+<ul>
+<li>Improvement</li>
+</ul>
+<h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
+<p>...</p>
+<hr />
+<p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=125615&amp;sha=latest&amp;name_0=PR)]</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/125615" rel="noreferrer">本日合并 PR #125615｜主线 / master｜2026-10-31T20:08:34Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-127038"><a href="https://github.com/ClickHouse/ClickHouse/pull/127038" rel="noreferrer">PR #127038｜主线 / master</a></p>
+<p>在基于执行计划的并行副本模式下，跳过仅供基于查询实现使用的查询树分析，避免为确定副本执行节点而克隆查询树、构造虚拟存储并建立临时执行计划。</p>
+<p>重要性与适用范围：该优化针对基于执行计划的并行副本查询规划路径，移除其不使用的分析结果及相关构建工作，减少冗余规划开销；不涉及基于查询实现的同类分析，来源未提供量化收益。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+<strong>The query-tree analysis is skipped under plan-based.</strong> <code>findQueryForParallelReplicas</code> answers which<br />
+query node the query-based implementation should execute with replicas, and clones the query tree with<br />
+dummy storages and builds a throwaway plan to do it. Plan-based picks the fragment while optimizing<br />
+the plan and has no use for the answer, so it no longer runs.</p>
+<p><code>03215_analyzer_replace_with_dummy_tables</code> is pinned to the query-based implementation: the walk over</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/127038" rel="noreferrer">本日合并 PR #127038｜主线 / master｜2026-10-31T21:52:15Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-127058"><a href="https://github.com/ClickHouse/ClickHouse/pull/127058" rel="noreferrer">PR #127058｜主线 / master</a></p>
+<p>调整并行副本禁用检查：在基于执行计划的并行副本模式下，允许使用 additional_table_filters 的查询继续利用并行副本，由发起端将过滤条件写入计划并传给副本执行。</p>
+<p>重要性与适用范围：适用于同时使用附加表过滤条件与基于计划的并行副本的查询，避免因不必要的禁用检查失去并行读取能力；测试验证副本参与执行，但未提供耗时或吞吐收益数据。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+A query with <code>additional_table_filters</code> silently loses parallel replicas, because a follower<br />
+re-resolves the setting's keys against its own current database and can match the wrong table. The<br />
+check that disables it exempts <code>serialize_query_plan = 1</code>, where the initiator lowers the filter into<br />
+a <code>FilterStep</code> and ships the plan. Plan-based parallel replicas ships the plan the same way -<br />
+<code>ReadFromParallelReplicas</code> passes <code>QueryProcessingStage::QueryPlan</code> and the plan itself to the remote<br />
+executor, whatever <code>serialize_query_plan</code> says - so the follower re-resolves nothing there either, and<br />
+the check now exempts it too.</p>
+<p>Measured with <code>parallel_replicas_local_plan = 0</code>, so every row comes from a replica reading the<br />
+shipped fragment: <code>SELECT count()</code> over 50000 rows with <code>additional_table_filters = {'t': 'y &lt; 5'}</code><br />
+returns 25000, and <code>ParallelReplicasQueryCount</code> goes from 0 to 1. The new test asserts both, and fails<br />
+on master for the second one.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/127058" rel="noreferrer">本日合并 PR #127058｜主线 / master｜2026-10-31T21:52:15Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-128277"><a href="https://github.com/ClickHouse/ClickHouse/pull/128277" rel="noreferrer">PR #128277｜主线 / master</a></p>
+<p>调整 StringValueFilter 共享统计计数器的更新顺序与内存序，并重新读取依赖计数，避免多个线程并发更新时因统计不一致而提前关闭过滤优化。</p>
+<p>重要性与适用范围：适用于同一列的多个读取器并行处理行组的场景，可避免字符串过滤优化因统计竞态而在查询剩余阶段失效；改动影响优化停用时机，不改变查询结果，未提供性能收益基准。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+a.html?PR=111218&amp;sha=690423b7011241f7a351993fefcbe1f6fba1110b&amp;name_0=PR&amp;name_1=Stateless%20tests%20%28arm_binary%2C%20AsyncInsert%2C%20s3%20storage%2C%20parallel%29).</p>
+<p>The filter object is shared by all readers of a column. <code>updateStatsImpl</code> added a batch to <code>values_checked</code> and then to <code>values_replaced</code> with two independent relaxed <code>fetch_add</code>s, and used the two results as a consistent pair. When two row groups update at the same time, one thread can see the other's <code>checked</code> without its <code>replaced</code> (7372 * 2 &lt; 16384), so it disables the filter for the rest of the query. The CI numbers are exact multiples of the 8192-value update batches. <code>updateStatsOfIndividualChecks</code> had the same race on the bytes-skipped pair.</p>
+<p>Now the dependent counter is added first, the count with <code>acq_rel</code>, and the dependent counter is re-read afterwards, so it always covers every batch included in the count. Only the moment the optimization switches off changes; results are unaffected.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/128277" rel="noreferrer">本日合并 PR #128277｜主线 / master｜2026-11-01T00:51:24Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-118099"><a href="https://github.com/ClickHouse/ClickHouse/pull/118099" rel="noreferrer">PR #118099｜主线 / master</a></p>
+<p>调整磁盘访问实体存储的后台写入线程退出机制：通知前先在互斥锁保护下记录退出请求，并让条件等待检查该标志，避免通知丢失导致关闭流程无谓等待。</p>
+<p>重要性与适用范围：适用于使用本地目录访问存储、退出前创建、删除或重命名访问实体的服务端及本地进程，尤其是执行完此类操作即退出的本地进程；优化范围是关闭延迟，而非查询执行速度。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
+<p><code>clickhouse-local</code> and <code>clickhouse-server</code> no longer take an extra minute to exit when the last operation before shutdown created, dropped or renamed an access entity (a user, role, settings profile, row policy, quota or masking policy) in the <code>local_directory</code> access storage.</p>
+<h3>Description</h3>
+<p><code>DiskAccessStorage</code> writes its <code>.list</code> files from a background thread that first waits up to a minute, so that several list updates can be batched. <code>stopListsWritingThread</code> asked that thread to exit by calling <code>notify_one</code> on <code>lists_writing_thread_should_exit</code>, holding no lock and recording nothing. If the thread had not reached its <code>wait_for</code> yet, the notification was dropped, the thread waited out the whole minute, and <code>join</code> held shutdown open for it. <code>clickhouse-local</code> reaches this most easily, because the DDL is usually the last thing the process does, so shutdown starts about a millisecond after the thread is created.</p>
+<p>I now record the request in a <code>mutex</code>-guarded flag before notifying, and pass the <code>wait_for</code> the predicate that reads it. The same line previously let a spurious wakeup return early and skip <code>writeLists</code>, which this also settles.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/118099" rel="noreferrer">本日合并 PR #118099｜主线 / master｜2026-11-01T13:25:00Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-123553"><a href="https://github.com/ClickHouse/ClickHouse/pull/123553" rel="noreferrer">PR #123553｜主线 / master</a></p>
+<p>为 Iceberg 连接重排序引入由 manifest 指标估算的列去重数、最小最大值及 NULL 比例，无需读取数据即可估计过滤条件、PREWHERE 和行策略的选择性。</p>
+<p>重要性与适用范围：适用于启用 use_iceberg_manifest_statistics 和 use_statistics 的 Iceberg 查询，为连接顺序选择提供过滤后的行数估计；收益取决于列统计估计质量，并非所有查询都会加速。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
+<p>With <code>use_iceberg_manifest_statistics</code>, join reordering also uses the number of distinct values, min/max and NULL fraction of Iceberg columns, estimated from the manifest metrics of the data files without reading data, and estimates the filter, <code>PREWHERE</code> and row policy of an Iceberg read on them, as for MergeTree tables with column statistics. The setting now requires <code>use_statistics</code>.</p>
+<hr />
+<p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=123553&amp;sha=latest&amp;name_0=PR)]<br />
+Sync PR [sync-upstream/pr/123553 (https://github.com/search?q=head%3Async-upstream%2Fpr%2F123553+org%3AClickHouse+type%3Apr&amp;type=pullrequests)]</p>
+<h3>Version info</h3>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/123553" rel="noreferrer">本日合并 PR #123553｜主线 / master｜2026-11-01T13:26:40Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-127690"><a href="https://github.com/ClickHouse/ClickHouse/pull/127690" rel="noreferrer">PR #127690｜主线 / master</a></p>
+<p>优化 ORC 读写运行时路径：读取时将值直接解码到 ClickHouse 原生类型列，类型转换复用列而不复制；写入时直接从列编码。</p>
+<p>重要性与适用范围：适用于 ORC 文件扫描与导出，通过直接对接列数据减少中间搬运开销；列选择、统计信息与布隆过滤器下推逻辑保持不变，不以改变过滤范围换取性能。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ul>
+<li>The values are decoded directly into ClickHouse columns of their natural types (<code>Int8</code>...<code>Int64</code>, <code>Float32</code>, <code>Float64</code>, <code>Bool</code>, <code>String</code>), the lengths of lists and maps directly into the offsets of <code>ColumnArray</code>, and the string dictionaries into <code>ColumnString</code>, which is used as is for <code>LowCardinality</code>. The type conversion code in <code>NativeORCBlockInputFormat.cpp</code> (type hints, unions, overflow checks) is kept and takes these columns without copying. <code>DATE</code>, <code>TIMESTAMP</code> and <code>DECIMAL</code> keep intermediate values, which are needed for the range and scale checks.</li>
+<li>The writer encodes directly from the ClickHouse columns, with the same value conversions as before (unsigned integers as signed ones of the same width, <code>DateTime64</code> as seconds and nanoseconds, <code>FixedString</code>, <code>IPv6</code> and big integers as raw bytes, <code>Variant</code> as UNION).</li>
+<li>Column selection, search arguments (with the same normalization: push down NOT, fold MAYBE, CNF) and their evaluation against the statistics and bloom filters are the same, so <code>rows_read</code> with filter pushdown is the same.</li>
+<li>The file layout, statistics and time zone handling on write are the same as in liborc's C++ writer.</li>
+<li>The metadata is parsed and serialized with a small hand-written Protocol Buffers implementation, so the build does not need <code>protoc</code> for ORC anymore.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/127690" rel="noreferrer">本日合并 PR #127690｜主线 / master｜2026-11-01T14:02:38Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-128375"><a href="https://github.com/ClickHouse/ClickHouse/pull/128375" rel="noreferrer">PR #128375｜主线 / master</a></p>
+<p>主键索引分析中，将单调函数链范围处理的键类型改为按引用传递，仅在函数链非空时复制类型，减少多线程分析数据分片时的引用计数争用。</p>
+<p>重要性与适用范围：适用于并行执行主键索引分析、且多数单调函数链为空的查询，可降低索引分析的 CPU 开销；原文测试中查询整体延迟基本不变，不应视为端到端查询加速。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Index analysis calls <code>applyMonotonicFunctionsChainToRange</code> for every atom on every hyperrectangle, and most chains are empty. Each call copied the key type, and the threads analyzing parts contended on its reference count. Now the function copies the type only for a non-empty chain.</p>
+<p>On an internal logs table with ~280M rows and 14 daily partitions, primary key analysis CPU at <code>max_threads = 64</code> dropped from about 82k to 26k µs per query. Wall-clock query latency was pretty much the same.</p>
+<hr />
+<p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=128092&amp;sha=latest&amp;name_0=PR)]</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/128092" rel="noreferrer">本日合并 PR #128092｜主线 / master｜2026-11-01T15:31:40Z</a></p>
+<h2 id="digest-section-14">StarRocks</h2>
+<p>来源读取成功：19 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<h3 id="digest-section-15">性能优化</h3>
+<p class="pr-title" id="digest-pr-starrocks-81978"><a href="https://github.com/StarRocks/starrocks/pull/81978" rel="noreferrer">PR #81978｜主线 / main</a></p>
+<p>统一共享事务日志查找、请求合并与插入使用的真实位置缓存键，并在日志删除、tablet 删除及 vacuum 时清理对应缓存，避免键不一致造成缓存未命中和重复条目。</p>
+<p>重要性与适用范围：适用于共享数据架构下的合并事务日志访问及元数据清理路径，可改善跨 tablet 访问共享日志时的缓存复用，减少已删除对象的缓存驻留；不涉及 SQL 或存储格式扩展。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<h2>Why I'm doing:</h2>
+<p>Combined transaction-log insertion uses a tablet virtual path while lookup uses the shared real location, causing cache misses and duplicate entries. Metadata/transaction-log deletion paths also leave entries resident. These bugs predate and are independent of the metacache split in.</p>
+<h2>What I'm doing:</h2>
+<p>This PR contains only the bug-fix commit <code>5d8930e344373377d362bc945467c72a4a10c03e</code>; key encapsulation remains in.</p>
+<ul>
+<li>Use the same real-location key for combined transaction-log lookup, singleflight and insertion; evict it when the RPC or tablet drop deletes the shared object.</li>
+<li>Evict each owning tablet's metadata key during legacy, incremental and full vacuum, for both individual metadata files and bundled tablet pages.</li>
+<li>Evict dropped tablets' versions and latest metadata entries even on partial deletion failure, while preserving surviving tablets' shared files and cache entries.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81978" rel="noreferrer">本日合并 PR #81978｜主线 / main｜2026-11-01T04:44:12Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82008" rel="noreferrer">本日合并 PR #82008｜回移／维护分支 / branch-4.0｜2026-11-01T07:01:56Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82009" rel="noreferrer">本日合并 PR #82009｜回移／维护分支 / branch-4.1｜2026-11-01T07:05:46Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82010" rel="noreferrer">本日合并 PR #82010｜回移／维护分支 / branch-4.2｜2026-11-01T07:21:11Z</a></p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
