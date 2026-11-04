@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="250b876038ffbdfd7e2d55deab3945282a0acc53367540b7477e42893f82b499"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-11-03（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-3"><a href="#digest-section-4">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28199">PR #28199｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28251">PR #28251｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28002">PR #28002｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28253">PR #28253｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27997">PR #27997｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28139">PR #28139｜回移／维护分支 / v2.0-cyanoptera</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28149">PR #28149｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-25785">PR #25785｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28259">PR #28259｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28262">PR #28262｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28038">PR #28038｜主线 / main</a></li><li class="toc-level-2"><a href="#digest-section-16">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-17">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128684">PR #128684｜回移／维护分支 / 26.9</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126991">PR #126991｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128218">PR #128218｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-120264">PR #120264｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128651">PR #128651｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126130">PR #126130｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-115605">PR #115605｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-117754">PR #117754｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-82294">PR #82294｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81578">PR #81578｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81767">PR #81767｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-82299">PR #82299｜主线 / main</a></li><li class="toc-level-3"><a href="#digest-section-30">重大新功能</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-82275">PR #82275｜主线 / main</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-11-03.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-11-03（北京时间）</h1><div class="meta">北京时间 2026-11-03</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-3"><a href="#digest-section-4">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28199">PR #28199｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28251">PR #28251｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28002">PR #28002｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28253">PR #28253｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-27997">PR #27997｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28139">PR #28139｜回移／维护分支 / v2.0-cyanoptera</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28149">PR #28149｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-25785">PR #25785｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28259">PR #28259｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28262">PR #28262｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-duckdb-28038">PR #28038｜主线 / main</a></li><li class="toc-level-2"><a href="#digest-section-16">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-17">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128684">PR #128684｜回移／维护分支 / 26.9</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126991">PR #126991｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128218">PR #128218｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-120264">PR #120264｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-128651">PR #128651｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-126130">PR #126130｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-115605">PR #115605｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-117754">PR #117754｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-82294">PR #82294｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81578">PR #81578｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-81767">PR #81767｜主线 / main</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-82299">PR #82299｜主线 / main</a></li><li class="toc-level-3"><a href="#digest-section-30">重大新功能</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-82275">PR #82275｜主线 / main</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>2026-11-03（北京时间）三库聚焦更新：筛选后 63 项，只关注性能优化、重大新功能及有官方明确修复证据的安全修复。合并记录不等于已发布；回移与原始改动关联展示，正式发布和预发布以官方公告为准。分类统计：安全修复 8 项、性能优化 53 项、重大新功能 2 项。</p>
+<p>DuckDB：Parquet读取器在逐列准备读取前，先检查所有过滤条件的最小值与最大值统计；若已能排除整个行组则提前返回，避免继续读取其余列的Bloom过滤器。</p>
+<p>ClickHouse：将按序读取的虚拟行优化扩展到带 FINAL 的查询，覆盖 ReplacingMergeTree、CollapsingMergeTree 等合并树引擎的运行时读取路径。</p>
+<p>StarRocks：将 pprof 预构建二进制所用的 Go 升级至 1.25.11，纳入 Go 标准库安全修复；公告未列出具体漏洞编号。；日期时间与日期类型转换为字符串时，改为直接写入输出缓冲区，消除逐行堆内存分配，优化类型转换的运行时执行路径。；新增对外部目录中 Paimon 视图的支持，可创建、替换、删除、查看定义并查询视图；视图内部的表引用改为在 Paimon 目录而非默认目录中解析。</p>
+<h2 id="digest-section-2">范围与证据</h2>
+<p>统计前一完整自然日：PR 按实际 merged_at；Release 与公开安全公告按 published_at。公开安全公告不覆盖未披露漏洞；GitHub Releases 不包含仅有 tag 或独立官网文章。模型仅依据标题与正文，未读取完整 diff；性能适用条件以所链官方证据为准。</p>
+<h2 id="digest-section-3">DuckDB</h2>
+<p>来源读取成功：44 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<h3 id="digest-section-4">性能优化</h3>
+<p class="pr-title" id="digest-pr-duckdb-28199"><a href="https://github.com/duckdb/duckdb/pull/28199" rel="noreferrer">PR #28199｜主线 / main</a></p>
+<p>Parquet读取器在逐列准备读取前，先检查所有过滤条件的最小值与最大值统计；若已能排除整个行组则提前返回，避免继续读取其余列的Bloom过滤器。</p>
+<p>重要性与适用范围：适用于带过滤条件且可通过最小值与最大值统计裁剪行组的Parquet扫描，可减少无效Bloom过滤器读取及远程存储请求；未被统计排除的行组仍使用Bloom过滤器进一步过滤。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<h2>Problem</h2>
+<p>When the Parquet reader prepares a row group, it goes through the scanned columns one by one. For a filtered column it checks min/max and if min/max can't rule the row group out, reads that column's Bloom filter.  Problem: when one column's min/max rules the row group out, the columns after it still read their Bloom filters. The row group is skipped either way, so those reads are wasted.</p>
+<p>This has a real impact for my workload because my groups are skippable by min/max but I still see 100s of GET requests to fetch bloom filters only to ignore the groups after.</p>
+<h2>Solution</h2>
+<p>This PR checks the min/max of every filter in <code>RegisterRowGroupReads</code> before the per-column loop, and returns early for a row group that is already ruled out. Row groups that survive min/max still read their Bloom filters.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28199" rel="noreferrer">本日合并 PR #28199｜主线 / main｜2026-11-02T16:00:57Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28251"><a href="https://github.com/duckdb/duckdb/pull/28251" rel="noreferrer">PR #28251｜主线 / main</a></p>
+<p>将 RemotePushdownOptimizer 中按值传递的 CatalogPushdownResult 对象在可行处改为移动而非复制，减少远程下推优化过程的对象拷贝，不改变优化器逻辑。</p>
+<p>重要性与适用范围：该优化针对远程下推优化器处理目录下推结果的运行时路径，减少可避免的对象复制开销；适用于使用远程下推能力的场景，现有证据未提供可量化的性能收益。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+In <code>RemotePushdownOptimizer</code> the <code>CatalogPushdownResult</code> objects are passed by value. This PR makes them to be moved, where possible instead of being copied. It does not change anything in the optimizer logic.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28251" rel="noreferrer">本日合并 PR #28251｜主线 / main｜2026-11-02T19:15:48Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28002"><a href="https://github.com/duckdb/duckdb/pull/28002" rel="noreferrer">PR #28002｜主线 / main</a></p>
+<p>针对普通 EXCEPT 与 INTERSECT 集合运算减少一次哈希聚合，优化大规模输入的运行时执行；ALL 变体的基准结果持平或更快。</p>
+<p>重要性与适用范围：适用于使用差集或交集处理大量数据的查询，收益随工作负载变化；部分 TPC-DS 查询改善，但 q87 因基数估计影响连接构建侧选择而出现退化。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+he test machine.</p>
+<h2>Performance</h2>
+<p>Release build, 8 threads, 30 interleaved samples each:</p>
+<div class="table-scroll" role="region" aria-label="数据表格" tabindex="0"><table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Base</th>
+<th>This PR</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TPC-DS SF1 q14</td>
+<td>42.4 ms</td>
+<td>33.1 ms</td>
+<td>-22%</td>
+</tr>
+<tr>
+<td>TPC-DS q08, q38</td>
+<td></td>
+<td></td>
+<td>3-4% faster</td>
+</tr>
+<tr>
+<td>TPC-DS q87</td>
+<td>16.8 ms</td>
+<td>18.2 ms</td>
+<td>+8%</td>
+</tr>
+<tr>
+<td><code>aoc2022_day18</code> (recursive CTE)</td>
+<td>437 ms median</td>
+<td>452 ms median</td>
+<td>within noise (samples 390-542 ms)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>q87 regresses because the <code>ANTI</code> join cardinality estimate divides the left input by a fixed selectivity (as for every <code>SEMI</code> / <code>ANTI</code> join), which makes the build-side optimizer build its outer join on the larger input.</li>
+<li>Plain <code>EXCEPT</code> / <code>INTERSECT</code> over 10M rows are up to 11% faster (one fewer hash aggregate); <code>ALL</code> variants are unchanged or faster.</li>
+</ul>
+<h2>Related work</h2>
+<ul>
+<li>duckdb-bot/duckdb#80 (volatile filters): its test passes unchanged on top of this change.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28002" rel="noreferrer">本日合并 PR #28002｜主线 / main｜2026-11-02T20:18:44Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28253"><a href="https://github.com/duckdb/duckdb/pull/28253" rel="noreferrer">PR #28253｜主线 / main</a></p>
+<p>调整DECIMAL转换的可抛异常判定，使包含安全转换的过滤条件能够下推至扫描，而非停留在投影或扫描上方，改善相关查询的执行计划。</p>
+<p>重要性与适用范围：适用于含安全DECIMAL转换的过滤查询，可解除异常判定对过滤下推等优化的限制；已有TPC-DS执行计划变化证据，但未提供运行耗时收益。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ul>
+<li><code>src/optimizer/pushdown/pushdown_projection.cpp</code> (<code>stays_on_top</code>): a throwing filter is kept above a projection instead of being pushed through it towards the scan.</li>
+<li><code>src/optimizer/projection_pullup.cpp</code> (<code>IsThrowingProjectionFilter</code>): projections stay below throwing filters.</li>
+<li><code>src/optimizer/pushdown/pushdown_get.cpp</code>: a throwing generic expression is only pushed into a scan when it is the single filter.</li>
+<li><code>src/optimizer/filter_combiner.cpp</code>, <code>src/optimizer/disjunctive_join_rewriter.cpp</code>, <code>src/optimizer/common_subplan_optimizer.cpp</code>, <code>src/optimizer/cte_filter_pusher.cpp</code>, <code>src/optimizer/expression_heuristics.cpp</code> (filter reordering), <code>src/optimizer/statistics/expression/propagate_conjunction.cpp</code>, and the dictionary fast path in <code>src/execution/expression_executor/execute_function.cpp</code>.</li>
+</ul>
+<p>With the change, <code>EXPLAIN</code> of the TPC-DS queries at SF 0.01 differs for q13, q37, q48, q64, q82 and q85: the <code>ss_net_profit BETWEEN ...</code> disjunction of q13/q48/q85 moves from a <code>FILTER</code> above <code>store_sales</code> into the scan, and the <code>i_current_price BETWEEN ...</code> filter of q37/q64/q82 moves into the <code>item</code> scan (with the cardinality estimates and the join order following). The other 93 plans are identical.</p>
+<h3>Tests</h3>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28253" rel="noreferrer">本日合并 PR #28253｜主线 / main｜2026-11-02T21:18:49Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-27997"><a href="https://github.com/duckdb/duckdb/pull/27997" rel="noreferrer">PR #27997｜主线 / main</a></p>
+<p>为自动补全匹配器引入 packrat 缓存，对匹配过程进行记忆化处理，减少自动补全运行路径中的重复匹配计算。</p>
+<p>重要性与适用范围：适用于使用自动补全的交互式场景，优化范围限于补全匹配过程；来源未提供性能基准，不能据此推断查询执行性能改善或具体收益。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ul>
+<li>Robinho-MR/duckdb#244: Reject a database header with an out-of-range block count</li>
+<li>Robinho-MR/duckdb#242: Memoize the autocomplete matcher with a packrat cache</li>
+<li>Robinho-MR/duckdb#240: Keep the zipped tree vector intact when releasing its levels</li>
+<li>Robinho-MR/duckdb#239: Take update_lock in ColumnData::HasChanges</li>
+<li>Robinho-MR/duckdb#238: Guard QueryMetrics string metrics with a lock</li>
+<li>Robinho-MR/duckdb#237: Load the state snapshot atomically in the StatesSnapshot slow path</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/27997" rel="noreferrer">本日合并 PR #27997｜主线 / main｜2026-11-03T09:22:12Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28139"><a href="https://github.com/duckdb/duckdb/pull/28139" rel="noreferrer">PR #28139｜回移／维护分支 / v2.0-cyanoptera</a></p>
+<p>回移压缩段缓冲区释放优化：在检查点刷新时，将小压缩段复制到共享部分块后立即切换为读取块内副本，释放该段原有缓冲区，避免无用缓冲区持续累积。</p>
+<p>重要性与适用范围：适用于加载后压缩段很小的数据，可降低检查点过程中的缓冲内存占用，减少临时目录溢写及无临时目录时的内存不足风险；这是维护分支的运行时内存优化，并非新增功能。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Backport of #28129 (Free a segment's buffer once its data is copied into a partial block) to <code>v2.0-cyanoptera</code>. This branch does not have #27305, so the change goes into <code>ColumnCheckpointState::FlushSegmentInternal</code> instead of <code>PartialBlock::Store</code>.</p>
+<p>Loading data that compresses to very small segments holds far more buffer memory than the data needs. It spills to the temp directory, or fails with an out of memory error without one.</p>
+<p>Each compressed segment is built in a full 256 KiB buffer. A small segment is then copied into a shared partial block, but keeps its own buffer until the partial block is written. With segments of a few dozen bytes, thousands of these dead buffers pile up per partial block.</p>
+<p><code>FlushSegmentInternal</code> now calls <code>ColumnSegment::UsePackedCopy</code> right after the copy. The segment then reads its copy in the partial block, which frees its own buffer. <code>InMemoryPartialBlock::AddSegmentToTail</code> already does this for in-memory checkpoints.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28139" rel="noreferrer">本日合并 PR #28139｜回移／维护分支 / v2.0-cyanoptera｜2026-11-03T09:26:58Z</a></p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28129" rel="noreferrer">关联原始 PR #28129（历史合并 2026-10-30T17:04:24Z，不是本日新功能）</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28149"><a href="https://github.com/duckdb/duckdb/pull/28149" rel="noreferrer">PR #28149｜主线 / main</a></p>
+<p>多文件扫描恢复使用explicit_cardinality作为整次扫描的基数估计；绑定时未打开文件且文件列表携带大小时，改用文件大小估算行数，改善连接计划选择。</p>
+<p>重要性与适用范围：适用于显式指定基数，或指定schema且文件列表携带大小的扫描，降低严重低估行数而将大表选为哈希连接构建侧的风险；无大小信息的普通路径仍需显式基数。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+On 2.0 and main, <code>read_parquet</code> runs through <code>TableFunctionMultiFileWrapper</code>. Its <code>GetCardinality</code> never looked at <code>explicit_cardinality</code>, so the option is silently ignored. 1.4 honored it in <code>ParquetMultiFileInfo::GetCardinality</code>, which <code>read_parquet</code> no longer reaches. Separately, a scan whose schema is given (<code>schema=</code>) opens no file at bind, so the wrapper has no row count and the scan is estimated at ~1 row. A join then builds its hash table on what may be the largest table in the query.</p>
+<p>This PR:</p>
+<ul>
+<li><strong><code>explicit_cardinality</code>:</strong> honors it as the estimate for the whole scan, ahead of the opened file's rows times the file count (as 1.4 did).</li>
+<li><strong>File sizes:</strong> with no file opened at bind, estimates the rows from the sizes of the files when the file list carries them (a local glob, or a list of <code>{filename, file_size}</code> structs), at 10 bytes a row. That is the floor the parquet reader puts under its measured ratio: a deliberate overestimate for every format the wrapper serves, <code>read_csv</code>/<code>read_json</code> with <code>schema=</code> included, and safer than ~1 row. A plain path is not expanded, carries no size, and still has no estimate without <code>explicit_cardinality</code>.</li>
+<li><strong>Unification:</strong> moves the file-size loop into <code>MultiFileList::EstimateRowsPerFile</code>, shared with <code>ParquetMultiFileInfo::GetCardinality</code>, whose behaviour is unchanged. The estimate is rows per file times the scan's file count, like the opened-file estimate, so a glob of more than 500 files is extrapolated from the files expanded so</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28149" rel="noreferrer">本日合并 PR #28149｜主线 / main｜2026-11-03T10:35:00Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-25785"><a href="https://github.com/duckdb/duckdb/pull/25785" rel="noreferrer">PR #25785｜主线 / main</a></p>
+<p>改进DICT_FSST压缩选择的大小估算：字典布局模拟块装填，FSST_ONLY布局按编码长度计入整块成本并检查适用条件，最终取较小估值，分析内存限制在单个模拟块内。</p>
+<p>重要性与适用范围：适用于重复值分散、块内难以去重或大尺寸唯一字符串导致块利用率低的场景，避免因低估DICT_FSST存储成本而误选压缩方式，减少不必要的块占用。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+DICT_FSST wins by roughly 1 MB on an estimate it cannot honor, producing ~150k segments of about two rows each.</p>
+<p>The unique variant, same block size, 2000 unique values of 5760 bytes: estimated at half the raw size, selected, and produces 1000 segments of two rows and 15.7 MB.</p>
+<h2>Fix</h2>
+<p>Both layouts DICT_FSST can produce are now estimated per block, and neither can bypass block accounting:</p>
+<ul>
+<li><strong>Dictionary layout</strong> — simulate the block packing, the way the dictionary analyze state already does, and charge for the blocks it needs. Memory during analyze stays bounded to one simulated block's distinct values: the hash set and its backing heap are both reset at each simulated block boundary.</li>
+<li><strong>FSST_ONLY layout</strong> — it stores every value encoded, with a symbol table per block and no selection buffer, so the values that fit a block follow from their encoded length. Whole blocks are charged. Only estimated where the mode is reachable: it requires every value in a segment to be unique, and a segment holds one block worth of values, so &quot;no simulated block held a value twice&quot; is exactly that condition.</li>
+</ul>
+<p><code>FinalAnalyze</code> returns the cheaper of the two.</p>
+<p>Measured, 16KB blocks:</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/25785" rel="noreferrer">本日合并 PR #25785｜主线 / main｜2026-11-03T11:33:55Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28259"><a href="https://github.com/duckdb/duckdb/pull/28259" rel="noreferrer">PR #28259｜主线 / main</a></p>
+<p>新增 self_join_aggregate 优化器：当上层只检查键是否存在时，将同表按键相等且恰有一个不等条件的自连接，改写为单次扫描的分组聚合，以最小值与最大值比较筛选键。</p>
+<p>重要性与适用范围：适用于通过 IN 等方式只读取键集合、不关心配对明细的查询，例如查找从多个仓库发货的订单。改写避免为同一键生成行对，减少重复扫描及自连接中间结果开销。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+This PR adds the <code>self_join_aggregate</code> optimizer, which rewrites a self-join of one table on equal keys and exactly one inequality into a group-by over a single scan when its parent only tests which keys exist.</p>
+<h2>What it does</h2>
+<p>TPC-DS q95's <code>ws_wh</code> subquery is the motivating case:</p>
+<pre><code class="language-sql">WITH ws_wh AS (SELECT ws1.ws_order_number, ws1.ws_warehouse_sk wh1, ws2.ws_warehouse_sk wh2
+               FROM web_sales ws1, web_sales ws2
+               WHERE ws1.ws_order_number = ws2.ws_order_number AND ws1.ws_warehouse_sk &lt;&gt; ws2.ws_warehouse_sk)
+...
+WHERE ws1.ws_order_number IN (SELECT ws_order_number FROM ws_wh)
+  AND ws1.ws_order_number IN (SELECT wr_order_number FROM web_returns, ws_wh WHERE wr_order_number = ws_wh.ws_order_number)
+</code></pre>
+<p>The self-join pairs every order's rows with each other only to learn which orders ship from more than one warehouse. The query reads the result only through <code>IN (...)</code>, so what matters is the set of order numbers, not the pairs. The optimizer turns the join into</p>
+<pre><code class="language-sql">SELECT ws_order_number FROM web_sales
+WHERE ws_order_number IS NOT NULL
+GROUP BY ws_order_number
+HAVING min(ws_warehouse_sk) &lt;&gt; max(ws_warehouse_sk)
+</code></pre>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28259" rel="noreferrer">本日合并 PR #28259｜主线 / main｜2026-11-03T11:51:37Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28262"><a href="https://github.com/duckdb/duckdb/pull/28262" rel="noreferrer">PR #28262｜主线 / main</a></p>
+<p>新增表达式重写规则，将同一列或表达式上由OR连接的重叠、接触或整数相邻范围合并为单一范围，使过滤条件可作为普通上下界过滤下推到扫描并裁剪行组。</p>
+<p>重要性与适用范围：适用于生成SQL等包含多个同列范围析取条件的查询，可减少析取过滤求值并改善扫描裁剪；范围边界须为与表达式同类型的常量，不代表所有OR条件都能受益。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+This PR adds an expression rewrite rule that merges range predicates on the same column (or expression) that are joined by <code>OR</code> into a single range when the ranges overlap, touch, or are adjacent integers:</p>
+<pre><code class="language-sql">-- before
+WHERE ss_quantity BETWEEN 1 AND 20 OR ss_quantity BETWEEN 21 AND 40 OR ss_quantity BETWEEN 41 AND 60
+-- after
+WHERE ss_quantity BETWEEN 1 AND 60
+</code></pre>
+<p>Hand-written <code>OR</code>s of ranges show up in generated SQL and in queries like TPC-DS q9, and the filter that #28257 builds when it merges sibling scalar aggregates has exactly this shape. The single range pushes into the scan as a plain <code>&gt;=</code>/<code>&lt;=</code> table filter and prunes row groups, where the <code>OR</code> was evaluated as a disjunction filter. It was prompted by the suggestion on #28257.</p>
+<h3>What is merged</h3>
+<p>The rule runs in the expression rewriter and looks at every <code>OR</code>. A child counts as a range when it restricts one expression to constant bounds of the same type as the expression:</p>
+<ul>
+<li><code>x BETWEEN a AND b</code> (which the binder plans as <code>x &gt;= a AND x &lt;= b</code> for columns, or as a <code>BETWEEN</code> function for other inputs, e.g. <code>abs(x) BETWEEN 1 AND 20</code>),</li>
+<li>a lower and an upper comparison joined by <code>AND</code> (<code>x &gt; 0 AND x &lt;= 20</code>),</li>
+<li>a single comparison (<code>x &lt; 20</code>), which is a range that is open on one side.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28262" rel="noreferrer">本日合并 PR #28262｜主线 / main｜2026-11-03T12:26:26Z</a></p>
+<p class="pr-title" id="digest-pr-duckdb-28038"><a href="https://github.com/duckdb/duckdb/pull/28038" rel="noreferrer">PR #28038｜主线 / main</a></p>
+<p>为字典溢出或禁用字典的Parquet列写入Bloom过滤器，利用已有字典值初始化并继续哈希行组数据；重复值较多时通过按位或合并相邻块来折叠过滤器。</p>
+<p>重要性与适用范围：适用于随机追踪ID等难以通过最小值和最大值裁剪行组的点查场景，可减少无关行组读取；写入端会跳过已排序或预计过滤器相对列块过大的列。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+DuckDB writes Parquet Bloom filters from retained dictionaries. When the dictionary overflows or is disabled, columns get no filter. This often affects random trace IDs and similar keys, where Bloom filters could help skip row groups during lookups.</p>
+<p>This PR also writes filters for these columns when <code>WRITE_BLOOM_FILTER</code> is enabled, which is the default. When the dictionary overflows during analysis, its distinct values seed a filter, and the rest of the row group is hashed into it. When values repeat, the filter shrinks by merging adjacent blocks with bitwise OR, following Bloom filter folding in Parquet (https://pydantic.dev/articles/bloom-filter-folding-parquet-logfire). These remain standard Parquet Bloom filters that recognize every inserted value.</p>
+<h3>Which columns get a filter</h3>
+<p>Bloom filters help when they can exclude row groups that min/max cannot, and when they are small relative to the data. The writer skips a filter, before hashing any value, when:</p>
+<ul>
+<li>the values seen so far are sorted, so min/max already prunes the row group;</li>
+<li>the folded filter is estimated to exceed a quarter of the column chunk. The estimate uses the distinct values the dictionary saw before overflowing.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/duckdb/duckdb/pull/28038" rel="noreferrer">本日合并 PR #28038｜主线 / main｜2026-11-03T14:24:27Z</a></p>
+<h2 id="digest-section-16">ClickHouse</h2>
+<p>来源读取成功：228 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 master。</p>
+<h3 id="digest-section-17">性能优化</h3>
+<p class="pr-title" id="digest-pr-clickhouse-128684"><a href="https://github.com/ClickHouse/ClickHouse/pull/128684" rel="noreferrer">PR #128684｜回移／维护分支 / 26.9</a></p>
+<p>将按序读取的虚拟行优化扩展到带 FINAL 的查询，覆盖 ReplacingMergeTree、CollapsingMergeTree 等合并树引擎的运行时读取路径。</p>
+<p>重要性与适用范围：适用于在相关合并树引擎上使用 FINAL 且按序读取的查询，使其也能利用虚拟行优化；这是既有优化适用范围的扩展与回移，来源未提供可量化的性能收益。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ul>
+<li>Queries with <code>FINAL</code> now use the virtual row optimization of reading in order. Supported for <code>ReplacingMergeTree</code>, <code>CollapsingMergeTree</code>, <code>VersionedCollapsingMergeTree</code>, <code>SummingMergeTree</code>, <code>AggregatingMergeTree</code> and <code>CoalescingMergeTree</code>.</li>
+</ul>
+<p>🤖 Generated with Claude Code (https://claude.com/claude-code)</p>
+<hr />
+<p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=124468&amp;sha=latest&amp;name_0=PR)]</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/128684" rel="noreferrer">本日合并 PR #128684｜回移／维护分支 / 26.9｜2026-11-02T16:59:25Z</a></p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/128683" rel="noreferrer">本日合并 PR #128683｜回移／维护分支 / 26.8｜2026-11-03T12:34:40Z</a></p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/124468" rel="noreferrer">关联原始 PR #124468（历史合并 2026-10-21T08:33:32Z，不是本日新功能）</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-126991"><a href="https://github.com/ClickHouse/ClickHouse/pull/126991" rel="noreferrer">PR #126991｜主线 / master</a></p>
+<p>EXPLAIN WHATIF 在假设跳数索引的扫描量超过行数预算时，改为抽样索引窗口进行估算，并通过 marks_span 展示抽样误差，避免读取全部相关窗口。</p>
+<p>重要性与适用范围：适用于大表上的假设跳数索引评估，可减少为内存构建评估索引而读取的数据；该优化针对评估过程，结果需结合抽样误差解读，不代表实际查询执行性能提升。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Related: https://github.com/ClickHouse/ClickHouse/pull/121766</p>
+<p><code>EXPLAIN WHATIF</code> estimates a hypothetical skip index by building the index in memory. Until now it read every index window that touches the baseline marks. On a large table this reads a lot of data.</p>
+<h3>Changelog category (leave one):</h3>
+<ul>
+<li>Improvement</li>
+</ul>
+<h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
+<p><code>EXPLAIN WHATIF</code> estimates a hypothetical skip index from a sample of index windows when the scan would read more than <code>index_scan_budget_rows</code> rows (10 million by default). It shows the sampling error as <code>marks_span</code></p>
+<hr />
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/126991" rel="noreferrer">本日合并 PR #126991｜主线 / master｜2026-11-02T17:43:22Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-128218"><a href="https://github.com/ClickHouse/ClickHouse/pull/128218" rel="noreferrer">PR #128218｜主线 / master</a></p>
+<p>让连接查询的延迟物化优化穿过 ARRAY JOIN，并将其纳入未使用列裁剪；底层表的行索引随数组展开重复，避免该步骤阻断底层列的延迟读取。</p>
+<p>重要性与适用范围：适用于启用连接延迟物化、包含 ARRAY JOIN 的 LIMIT 查询，可减少底层表不必要的列读取；不适用于非对齐数组展开、带元素过滤的步骤或表达式中的 arrayJoin 函数。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Related: https://github.com/ClickHouse/ClickHouse/pull/122682</p>
+<p>Lazy materialization over joins (<code>query_plan_lazy_materialization_for_join</code>) stopped at an <code>ARRAY JOIN</code>. The whole subtree below the <code>ArrayJoinStep</code>, including a <code>FINAL</code> read, became one source, so none of its columns were read lazily.</p>
+<p>An <code>ARRAY JOIN</code> repeats each row once for each element of its arrays, in the same way as a join repeats a row that matches several times. So the optimization now goes through it:</p>
+<ul>
+<li><code>ArrayJoinStep</code> takes part in the removal of unused columns. Each input column stays at the same position in the output. The step always keeps the columns it reads: the array joined columns, and the inputs of its element filter.</li>
+<li>The merged plan DAG represents the step with <code>ArrayJoinStep::toActionsDAG</code>, and counts it as a join above the values below it. The elements of the arrays are computed below the <code>LIMIT</code>. The optimization does not go through an unaligned <code>ARRAY JOIN</code>, a step with an element filter, or an <code>arrayJoin</code> function in an expression.</li>
+<li>The row index of a lazily read table is repeated together with the rows. The lazy read already handles a repeated row index, as it does for joins.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/128218" rel="noreferrer">本日合并 PR #128218｜主线 / master｜2026-11-02T20:04:52Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-120264"><a href="https://github.com/ClickHouse/ClickHouse/pull/120264" rel="noreferrer">PR #120264｜主线 / master</a></p>
+<p>将未显式指定窗口帧的 row_number 默认帧改为仅包含当前行，使其作为窗口内唯一函数时可流式输出，并允许窗口执行器释放先前数据块及其同值行索引；显式窗口帧保持不变。</p>
+<p>重要性与适用范围：适用于依赖默认窗口帧的 row_number 查询，尤其是大分区场景，可避免为编号缓存整个分区，降低内存压力并提早输出结果；不改变编号结果，混用其他窗口函数时仍受其执行需求约束。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Use <code>ROWS BETWEEN CURRENT ROW AND CURRENT ROW</code> as the function default when no frame is specified. The current-row end allows output to stream, and the advancing start lets the window transform release previous blocks and their peer indexes. <code>row_number</code> depends only on the row position, so this frame preserves its results. Explicit frames remain unchanged. Regression coverage checks ten million rows under a 64 MiB memory limit, named and shared windows, mixed aggregates, and explicit frames.</p>
+<p>Validated the frame behavior with explicit frames on master build <code>977ed4e7292b</code>, whose relevant window-engine sources match this branch's merged master: the old unbounded start exceeds 64 MiB, while inline, named, and shared current-row windows pass. Mixed aggregate, explicit suffix, and partition-reset results also match. These checks use the master binary; the updated PR binary is covered by fresh CI.</p>
+<p>Related: https://github.com/ClickHouse/ClickBench/pull/976<br />
+Related: https://github.com/ClickHouse/clickhouse-private/pull/75207</p>
+<h3>Changelog category (leave one):</h3>
+<ul>
+<li>Performance Improvement</li>
+</ul>
+<h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
+<p><code>row_number</code> now streams rows for its default window frame instead of buffering the entire partition when it is the only function in the window.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/120264" rel="noreferrer">本日合并 PR #120264｜主线 / master｜2026-11-02T20:15:07Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-128651"><a href="https://github.com/ClickHouse/ClickHouse/pull/128651" rel="noreferrer">PR #128651｜主线 / master</a></p>
+<p>优化 TTL 分组聚合执行路径，将分组键和聚合列在数据块及表头中的按名称解析由每行一次改为每块一次，并缓存列指针及表头位置供逐行循环使用。</p>
+<p>重要性与适用范围：适用于配置 TTL ... GROUP BY 的表合并场景，可减少逐行处理时重复的列名哈希查找开销；优化针对 TTL 聚合路径，不代表所有查询或所有表合并均有同等收益。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+<code>TTLAggregationAlgorithm::execute</code> looked up every <code>GROUP BY</code> key column and every aggregated column by name, in both <code>block</code> and <code>header</code>, for every row. That is about 63 M hash lookups per <code>OPTIMIZE</code> in the <code>ttl_group_by_consecutive_keys</code> perf test. This change resolves the columns once per block and keeps the pointers and header positions for the row loop.</p>
+<p>In the perf comparison of https://github.com/ClickHouse/ClickHouse/pull/109239 (commit f819647dc3f6, which includes this change), <code>ttl_group_by_consecutive_keys</code> #0 against master was:</p>
+<ul>
+<li>amd: 1.125 s -&gt; 0.435 s (2.6x faster)</li>
+<li>arm: 1.434 s -&gt; 0.510 s (2.8x faster)</li>
+</ul>
+<p>https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=109239&amp;sha=f819647dc3f6053fea1fa7c102bbf0052cf61420</p>
+<p>Related: https://github.com/ClickHouse/ClickHouse/pull/109239</p>
+<h3>Changelog category (leave one):</h3>
+<ul>
+<li>Performance Improvement</li>
+</ul>
+<h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
+<p>Faster merges of tables with <code>TTL ... GROUP BY</code>: columns are now resolved once per block instead of once per row.</p>
+<p>🤖 Generated with Claude Code (https://claude.com/claude-code)</p>
+<hr />
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/128651" rel="noreferrer">本日合并 PR #128651｜主线 / master｜2026-11-03T02:27:07Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-126130"><a href="https://github.com/ClickHouse/ClickHouse/pull/126130" rel="noreferrer">PR #126130｜主线 / master</a></p>
+<p>优化备份任务调度：无需写入数据的增量备份条目改为内联处理，仅实际写入数据的条目创建任务；文件信息扫描改用TaskTracker，及时回收已完成任务并限制在途任务数量。</p>
+<p>重要性与适用范围：适用于包含大量文件条目的备份，尤其是大量条目无需写入数据的增量备份。任务保留数量受线程池规模约束，减少随条目数量增长的内存开销，并让空闲线程继续处理扫描任务。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+size classes may shift this by some percent). So the peak of each phase carries <code>160 B x entries</code>: 20 MB for 124741 entries, 160 MB for a million, 1.6 GB for ten million.</p>
+<p><strong>Writing.</strong> Most of the entries of an incremental backup have no data file to write, because the base backup already has them, or they are empty. <code>BackupImpl::writeFile</code> only updates the counters of the backup for such an entry and returns, so it now runs inline, as in the single-threaded case, instead of in a task. A reference writes nothing either, so it is named in the same condition. Only the entries that write data get tasks.</p>
+<p><strong>Building the file infos.</strong> The scan now uses <code>TaskTracker</code>, which <code>copyS3File</code> and <code>copyAzureBlobStorageFile</code> already use for the parts of one file, instead of a schedule written here. It keeps a task per entry - so an entry whose checksum is calculated by reading the whole file is picked up by whichever thread is free next, and no thread idles while entries remain - and <code>add</code> admits a task only while fewer than <code>max_tasks_inflight</code> of them are in flight, collecting the finished ones as it goes. The tasks kept at once are therefore bounded by the thread pool rather than by the size of the backup: at <code>backup_threads = 16</code> that is 32 tasks instead of one per file. <code>add</code> also rethrows the first failure, which replaces the <code>failed</code> flag the loop used to carry.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/126130" rel="noreferrer">本日合并 PR #126130｜主线 / master｜2026-11-03T05:39:16Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-115605"><a href="https://github.com/ClickHouse/ClickHouse/pull/115605" rel="noreferrer">PR #115605｜主线 / master</a></p>
+<p>将 hash 与 parallel_hash 统一为同一哈希连接实现，按右表规模阈值选择串行或并行布局，使大右表的 hash 连接可并行构建，小右表则避免固定并行执行。</p>
+<p>重要性与适用范围：优化直接作用于哈希连接的运行时构建路径，不再由算法名称决定并行度；适用于右表规模差异较大的连接负载，部分 ASOF、ANTI 连接也可在阈值允许时采用并行布局。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ol>
+<li>Listing <code>hash</code> or <code>parallel_hash</code> picks the same implementation. <code>parallel_hash</code> reads back as <code>hash</code>, for example in <code>system.settings</code> and in <code>getSetting</code>.</li>
+<li><code>parallel_hash_join_threshold</code> decides whether a hash join uses the parallel layout. <code>hash</code> on a large right table builds in parallel, where it used to be single-threaded. <code>parallel_hash</code> on a right table estimated below the threshold runs single-threaded, where it always ran parallel. If there is no right-table row-count estimate, the parallel layout is used, except with the largest value, <code>18446744073709551615</code>, which always gives the serial layout. <code>0</code> always gives the parallel layout. <code>hash_join_layout = 'serial'</code> or <code>'parallel'</code> forces the layout whatever the estimate. The old analyzer never has an estimate. <code>max_threads</code> does not change the layout. It only sets how many threads can fill a table with the parallel layout, so with <code>max_threads = 1</code> one thread fills all its buckets.</li>
+<li>Parallel build and parallel non-joined-row emission follow <code>JoinKind</code> (<code>INNER</code>, <code>LEFT</code>, <code>RIGHT</code>, <code>FULL</code>). <code>SEMI</code>, <code>ANTI</code> and <code>ASOF</code> use that same gate, so a <code>LEFT ASOF</code> or <code>RIGHT ANTI</code> join gets the parallel layout when the threshold allows it.</li>
+</ol>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/115605" rel="noreferrer">本日合并 PR #115605｜主线 / master｜2026-11-03T08:17:53Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-117754"><a href="https://github.com/ClickHouse/ClickHouse/pull/117754" rel="noreferrer">PR #117754｜主线 / master</a></p>
+<p>Arrow 写入器将超大数据块拆为多个记录批次，RecordBatchEncoder 按行范围直接读取原块，避免复制切片；同一数据块的字典消息也改为仅发送一次。</p>
+<p>重要性与适用范围：针对大字符串列写出的内存压力，写入 2 GiB String 列的峰值内存从 10.4 GB 降至 4.4 GB；共享写入器的 Arrow Flight 服务、ArrowFlight 表引擎插入及 DeltaLake 写入均受益。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+'(SELECT randomString(40000) AS s FROM numbers(60000))')<br />
+Error with a Arrow column &quot;String&quot;: Capacity error:<br />
+array cannot contain more than 2147483646 bytes, have 2147520000.</p>
+<pre><code>
+Both now split such a chunk into as many record batches as it needs. This keeps the schema on
+32-bit offsets, so the output stays readable by every Arrow implementation — unlike switching
+to `LargeUtf8`/`LargeBinary`, which the issue also asks for and which is better done
+separately behind its own setting.
+
+`RecordBatchEncoder` encodes a row range rather than a whole column, so a split batch reads
+its rows out of the chunk instead of copying a slice of it. That cuts the peak memory of
+writing a 2 GiB `String` column from 10.4 GB to 4.4 GB. As a side effect, a chunk's dictionary
+messages are now emitted once for the chunk rather than once per batch.
+
+The Apache Arrow library writer is shared by the Arrow Flight server, the `ArrowFlight` table
+engine's insert path and DeltaLake writes, so all three get the fix.
+
+`Parquet` and `ORC` were already unaffected — they no longer go through Arrow.
+
+### Changelog category (leave one):
+- Bug Fix (user-visible misbehavior in an official stable release)
+
+
+### Changelog entry (a [user-readable short description](https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md) of the changes that goes into CHANGELOG.md):
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #117754｜主线 / master｜2026-11-03T08:52:28Z](https://github.com/ClickHouse/ClickHouse/pull/117754)
+
+[PR #128764｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/128764)
+
+针对由 PromQL 生成的查询禁用自适应聚合器，避免网格聚合中较大的采样窗口状态过早触发线程本地聚合表冻结，并将剩余重型行暂存至合并阶段。
+
+重要性与适用范围：适用于按时间序列分组、每个序列行数较少且聚合状态保留窗口内全部样本的查询，可减少本地聚合过早冻结造成的暂存开销与合并阶段负担。
+
+官方原文证据（保留基准及适用条件）：
+### Changelog category (leave one):
+- Performance Improvement
+
+### Changelog entry (a [user-readable short description](https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md) of the changes that goes into CHANGELOG.md):
+Disable the adaptive aggregator for queries generated from PromQL
+
+The grid aggregation groups by time series with a few rows per series and a state that keeps every sample of its windows, so the adaptive aggregator's byte bound freezes each thread's table after a few series and stages the remaining heavy rows for the merge.
+
+**c01 at S: `sum by (namespace) (rate(container_cpu_usage_seconds_total{job=&quot;cadvisor&quot;, image!=&quot;&quot;}[5m]))`, 30 days at step 15 m; 400 series, 4 threads, 400/4 = 100 series per thread**
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #128764｜主线 / master｜2026-11-03T11:49:00Z](https://github.com/ClickHouse/ClickHouse/pull/128764)
+
+[PR #128759｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/128759)
+
+优化 Iceberg 表 OPTIMIZE 的文件收集与删除处理：避免按快照重复收集文件，使每个位置删除文件对每个适用数据文件只读取一次，减少压实中的重复读取。
+
+重要性与适用范围：适用于启用实验性 Iceberg 压实、且具有较长快照历史的表。多个快照引用相同文件时，此改动可减少删除文件的重复打开和读取，降低历史累积带来的压实开销。
+
+官方原文证据（保留基准及适用条件）：
+### Changelog entry (a [user-readable short description](https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md) of the changes that goes into CHANGELOG.md):
+`OPTIMIZE` of Iceberg tables (`allow_experimental_iceberg_compaction`) now writes the `total-records`, `total-data-files` and `total-files-size` of every rewritten snapshot from its live rewritten files, so a trivial `count()` after compaction matches a full scan, and reads each position delete file once per data file it applies to instead of once for every snapshot that lists the two files, which makes compaction of long histories much cheaper. Closes #128265.
+
+### Description
+
+`getPlan` reads the manifest list of every snapshot, and a manifest list also lists the manifests of earlier snapshots, so each data file and position delete file was collected once per snapshot listing it:
+
+- every copy of a delete file was applied to every copy of a data file, so each delete file was opened many times;
+- `added_records` was the row count of the snapshot's whole live set, and `setSnapshotTotals` adds it to the parent's `total-records` (in the issue: trivial `count()` 3, full scan 2).
+
+Now each file is collected once, and a rewritten snapshot's `added_records`, `added_files` and `added_files_size` are its live rows, data files and bytes minus its parent's when the parent is rewritten too, so each total equals the live value. Counting a data file only under its first snapshot is not enough: a del
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #128759｜主线 / master｜2026-11-03T12:56:03Z](https://github.com/ClickHouse/ClickHouse/pull/128759)
+
+[PR #126963｜主线 / master](https://github.com/ClickHouse/ClickHouse/pull/126963)
+
+调整 SLRU 文件系统缓存的运行时晋升策略：部分下载的文件段在缓存命中时也会移入受保护队列，与完整下载文件段采用相同处理方式。
+
+重要性与适用范围：适用于启用 SLRU 文件系统缓存、窄范围读取与扫描并存的场景，可减少窄范围读取的数据留在试用队列而被扫描驱逐的风险，改善热点数据保留。
+
+官方原文证据（保留基准及适用条件）：
+The `SLRU` filesystem cache policy now moves a partially downloaded file segment to the protected queue on a cache hit, as it does for a fully downloaded one. Before, a scan could evict the data of narrow reads from the probationary queue.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+&lt;!-- CI automatic block start :ci_links: --&gt;
+
+---
+Workflow [[PR](https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=126963&amp;sha=latest&amp;name_0=PR)]
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #126963｜主线 / master｜2026-11-03T14:08:51Z](https://github.com/ClickHouse/ClickHouse/pull/126963)
+
+## StarRocks
+
+来源读取成功：99 条已合并 PR、6 条发布公告、0 条公开安全公告；开发默认分支 main。
+
+### 安全修复
+
+[4.1.2｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.2)
+
+将 pprof 预构建二进制所用的 Go 升级至 1.25.11，纳入 Go 标准库安全修复；公告未列出具体漏洞编号。
+
+重要性与适用范围：此次修复针对随产品提供的 pprof 预构建工具及其 Go 标准库依赖，适用于使用该工具的环境，不能据此推断数据库执行或存储引擎存在同类漏洞。
+
+[4.1.4｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.4)
+
+将 Netty 升级至 4.1.136.Final，修复 STOMP 子帧解码器中的内存耗尽拒绝服务漏洞 CVE-2026-44891。
+
+重要性与适用范围：官方安全条目明确确认依赖升级用于修复该漏洞，涉及 STOMP 子帧解码路径的拒绝服务风险；公告未说明默认部署是否暴露该路径，不能扩大受影响范围。
+
+[4.1.4｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.4)
+
+将 Apache Thrift 升级至 0.24.0，修复 C++ 绑定中的堆缓冲区溢出及无限循环漏洞，对应 CVE-2026-55971 和 CVE-2026-43871。
+
+重要性与适用范围：官方安全条目明确确认此次依赖升级用于修复两项漏洞，对使用相关 Thrift C++ 绑定路径的部署具有安全意义；公告未说明具体触发条件及更广泛的影响范围。
+
+[4.1.4｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.4)
+
+针对CVE-2024-29857，移除与已修复依赖同时存在的旧版易受攻击传递依赖，并增加依赖禁用规则，防止此类依赖再次引入。
+
+重要性与适用范围：官方安全说明明确确认已移除存在漏洞的陈旧依赖，适用于包含这些传递依赖的部署；依赖禁用规则还可降低后续重新引入同类风险的可能。
+
+[4.1.6｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.6)
+
+将 Apache Thrift 升级至 0.24.0，修复其 C++ 绑定中 THeaderTransport::untransform() 的堆缓冲区溢出漏洞 CVE-2026-55971。
+
+重要性与适用范围：此修复针对 Apache Thrift C++ 绑定的特定传输处理路径，涉及相关组件的部署应关注；公告未说明漏洞利用条件及影响范围，不宜扩大为所有查询路径均受影响。
+
+[4.1.6｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.6)
+
+通过将 Apache Ranger 升级至 2.9.0，修复 JDBC URL 注入导致的远程代码执行问题；将 Bouncy Castle 升级至 1.85，修复 DTLS 重组器缓冲区越界问题。
+
+重要性与适用范围：官方安全条目明确确认两项依赖升级用于修复漏洞，涉及 JDBC URL 注入和 DTLS 重组处理路径；使用相关组件及路径的用户应重点评估升级，不能据此认定所有部署均受影响。
+
+[4.0.16｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.0.16)
+
+正式版本通过升级 Apache Ranger、Bouncy Castle、Netty、ZooKeeper 等依赖修复安全漏洞，同时统一 gRPC 依赖管理，并停止在 Java 扩展读取器库目录中分发测试依赖。
+
+重要性与适用范围：官方公告明确确认已修复依赖相关安全漏洞，涉及多项第三方组件及 Broker、Java 扩展读取器的依赖分发；使用相关组件的部署应评估升级，但公告未列明具体漏洞编号及受影响条件。
+
+[4.0.17｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.0.17)
+
+通过升级 ZooKeeper、broker Tomcat、BouncyCastle、jackson、zstd-jni、parquet 和 lz4-java 依赖，修复官方公告明确确认的安全漏洞。
+
+重要性与适用范围：此项修复覆盖多项第三方依赖，适用于使用相关组件的部署；公告未列出具体漏洞编号、影响条件或利用方式，因此不能据此判断各部署的实际风险及漏洞严重程度。
+
+### 性能优化
+
+[4.1.2｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.2)
+
+日期时间与日期类型转换为字符串时，改为直接写入输出缓冲区，消除逐行堆内存分配，优化类型转换的运行时执行路径。
+
+重要性与适用范围：适用于查询中包含日期时间或日期转字符串操作的场景，可减少逐行转换带来的内存分配开销；公告未提供基准数据，无法量化实际收益。
+
+官方原文证据（保留基准及适用条件）：
+### Improvements
+- `DATETIME`/`DATE`-to-string casts now write directly to the output buffer, eliminating per-row heap allocations. [#73801](https://github.com/StarRocks/starrocks/pull/73801)
+
+[4.1.2｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.2)
+
+修复 JDBC getTable() 在每次缓存未命中时额外调用 getTableComment() 的问题，消除冗余往返请求，缩短查询规划阶段的锁持有时间。
+
+重要性与适用范围：适用于 JDBC 表元数据缓存未命中且查询规划与 DDL 并发的场景，可减少额外元数据请求引发的长时间持锁及并发 DDL 阻塞。
+
+官方原文证据（保留基准及适用条件）：
+### Bug Fixes
+- JDBC `getTable()` performed an extra `getTableComment()` round-trip on every cache miss, extending the intensive planning-phase lock hold and blocking concurrent DDL. [#73488](https://github.com/StarRocks/starrocks/pull/73488)
+
+[4.1.2｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.2)
+
+优化 BackendLoadStatistic.init 对单一存储介质 BE 的检查路径，将原先开销较高的逐副本扫描改为 O(1) 检查。
+
+重要性与适用范围：该优化适用于磁盘存储介质同质的 BE，避免初始化负载统计时逐个扫描副本的开销；收益范围限于该检查路径，不代表整体查询性能提升。
+
+官方原文证据（保留基准及适用条件）：
+### Bug Fixes
+- `BackendLoadStatistic.init` performed an expensive per-replica scan on BEs with a single storage medium; the check is now O(1) for homogeneous-disk BEs. [#73555](https://github.com/StarRocks/starrocks/pull/73555)
+
+[4.1.2｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.2)
+
+统计信息收集新增可选的宽字符串列隔离机制，针对含多个宽字符串列的表，降低收集统计信息时单个查询的内存峰值。
+
+重要性与适用范围：适用于包含多个宽字符串列且统计信息收集内存压力较高的表；该机制需主动启用，优化范围是统计信息收集过程，而非所有查询。
+
+官方原文证据（保留基准及适用条件）：
+### Improvements
+- Added opt-in wide-string column isolation for statistics collection to reduce per-query memory peaks when collecting statistics on tables with multiple wide string columns. [#73258](https://github.com/StarRocks/starrocks/pull/73258)
+
+[4.1.2｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.2)
+
+慢锁日志增加按事件限流和可配置的堆栈采集控制，用于防止高锁竞争场景下慢锁诊断引发 JVM 安全点停顿。
+
+重要性与适用范围：适用于锁竞争激烈且需要慢锁诊断的运行环境，可控制诊断过程的运行时开销，降低诊断活动干扰服务执行的风险。
+
+官方原文证据（保留基准及适用条件）：
+### Improvements
+- Slow-lock logging now supports per-event rate limiting and configurable stack-capture controls to prevent JVM safepoint stalls under high lock contention. [#73647](https://github.com/StarRocks/starrocks/pull/73647)
+
+[4.1.4｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.4)
+
+修复共享数据模式下湖表采样选项未传递至执行后端的问题，使 TABLESAMPLE / SAMPLE 子句及 ANALYZE SAMPLE TABLE 实际执行采样，避免此前退化为全表扫描。
+
+重要性与适用范围：适用于共享数据模式下使用湖表采样查询或采样统计信息收集的场景，可避免采样选项失效造成的全表扫描；该改动不涉及未使用采样选项的查询。
+
+官方原文证据（保留基准及适用条件）：
+### Behavior Changes
+- In shared-data mode, the `TABLESAMPLE` / `SAMPLE` clause and `ANALYZE SAMPLE TABLE` now take effect on lake tables. Previously the sample options never reached the BE, so a full scan was performed. [#71874](https://github.com/StarRocks/starrocks/pull/71874)
+
+[4.1.4｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.4)
+
+ANALYZE ... UPDATE HISTOGRAM ON 对字符类型列不再计算优化器不会使用的直方图，仅计算最常见值（MCV），减少统计信息分析开销。
+
+重要性与适用范围：适用于对字符类型列执行直方图统计分析的场景，通过省去优化器不使用的直方图计算降低分析成本；该优化针对统计信息收集过程，并非直接加速查询执行。
+
+官方原文证据（保留基准及适用条件）：
+### Behavior Changes
+- `ANALYZE ... UPDATE HISTOGRAM ON` no longer computes histograms for char-family columns (which the optimizer does not use) and computes only MCVs, reducing analyze cost. [#75968](https://github.com/StarRocks/starrocks/pull/75968)
+
+[4.1.4｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.4)
+
+调整多语句流式导入的通道启动顺序，在进入等待前先触发相关导入通道，减少该类数据导入操作的延迟。
+
+重要性与适用范围：适用于使用多语句流式导入的场景，优化直接涉及导入运行时的通道调度与等待路径；公告未提供量化收益或基准条件。
+
+官方原文证据（保留基准及适用条件）：
+### Improvements
+- Fires multi-statement stream load channels before waiting, reducing load latency. [#76715](https://github.com/StarRocks/starrocks/pull/76715)
+
+[4.1.4｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.4)
+
+调整范围共置表基于采样的 tablet 预切分逻辑，将新分片分散到多个计算节点，而非集中在源 tablet 所在节点，改善范围批量导入性能。
+
+重要性与适用范围：适用于使用范围共置表且触发采样预切分的批量导入场景，通过分散新分片避免导入负载集中在单个计算节点，不代表所有导入模式均有收益。
+
+官方原文证据（保留基准及适用条件）：
+### Behavior Changes
+- Sample-based tablet pre-split on range-colocate tables now spreads new shards across compute nodes instead of packing them onto the source tablet's worker, fixing range batch imports that were roughly 3x slower than hash. [#76608](https://github.com/StarRocks/starrocks/pull/76608)
+
+[4.1.4｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.4)
+
+为 Iceberg 分区缓存增加内存容量约束，不再仅按条目数量限制缓存，并暴露其使用情况，防止多分区表导致缓存无界增长。
+
+重要性与适用范围：适用于包含大量分区的 Iceberg 表，通过直接限制运行时缓存的内存占用，降低缓存持续增长带来的内存压力，并改善资源使用的可观测性。
+
+官方原文证据（保留基准及适用条件）：
+### Behavior Changes
+- The Iceberg partition cache is now bounded by memory (not just entry count) and its usage is exposed, preventing unbounded growth on tables with many partitions. [#76165](https://github.com/StarRocks/starrocks/pull/76165)
+
+[4.1.6｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.6)
+
+默认启用 jemalloc 专用超大分配内存区，使大块内存分配不再进入调用线程的每 CPU 内存区，改善大缓冲区复用并减少内存碎片。
+
+重要性与适用范围：该优化针对大块内存分配场景，可改善大缓冲区的复用与碎片问题，并改变 BE 和 CN 的内存在各内存区之间的分布，适合关注内存分配行为的大缓冲区工作负载。
+
+官方原文证据（保留基准及适用条件）：
+### Behavior Changes
+- jemalloc's dedicated oversize arena is enabled by default, so large allocations no longer land in the per-CPU arena of the calling thread. This improves reuse of large buffers and reduces fragmentation, and changes how BE and CN memory is distributed across arenas. [#78396](https://github.com/StarRocks/starrocks/pull/78396)
+
+[4.1.6｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.6)
+
+Hudi 扫描在同一次扫描的多个分区间复用元数据读取器，避免为每个分区重复构建，缩短启用 Hudi 元数据表时多分区表的查询规划耗时。
+
+重要性与适用范围：该优化针对 Hudi 数据源的查询规划路径，适用于已启用 Hudi 元数据表且分区较多的表，可减少重复初始化开销；不能据此推断扫描执行阶段的性能收益。
+
+官方原文证据（保留基准及适用条件）：
+### Improvements
+- Hudi metadata readers are now reused across the partitions of one scan instead of being rebuilt per partition, which shortens planning for tables with many partitions when the Hudi metadata table is enabled. [#79367](https://github.com/StarRocks/starrocks/pull/79367)
+
+[4.1.7｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.7)
+
+本地共享无主键表插入默认跳过不可变L1、L2持久化索引文件的重复键检查，仍始终执行L0内存表检查，可通过BE配置恢复原行为。
+
+重要性与适用范围：该改动减少本地共享无主键表插入路径中的持久化索引检查，适用于此类表的写入场景；不涉及其他表类型，公告未提供性能基准或量化收益。
+
+官方原文证据（保留基准及适用条件）：
+### Behavior Changes
+- Local (shared-nothing) Primary Key inserts no longer check the immutable L1 and L2 persistent-index files for duplicate keys by default. The new BE configuration `skip_pindex_l1_l2_check_in_insert` defaults to `true`; L0 (memtable) checks are always performed. Set it to `false` to restore the previous behavior. [#81304](https://github.com/StarRocks/starrocks/pull/81304)
+
+[4.1.7｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.7)
+
+Lake 复制的文件拷贝改用 CN 级专用线程池，调整默认线程数，并为单个 tablet 的并行文件拷贝设置上限，从节点与 tablet 两个层级约束复制并发。
+
+重要性与适用范围：适用于使用 Lake 复制的场景，优化对象是文件拷贝任务的并发调度与线程资源管理。节点级线程池和单 tablet 并发限制改变运行时复制路径，但公告未提供性能收益数据。
+
+官方原文证据（保留基准及适用条件）：
+### Behavior Changes
+- Lake replication file copies now run in a dedicated CN-wide pool. `lake_replication_file_copy_threads` defaults to `16` instead of `0` (which meant 4 × CPU cores), and the new `lake_replication_max_parallel_files_per_tablet` (default `4`) bounds the files copied in parallel for one tablet. [#78078](https://github.com/StarRocks/starrocks/pull/78078)
+
+[4.1.7｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.7)
+
+优化大型主键索引在发布阶段的删除处理，通过并行反向查找和 tombstone SSTable 路径加快删除操作。
+
+重要性与适用范围：适用于发布阶段涉及大型主键索引删除的场景，改动直接优化该阶段的运行时处理路径；公告未提供量化收益，不能据此推断整体查询性能提升。
+
+官方原文证据（保留基准及适用条件）：
+### Improvements
+- Large Primary Key index deletes during publish are faster, using a parallel reverse lookup and a tombstone sstable path. [#76785](https://github.com/StarRocks/starrocks/pull/76785)
+
+[4.1.7｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.1.7)
+
+UNNEST 对可空数组及 LEFT JOIN 场景采用零拷贝，多数组展开改为逐块处理，避免物化整个输入块；其余表函数增加内存不足防护。
+
+重要性与适用范围：优化直接作用于数组展开的运行时路径，适用于可空数组、LEFT JOIN 和多数组展开查询，可减少复制与整体物化开销；公告未提供量化性能收益。
+
+官方原文证据（保留基准及适用条件）：
+### Improvements
+- `UNNEST` is zero-copy for nullable arrays and with `LEFT JOIN`, expands multiple arrays one chunk at a time instead of materializing the whole input chunk, and the remaining table functions are guarded against out-of-memory. [#79221](https://github.com/StarRocks/starrocks/pull/79221) [#79222](https://github.com/StarRocks/starrocks/pull/79222)
+
+[PR #82045｜主线 / main](https://github.com/StarRocks/starrocks/pull/82045)
+
+调整物化视图切换至 REFRESH ON_CHANGE 时的处理逻辑，仅重置调度字段，保留版本映射、增量基线及进行中刷新的暂存状态，避免触发不必要的全量重算。
+
+重要性与适用范围：适用于切换至事件触发刷新的物化视图：PCT 视图仅刷新自上次刷新以来发生变化的分区，增量视图继续增量刷新，减少调度方式变更引起的额外计算与数据扫描。
+
+官方原文证据（保留基准及适用条件）：
+- On `ON_CHANGE`, reset only the schedule fields (start time, define-start-time, step = 0, time unit = null), the same fields the `EVERY` form sets; the version maps, the TVR baseline and the staged pinned state are kept. `step == 0 &amp;&amp; timeUnit == null` is what `isLoadTriggeredRefresh()` and `TaskBuilder.updateTaskInfo(task, mv)` read as event-triggered, so a later task rebuild (activation, swap,...) cannot turn the view periodic again, and `SHOW CREATE` prints no `START` / `EVERY`.
+- Nothing else changes around it: the scheme is still copied under the MV's write lock and published through `MVVersionManager.publishRefreshScheme` with the version-map reset epoch read before the copy (as for `EVERY` / `MANUAL`), the task is still switched to `EVENT_TRIGGERED` with its schedule cleared through `TaskManager.alterTask`, and the journaled context is replayed verbatim on followers.
+- **Behavior change, also for the community code this syncs to:** PCT views no longer do that one full refresh after `ALTER... REFRESH ON_CHANGE`; the refresh it triggers refreshes only the partitions that changed since the last refresh. Incremental views stay incremental.
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #82045｜主线 / main｜2026-11-03T05:52:28Z](https://github.com/StarRocks/starrocks/pull/82045)
+
+[PR #82129｜主线 / main](https://github.com/StarRocks/starrocks/pull/82129)
+
+在关闭湖表批量版本发布时，将分区可发布性检查提前至事务认领之前；若所有未完成分区均处于失败退避期，则跳过事务，避免每轮守护循环重复记录发布开始日志和构建异步任务。
+
+重要性与适用范围：适用于关闭批量发布且存在分区发布失败重试的湖表场景，可减少退避期间的无效调度与对象构建；仍允许就绪分区发布、退避到期重试，以及分区全部发布后的事务收尾。
+
+官方原文证据（保留基准及适用条件）：
+## Why I'm doing:
+
+Fixes #82132
+
+When `lake_enable_batch_publish_version=false`, every daemon tick enters `publishLakeTransactionAsync` before partition-level failure backoff is checked. A transaction waiting to retry therefore keeps logging `start publish lake` and rebuilding futures. #81803 fixed the equivalent single-transaction batch path.
+
+## What I'm doing:
+
+Reuse `batchHasPublishablePartition` in the non-batch entrypoint after the existing in-flight checks and before claiming the transaction. Skip the transaction while all unfinished partitions are backing off. Continue when any partition can publish, when the retry interval expires, or when all partitions are published and only transaction finish remains.
+
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #82129｜主线 / main｜2026-11-03T06:08:11Z](https://github.com/StarRocks/starrocks/pull/82129)
+
+[本日合并 PR #82257｜回移／维护分支 / branch-4.1｜2026-11-03T06:52:50Z](https://github.com/StarRocks/starrocks/pull/82257)
+
+[本日合并 PR #82258｜回移／维护分支 / branch-4.0｜2026-11-03T06:53:23Z](https://github.com/StarRocks/starrocks/pull/82258)
+
+[本日合并 PR #82255｜回移／维护分支 / branch-4.2｜2026-11-03T07:12:22Z](https://github.com/StarRocks/starrocks/pull/82255)
+
+[PR #82164｜主线 / main](https://github.com/StarRocks/starrocks/pull/82164)
+
+默认开启湖存储多表事务批量发布，将连续的多表事务合并到一次发布中，替代每个多表事务独立发布的默认运行路径。
+
+重要性与适用范围：适用于高频提交小型原子多表事务的负载，例如向多张表分发的 CDC 微批次；批量发布可缓解逐事务依赖链造成的积压及提交到可见延迟增长。
+
+官方原文证据（保留基准及适用条件）：
+## Why I'm doing:
+
+Lake batch publish can group consecutive multi-table transactions into one publish (StarRocks, in 4.1.5-ee and 26.2.0-ee), but only when the FE config `lake_enable_batch_publish_multi_table` is on, and it defaults to `false`.
+
+With it off, every multi-table transaction is published on its own. Each transaction chains on the previous writer of every table it touches, so workloads that commit small atomic multi-table transactions at a high rate (for example CDC micro-batches fanning out to several tables) serialize into one dependency chain, and the commit-to-visible latency grows with the backlog depth.
+
+## What I'm doing:
+
+- `Config.java`: `lake_enable_batch_publish_multi_table` defaults to `true`. The old comment said to enable it only after all FEs are upgraded; it now says when to turn it off instead (see compatibility below).
+- FE parameter docs (en/zh/ja `shared_lake_other.md`): default `true`, &quot;From v26.3 onwards, the default value is changed from `false` to `true`&quot;, and the upgrade/downgrade steps below.
+
+
+状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。
+
+[本日合并 PR #82164｜主线 / main｜2026-11-03T06:20:35Z](https://github.com/StarRocks/starrocks/pull/82164)
+
+[本日合并 PR #82260｜回移／维护分支 / branch-4.2｜2026-11-03T06:52:25Z](https://github.com/StarRocks/starrocks/pull/82260)
+
+[4.0.16｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.0.16)
+
+默认启用 jemalloc 专用超大分配 arena，使大块内存分配不再进入调用线程的每 CPU arena，改善大缓冲区复用并减少内存碎片。
+
+重要性与适用范围：该优化面向 BE 和 CN 的大块内存分配路径，对频繁申请大缓冲区的负载更有意义；同时会改变内存在各 arena 间的分布，需关注相关内存观测指标。
+
+官方原文证据（保留基准及适用条件）：
+### Behavior Changes
+- jemalloc's dedicated oversize arena is enabled by default, so large allocations no longer land in the per-CPU arena of the calling thread. This improves reuse of large buffers and reduces fragmentation, and changes how BE and CN memory is distributed across arenas. [#78396](https://github.com/StarRocks/starrocks/pull/78396)
+
+[4.0.16｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.0.16)
+
+修复基于 Paimon 基表的物化视图刷新未下推分区谓词的问题，使刷新能够利用分区过滤，避免因此触发全表扫描。
+
+重要性与适用范围：适用于以 Paimon 分区表为基表、刷新时可利用分区条件的物化视图，可减少不必要的数据扫描；公告未提供量化性能收益。
+
+官方原文证据（保留基准及适用条件）：
+### Bug Fixes
+- A materialized view refresh on a Paimon base table performed a full scan because the partition predicate was not pushed down. [#61813](https://github.com/StarRocks/starrocks/pull/61813)
+
+[4.0.16｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.0.16)
+
+修复存算分离模式下 Flat JSON 纵向合并内存占用偏高的问题，处理合并器保留上一结果列及根元数据未计入子项的问题。
+
+重要性与适用范围：该优化针对存算分离模式下的 Flat JSON 纵向合并运行路径，有助于减少不必要的内存占用；公告未提供基准数据，不宜量化收益。
+
+官方原文证据（保留基准及适用条件）：
+### Bug Fixes
+- Flat JSON vertical compaction in shared-data mode used more memory than necessary, because the merger retained the previous result column and the root metadata did not account for its children. [#77682](https://github.com/StarRocks/starrocks/pull/77682)
+
+[4.0.16｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.0.16)
+
+优化EXCEPT与INTERSECT的键序列化内存分配：针对按数据块最宽行估算缓冲区造成超大申请的情况，改为逐行序列化。
+
+重要性与适用范围：适用于EXCEPT与INTERSECT处理含超宽行的数据块，可避免单个宽行触发巨额内存池申请；来源未提供查询耗时或吞吐量基准。
+
+官方原文证据（保留基准及适用条件）：
+### Bug Fixes
+- `EXCEPT` and `INTERSECT` sized their serialization buffer from the widest row in the chunk, so a single fat row could ask the memory pool for hundreds of gigabytes. Keys are now serialized row by row in that case. [#77821](https://github.com/StarRocks/starrocks/pull/77821)
+
+[4.0.16｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.0.16)
+
+SQL 黑名单校验在模式匹配期间不再持有全局读锁，避免高开销模式或并发增删黑名单操作在 SQL 入口阻塞所有查询。
+
+重要性与适用范围：该优化针对启用 SQL 黑名单的查询入口并发路径，尤其适用于匹配规则开销较大或频繁调整黑名单的场景，可减少全局锁竞争造成的查询阻塞。
+
+官方原文证据（保留基准及适用条件）：
+### Behavior Changes
+- SQL blacklist verification no longer holds a global read lock while matching, so an expensive pattern or a concurrent `ADD`/`DELETE SQLBLACKLIST` no longer stalls every query at the SQL entry point. [#78476](https://github.com/StarRocks/starrocks/pull/78476)
+
+[4.0.16｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.0.16)
+
+将分组集下推规则从原有的MAX、MIN和SUM扩展至AVG与COUNT，优化超过三层的ROLLUP、CUBE和GROUPING SETS查询。
+
+重要性与适用范围：适用于包含AVG或COUNT聚合且分组层级超过三层的多维汇总查询，通过扩大分组集下推的适用范围加速执行；公告未提供量化性能收益。
+
+官方原文证据（保留基准及适用条件）：
+### Improvements
+- Extended the grouping-sets push-down rule to `AVG` and `COUNT`, in addition to `MAX`, `MIN`, and `SUM`, which speeds up `ROLLUP`, `CUBE`, and `GROUPING SETS` queries with more than three levels. [#77832](https://github.com/StarRocks/starrocks/pull/77832)
+
+[4.0.16｜正式发布公告](https://github.com/StarRocks/starrocks/releases/tag/4.0.16)
+
+在 arm64 平台同时提供适配 4K 与 64K 页的 jemalloc，并在运行时选择，避免常见 4K 页内核因使用 64K 分配粒度产生额外内存开销。
+
+重要性与适用范围：该优化适用于使用常见 4K 页内核的 arm64 部署，可减少分配器页粒度不匹配造成的内存浪费；公告未提供量化收益，也未说明查询速度变化。
+
+官方原文证据（保留基准及适用条件）：
+### Improvements
+- On arm64, a 4K-page jemalloc variant is built alongside the 64K one and selected at runtime, which avoids the memory overhead of 64K page granularity on the common 4K-page kernels. The jemalloc libraries now live in dedicated directories selected through `LD_LIBRARY_PATH` instead of runtime symlink manipulation. [#77886](https://github.com/StarRocks/starrocks/pull/77886) [#67667](https://github.com/StarRocks/starrocks/pull/67667)
+
+[PR #82293｜主线 / main](https://github.com/StarRocks/starrocks/pull/82293)
+
+优化 array_map 的复杂类型子字段裁剪，将 lambda 对数组元素的字段访问路径传递到扫描列，仅读取所需子字段；对函数生成的数组及下层投影产生的数组仍保留完整读取。
+
+重要性与适用范围：适用于扫描数组列或其结构体子字段、且 lambda 仅访问部分元素字段的查询，可减少无关字段读取。整体使用参数或存在提升表达式的 lambda 保持原有行为，优化不覆盖任意数组表达式。
+
+官方原文证据（保留基准及适用条件）：
+2. In `array_map`, the lambda argument is bound to the array's elements and the result is built only from what the lambda returns. So the paths the lambda takes into `x` become the paths into `arr`'s elements. They are propagated only when `arr` is a scan column or struct subfields of one (or of an enclosing lambda's argument that is). Every other array is read in full, as before:
+ - Anything computed by a function may reshape the elements (e.g. `map_entries`).
+ - A column produced by a lower projection keeps its full declared type. Only scan columns are narrowed, so narrowing the scan under such a column would make the two widths disagree across an exchange.
+ - An argument used whole, or a lambda with hoisted expressions, keeps the old behavior.
+3. `map_entries` goes through the generic unknown-expression path, which reads the map in full.
+
+</code></pre>
+<p>array_map(x -&gt; x.a, col.items) -&gt; col pruned to items&lt;a&gt;</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82293" rel="noreferrer">本日合并 PR #82293｜主线 / main｜2026-11-03T13:02:55Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82302" rel="noreferrer">本日合并 PR #82302｜回移／维护分支 / branch-4.0｜2026-11-03T13:36:38Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82304" rel="noreferrer">本日合并 PR #82304｜回移／维护分支 / branch-4.1｜2026-11-03T13:37:46Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82303" rel="noreferrer">本日合并 PR #82303｜回移／维护分支 / branch-4.2｜2026-11-03T13:49:06Z</a></p>
+<p class="pr-title" id="digest-pr-starrocks-82294"><a href="https://github.com/StarRocks/starrocks/pull/82294" rel="noreferrer">PR #82294｜主线 / main</a></p>
+<p>调整 Iceberg manifest 缓存的统计列选择顺序，优先保留配置为写入上下界的列，并缓存及返回文件级 columnSizes，使平均行宽统计路径也能使用缓存。</p>
+<p>重要性与适用范围：适用于宽表且统计缓存列数受限的场景，减少仅含计数的列挤占可用于文件裁剪的统计列，并补足行宽估算所需信息；未提供查询加速的基准数据。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<ul>
+<li><code>write.metadata.metrics.default=counts</code> with a few <code>truncate</code>/<code>full</code> columns: more than 100 counts-only columns with lower field ids crowd out the columns that have min/max.</li>
+<li>No explicit default and more than 100 leaf columns: Iceberg writes <code>truncate(16)</code> for the first 100 and none for the rest, and a column set explicitly with <code>write.metadata.metrics.column.&lt;col&gt;</code> and a high field id may rank past the limit.</li>
+</ul>
+<p>The cache also drops <code>columnSizes</code>, which the column statistics path needs (average row width), so that path cannot be served from the cache.</p>
+<h2>What I'm doing:</h2>
+<ul>
+<li>Rank the candidate columns in tiers from the table's current <code>MetricsConfig</code>: explicit per-column modes that write bounds, then other columns whose mode writes bounds, then counts-only / none / dropped columns. Inside a tier the order is unchanged (top-level before struct fields, then field id). The config only orders the columns; what is stored still comes from the manifest. If the config cannot be read, the old order is kept. Cost: once per scan planning, O(properties + columns) map lookups.</li>
+<li>Store per-file <code>columnSizes</code> in <code>ManifestColumnStats</code> with the same compact encodings as the counts, read <code>column_sizes</code> from the manifest when the column-wise layout is used, and return them from cached <code>DataFileWrapper</code>s.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82294" rel="noreferrer">本日合并 PR #82294｜主线 / main｜2026-11-03T13:23:26Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82306" rel="noreferrer">本日合并 PR #82306｜回移／维护分支 / branch-4.2｜2026-11-03T14:10:51Z</a></p>
+<p class="pr-title" id="digest-pr-starrocks-81578"><a href="https://github.com/StarRocks/starrocks/pull/81578" rel="noreferrer">PR #81578｜主线 / main</a></p>
+<p>物化视图刷新作业通过向后续任务传递首次运行的处理开始时间来统计耗时，移除终末任务记录耗时时对任务运行历史表的同步查询，覆盖 PCT 和 IVM 刷新路径。</p>
+<p>重要性与适用范围：该改动消除刷新成功后、任务执行结束前的额外查询等待，减少对下一次刷新的阻塞，尤其适用于实时 IVM 场景；单次运行也不再承担最终被丢弃的历史查询开销。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+<code>recordRefreshJobDuration</code> ran a synchronous DQL against <code>_statistics_.task_run_history</code> on the terminal MV refresh run, between <code>refresh mv success</code> and <code>finished to execute task run</code>. For single-run jobs the lookup was always discarded (<code>startTaskRunId</code> filter). That extra wait delays the next refresh and affects real-time IVM.</p>
+<h2>What I'm doing:</h2>
+<ul>
+<li>Add internal task-run property <code>MV_REFRESH_JOB_PROCESS_START_TIME</code>: the first run's <code>processStartTime</code>, written only onto the <strong>next</strong> run (same spawn path as <code>MV_FRESHNESS_BASELINE_TIME</code>). The first/single run does not carry the key. <code>processStartTime &lt;= 0</code> is not written as <code>&quot;0&quot;</code>.</li>
+<li>Do not put the property in <code>MV_UNCOPYABLE_PROPERTIES</code> or <code>MV_COMPARABLE_PROPERTIES</code>, and do not treat it as a Task-level property.</li>
+<li><code>recordRefreshJobDuration</code> no longer calls <code>lookupLastJobOfTasks</code>. Missing key uses this run's <code>processStartTime</code> (<code>createTime</code> if unset); present and <code>parseLong &gt; 0</code> uses the property; present but non-numeric or <code>&lt;= 0</code> warns and <strong>skips this duration sample</strong> (job success counters still increment). End time is <code>finishTime</code> if set, else <code>now()</code>.</li>
+<li>Seed on both PCT and IVM next-run spawn. No upgrade path: unfinished runs are cleared on leader start, so the next refresh is a new job.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81578" rel="noreferrer">本日合并 PR #81578｜主线 / main｜2026-11-03T14:25:58Z</a></p>
+<p class="pr-title" id="digest-pr-starrocks-81767"><a href="https://github.com/StarRocks/starrocks/pull/81767" rel="noreferrer">PR #81767｜主线 / main</a></p>
+<p>为共享数据集群的异步物化视图启用文件捆绑：创建时支持指定该属性，未指定时遵循前端配置，使刷新产出的文件也能采用捆绑机制。</p>
+<p>重要性与适用范围：适用于共享数据集群中频繁刷新的异步物化视图，可减少原先按 tablet 发起的对象存储请求及其开销；共享无数据集群不支持该属性。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+File bundling bundles the files that loading, compaction and publish produce on a shared-data table, which cuts the cost of frequent object-storage requests. New shared-data tables get it by default through the FE config <code>enable_file_bundling</code>, and <code>ALTER TABLE</code> can switch it on an existing table.</p>
+<p>Shared-data asynchronous materialized views never got it. <code>CREATE MATERIALIZED VIEW</code> rejects <code>file_bundling</code> as an unknown property, <code>enable_file_bundling</code> only applies to <code>CREATE TABLE</code>, and <code>ALTER MATERIALIZED VIEW</code> cannot change the property. Every materialized view therefore keeps per-tablet metadata, and every refresh pays the per-tablet requests that file bundling avoids for tables.</p>
+<h2>What I'm doing:</h2>
+<ul>
+<li><code>CREATE MATERIALIZED VIEW</code> on a shared-data cluster reads <code>file_bundling</code>. When the property is omitted, <code>enable_file_bundling</code> (default <code>true</code>) decides, the same as <code>CREATE TABLE</code>. On a shared-nothing cluster the property is rejected with an explicit error instead of the generic unknown-property message.</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/81767" rel="noreferrer">本日合并 PR #81767｜主线 / main｜2026-11-03T14:28:00Z</a></p>
+<p class="pr-title" id="digest-pr-starrocks-82299"><a href="https://github.com/StarRocks/starrocks/pull/82299" rel="noreferrer">PR #82299｜主线 / main</a></p>
+<p>调整子字段访问的公共子表达式重写逻辑，先重写子表达式再尝试替换整个字段访问，使多个字段共享同一结构体表达式，避免重复执行结构体转换及其上游计算。</p>
+<p>重要性与适用范围：适用于从同一结构体表达式读取多个字段的查询，包括 JSON、VARIANT 转结构体以及 row、named_struct 等场景；优化减少投影中的重复求值，并非仅针对 VARIANT 的特殊处理。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+The cause is in common sub-expression reuse: <code>ScalarOperatorsReuse.ScalarOperatorRewriter#visitSubfield</code> only descends into a subfield whose child is <code>dictionary_get</code> and returns every other subfield unchanged. The collector does find <code>CAST(...)</code> as a common operator, but the rewrite is a no-op, so the projection gives up on reuse. This is not specific to VARIANT: any <code>expr.field</code> reused several times (struct casts from JSON/VARIANT, <code>row(...)</code>, <code>named_struct(...)</code>, struct column fields) is affected.</p>
+<h2>What I'm doing:</h2>
+<p>Make <code>visitSubfield</code> rewrite its child and then try to replace the whole subfield, the same way <code>visitCollectionElement</code> does. The shared struct expression becomes one common expression and each field reads from it:</p>
+<pre><code>8 &lt;-&gt; [16: cast, struct&lt;...&gt;].k01[false]
+9 &lt;-&gt; [16: cast, struct&lt;...&gt;].k02[false]
+common expressions:
+16 &lt;-&gt; cast([15: cast, VARIANT] as struct&lt;...&gt;)
+</code></pre>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82299" rel="noreferrer">本日合并 PR #82299｜主线 / main｜2026-11-03T14:33:55Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82318" rel="noreferrer">本日合并 PR #82318｜回移／维护分支 / branch-4.1｜2026-11-03T15:09:11Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82317" rel="noreferrer">本日合并 PR #82317｜回移／维护分支 / branch-4.0｜2026-11-03T15:13:07Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82319" rel="noreferrer">本日合并 PR #82319｜回移／维护分支 / branch-4.2｜2026-11-03T15:21:41Z</a></p>
+<h3 id="digest-section-30">重大新功能</h3>
+<p><a href="https://github.com/StarRocks/starrocks/releases/tag/4.1.2" rel="noreferrer">4.1.2｜正式发布公告</a></p>
+<p>新增对外部目录中 Paimon 视图的支持，可创建、替换、删除、查看定义并查询视图；视图内部的表引用改为在 Paimon 目录而非默认目录中解析。</p>
+<p>重要性与适用范围：扩展了 Paimon 外部数据源的视图操作与查询能力，适用于需要通过 StarRocks 管理和访问 Paimon 视图的用户，并明确了跨目录场景下的表引用解析范围。</p>
+<p class="pr-title" id="digest-pr-starrocks-82275"><a href="https://github.com/StarRocks/starrocks/pull/82275" rel="noreferrer">PR #82275｜主线 / main</a></p>
+<p>支持共享数据集群中的范围共置表及异步物化视图在线修改排序键，重写后的 tablet 仍与共置范围及 PACK 分片组对齐，保持共置组稳定。</p>
+<p>重要性与适用范围：使用范围共置组的用户调整排序键时不再必须重建表；新排序键须以共置列为前缀，且列顺序与类型保持一致，适用于受此前限制的表和物化视图。</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82275" rel="noreferrer">本日合并 PR #82275｜主线 / main｜2026-11-03T09:40:58Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/82288" rel="noreferrer">本日合并 PR #82288｜回移／维护分支 / branch-4.2｜2026-11-03T10:15:14Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/releases/tag/4.1.7" rel="noreferrer">本日官方发布来源：4.1.7（正式发布）</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/releases/tag/4.0.17" rel="noreferrer">本日官方发布来源：4.0.17（正式发布）</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/releases/tag/4.1.6" rel="noreferrer">本日官方发布来源：4.1.6（正式发布）</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/releases/tag/4.0.16" rel="noreferrer">本日官方发布来源：4.0.16（正式发布）</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/releases/tag/4.1.4" rel="noreferrer">本日官方发布来源：4.1.4（正式发布）</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/releases/tag/4.1.2" rel="noreferrer">本日官方发布来源：4.1.2（正式发布）</a></p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
