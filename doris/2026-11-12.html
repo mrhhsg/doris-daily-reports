@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="2001f596a88e046bf5db8f61acfcc5d9ccdd671c65e0b714c878dcc4a77b5341"><title>Apache Doris 合并日报｜2026-11-12（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">合并概览</a></li><li class="toc-level-2"><a href="#digest-section-3">master 主线（2 条）</a></li><li class="toc-level-3"><a href="#digest-section-4">修复（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70486">PR #70486</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70515">PR #70515</a></li><li class="toc-level-2"><a href="#digest-section-7">release 回移 / branch-4.1（1 条）</a></li><li class="toc-level-3"><a href="#digest-section-8">修复（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70492">PR #70492</a></li><li class="toc-level-2"><a href="#digest-section-10">release 回移 / branch-4.2（1 条）</a></li><li class="toc-level-3"><a href="#digest-section-11">测试（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70344">PR #70344</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-11-12.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">Apache Doris 合并日报｜2026-11-12（北京时间）</h1><div class="meta">北京时间 2026-11-12</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">合并概览</a></li><li class="toc-level-2"><a href="#digest-section-3">master 主线（2 条）</a></li><li class="toc-level-3"><a href="#digest-section-4">修复（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70486">PR #70486</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70515">PR #70515</a></li><li class="toc-level-2"><a href="#digest-section-7">release 回移 / branch-4.1（1 条）</a></li><li class="toc-level-3"><a href="#digest-section-8">修复（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70492">PR #70492</a></li><li class="toc-level-2"><a href="#digest-section-10">release 回移 / branch-4.2（1 条）</a></li><li class="toc-level-3"><a href="#digest-section-11">测试（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70344">PR #70344</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>本日 master 主线改动集中于 TeamCity 评论触发流程，调整 buildall、Performance 与回归任务的选择和分发，保留文件过滤，旨在减少误触发导致的工作流失败。本地检查或测试已通过，但两项摘要对 buildall 是否包含 Performance 的描述存在差异，最终触发行为仍待合并后验证，不能据此认定已生效。</p>
+<p>release 回移方面，branch-4.1 修复混合版本升级时读取旧版 Variant V1 数据块可能越界并崩溃的问题，通过拒绝缺少格式标记的旧数据块降低崩溃风险，传输布局及执行版本号不变，相关单测通过。branch-4.2 仅校准 HTTP TVF 回归测试中与 Parquet UTC 时区设置相关的预期结果，不改变生产代码，完整测试套件复测通过。</p>
+<p>本日摘要未涉及新增产品功能、性能优化或文档更新；用户侧主要关注升级兼容性修复，开发者侧则需留意 CI 触发规则的实际验证结果。</p>
+<h2 id="digest-section-2">合并概览</h2>
+<p>2026-11-12（北京时间）｜合并 PR：4。按实际 merged_at 筛选，主线与 release 回移分别统计。</p>
+<h2 id="digest-section-3">master 主线（2 条）</h2>
+<h3 id="digest-section-4">修复（2 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70486"><a href="https://github.com/apache/doris/pull/70486" rel="noreferrer">PR #70486</a></p>
+<p>修复评论触发 TeamCity 流水线的路由条件，使 run buildall 不再提交 Performance，避免其临时校验配置拒绝普通 PR 导致工作流失败。Performance 仅由 run performance 显式触发，保留原有主分支及文件检查，其他流水线不变；本地检查通过，合并后待验证实际评论触发行为。</p>
+<p class="pr-title" id="digest-pr-doris-70515"><a href="https://github.com/apache/doris/pull/70515" rel="noreferrer">PR #70515</a></p>
+<p>修复 TeamCity 评论触发任务的选择逻辑：run buildall 选择单元测试及 Compile，并在 master PR 中纳入 Performance；回归任务仅由显式命令选择，自动分发仍由 Compile 负责。保留原有文件过滤，并传递请求提交信息；本地测试通过，端到端验证待合并后完成。</p>
+<h2 id="digest-section-7">release 回移 / branch-4.1（1 条）</h2>
+<h3 id="digest-section-8">修复（1 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70492"><a href="https://github.com/apache/doris/pull/70492" rel="noreferrer">PR #70492</a></p>
+<p>修复混合版本升级时，4.1 后端反序列化 4.0 Variant V1 数据块可能越界读取并崩溃的问题。通过传递 variant_enable_doc_mode 字段的存在状态，在反序列化入口拒绝缺少该格式标记的旧数据块；V1/V2 传输布局和 be_exec_version 保持不变，相关单测全部通过。</p>
+<h2 id="digest-section-10">release 回移 / branch-4.2（1 条）</h2>
+<h3 id="digest-section-11">测试（1 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70344"><a href="https://github.com/apache/doris/pull/70344" rel="noreferrer">PR #70344</a></p>
+<p>更新 4.2 分支 HTTP TVF 回归测试预期结果，使其与 Parquet 时区 UTC 设置一致。仅将 sql08 的 10 行中 54 个 INT96 映射键时间回退八小时，其他数据、时区选项及生产代码不变；完整测试套件复测通过。</p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
