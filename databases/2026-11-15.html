@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="d850e09590e4355d156b0a45b73e17da85ad3751c27792e41ecbfdb7e67d1ccf"><title>DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-11-15（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125946">PR #125946｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-131670">PR #131670｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-131460">PR #131460｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-131667">PR #131667｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-131635">PR #131635｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-11">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-12">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-83233">PR #83233｜回移／维护分支 / branch-4.2</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-83207">PR #83207｜回移／维护分支 / branch-4.2</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-11-15.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">DuckDB / ClickHouse / StarRocks 聚焦日报｜2026-11-15（北京时间）</h1><div class="meta">北京时间 2026-11-15</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">范围与证据</a></li><li class="toc-level-2"><a href="#digest-section-3">DuckDB</a></li><li class="toc-level-2"><a href="#digest-section-4">ClickHouse</a></li><li class="toc-level-3"><a href="#digest-section-5">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-125946">PR #125946｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-131670">PR #131670｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-131460">PR #131460｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-131667">PR #131667｜主线 / master</a></li><li class="toc-level-4"><a href="#digest-pr-clickhouse-131635">PR #131635｜主线 / master</a></li><li class="toc-level-2"><a href="#digest-section-11">StarRocks</a></li><li class="toc-level-3"><a href="#digest-section-12">性能优化</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-83233">PR #83233｜回移／维护分支 / branch-4.2</a></li><li class="toc-level-4"><a href="#digest-pr-starrocks-83207">PR #83207｜回移／维护分支 / branch-4.2</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>2026-11-15（北京时间）三库聚焦更新：筛选后 7 项，只关注性能优化、重大新功能及有官方明确修复证据的安全修复。合并记录不等于已发布；回移与原始改动关联展示，正式发布和预发布以官方公告为准。分类统计：安全修复 0 项、性能优化 7 项、重大新功能 0 项。</p>
+<p>DuckDB：当日所检查官方来源未发现符合筛选边界的更新。</p>
+<p>ClickHouse：将自动 max_threads 所需的空闲内存与 CPU 槽位公平份额改为每条查询首次使用时获取快照，并由派生上下文共享；子查询仍可结合自身线程设置计算有效值。</p>
+<p>StarRocks：通过依赖升级回移读取与缓存运行路径改进：starlet 远程读取调度器为 StarCache 未命中及 S3 读取共享缓存填充，starcache 将查询快照的释放移至解锁之后。</p>
+<h2 id="digest-section-2">范围与证据</h2>
+<p>统计前一完整自然日：PR 按实际 merged_at；Release 与公开安全公告按 published_at。公开安全公告不覆盖未披露漏洞；GitHub Releases 不包含仅有 tag 或独立官网文章。模型仅依据标题与正文，未读取完整 diff；性能适用条件以所链官方证据为准。</p>
+<h2 id="digest-section-3">DuckDB</h2>
+<p>来源读取成功：0 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<p>当日未发现符合性能优化、重大新功能或官方已确认安全修复边界的更新；不列普通功能、小修复、CI 或文档变化。</p>
+<h2 id="digest-section-4">ClickHouse</h2>
+<p>来源读取成功：77 条已合并 PR、2 条发布公告、0 条公开安全公告；开发默认分支 master。</p>
+<h3 id="digest-section-5">性能优化</h3>
+<p class="pr-title" id="digest-pr-clickhouse-125946"><a href="https://github.com/ClickHouse/ClickHouse/pull/125946" rel="noreferrer">PR #125946｜主线 / master</a></p>
+<p>将自动 max_threads 所需的空闲内存与 CPU 槽位公平份额改为每条查询首次使用时获取快照，并由派生上下文共享；子查询仍可结合自身线程设置计算有效值。</p>
+<p>重要性与适用范围：适用于自动选择查询线程数的场景，减少读取流、聚合及执行管线规划时反复读取资源状态和获取并发控制全局锁的开销，同时避免同一查询各部分因资源波动采用不同规划依据。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+When <code>max_threads</code> is auto, <code>getEffectiveMaxThreads</code> lowers it under memory pressure (<code>max_threads_min_free_memory_per_thread</code>) and to the fair share of CPU slots of the concurrency control (<code>use_concurrency_control_for_max_threads</code>). Both inputs were read live at each of the 18 call sites: read streams of every table expression, aggregation and merge threads, window functions, unions, inserts, <code>IStorage::read</code> and every <code>BuildQueryPipelineSettings</code>. A query that started or finished in another session between two of them changed the result, so different parts of one query could be planned with different numbers of streams. A set built while the query already ran counted the query's own CPU allocation in the fair share. Every call also took the global mutex of the concurrency control.</p>
+<p>Now the free memory and the fair share are taken once per query, on first use, into a <code>QueryMaxThreadsSnapshot</code>. <code>makeQueryContext</code> creates the snapshot, and every context copied from the query context shares it. <code>getEffectiveMaxThreads</code> takes a <code>Context</code> and combines the snapshot with that context's settings. A subquery with its own <code>max_threads</code> still gets its own value, but from the same snapshot. The parts of a query that run under a separate query context share the snapshot of the outer que</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/125946" rel="noreferrer">本日合并 PR #125946｜主线 / master｜2026-11-14T23:21:29Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-131670"><a href="https://github.com/ClickHouse/ClickHouse/pull/131670" rel="noreferrer">PR #131670｜主线 / master</a></p>
+<p>优化ClickHouse自定义LZ4解码器的短字面量与匹配序列，通过合并缓冲区检查缩短解码路径，保留默认解码器及重叠处理；另提供默认关闭的上游解码器选择设置。</p>
+<p>重要性与适用范围：该快捷路径仅适用于原始块大小至少1 KiB且小于32 KiB、压缩后大小不低于原始一半的数据。用户也可选择上游解码器处理LZ4、LZ4HC及含LZ4的编解码链，无需重写已有数据。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+🫧 Optimize short literal/match sequences in ClickHouse's custom <code>LZ4</code> decoder and keep that decoder enabled by default. The shortcut combines buffer checks for short pairs and is limited to blocks of at least 1 KiB and below 32 KiB whose compressed payload is at least half the original size. Existing overlap handling and the three adaptive methods remain available.</p>
+<p>Add <code>use_lz4_library_decompression</code> as an opt-in query/profile setting, disabled by default. Setting it to <code>1</code> selects the bundled upstream <code>LZ4_decompress_safe</code> implementation, including for <code>LZ4HC</code> and codec chains containing <code>LZ4</code>. Outside a query, the global context's setting applies; without any context, the custom decoder is used. Both implementations read the same stored data. Encoding and padding requirements are unchanged, and a decoding error is reported directly without retrying anoth</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/131670" rel="noreferrer">本日合并 PR #131670｜主线 / master｜2026-11-14T23:25:28Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-131460"><a href="https://github.com/ClickHouse/ClickHouse/pull/131460" rel="noreferrer">PR #131460｜主线 / master</a></p>
+<p>原生压缩块默认改用上游 LZ4 库解压，保持既有压缩数据兼容；可将 use_lz4_library_decompression 设为 0，恢复原有自适应解码器。</p>
+<p>重要性与适用范围：较宽的字符串密集读取可受益，但部分列读取明显变慢，现有验证结果不足以支持默认启用。适用性取决于实际读取负载，应验证性能并保留切回原解码器的选项。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+(+34.8%, versus CI's +38.5% high-noise row on 100M rows). CI uses a different reference revision and build instrumentation; those are possible confounders, not an established explanation for its regressions.</p>
+<p>The default remains enabled as requested, but these results do not support merging the default-on change yet: wider string-heavy reads improve while several other columns regress substantially. Both implementations remain selectable for further investigation.</p>
+<p>Related: https://github.com/ClickHouse/ClickHouse/issues/80216<br />
+Related: https://github.com/ClickHouse/ClickHouse/pull/88360</p>
+<h3>Changelog category (leave one):</h3>
+<ul>
+<li>Performance Improvement</li>
+</ul>
+<h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
+<p>Use the upstream LZ4 library for native block decompression by default. Set <code>use_lz4_library_decompression = 0</code> to restore ClickHouse's adaptive decoder. Existing compressed data remains compatible with both implementations.</p>
+<hr />
+<p>Workflow [PR (https://s3.amazonaws.com/clickhouse-test-reports/praktika.html?PR=131460&amp;sha=latest&amp;name_0=PR)]</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/131460" rel="noreferrer">本日合并 PR #131460｜主线 / master｜2026-11-14T23:25:29Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-131667"><a href="https://github.com/ClickHouse/ClickHouse/pull/131667" rel="noreferrer">PR #131667｜主线 / master</a></p>
+<p>将判断是否加载统计信息的有界主键探测改为按线程数分窗处理，在窗口内多个主索引未驻留内存时并行分析，再按分区片段顺序消费结果并保留提前停止逻辑。</p>
+<p>重要性与适用范围：适用于重启或重新挂载后，统计信息与主索引尚未驻留内存的首次选择性读取，可减少计划优化阶段串行加载主索引的等待；热读及单线程配置仍走串行路径，保持原有判断与异常行为。</p>
+<p>官方原文证据（保留基准及适用条件）：<br />
+Since #126627, a read whose parts do not have their statistics in memory first runs <code>hasFewerMarksToReadThan</code>, a bounded primary key probe, to decide whether loading statistics pays off. The probe analyzes the parts one after another, and analyzing a part loads its primary index if it is not in memory, so after a restart or <code>ATTACH</code> the first selective read loads the indexes of its parts serially during plan optimization, while the read's own index analysis loads them in parallel.</p>
+<p>The probe now takes windows of <code>num_threads</code> consecutive parts. A window with more than one index not in memory (new <code>IMergeTreeDataPart::isIndexInMemory</code>, which also checks the primary index cache) is analyzed in a thread pool, then consumed in part order with the same early stop, so the decision and the exception are those of the serial probe, and at most <code>num_threads - 1</code> extra parts are analyzed. Hot reads and <code>max_threads = 1</code> keep the serial path.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/131667" rel="noreferrer">本日合并 PR #131667｜主线 / master｜2026-11-15T02:40:54Z</a></p>
+<p class="pr-title" id="digest-pr-clickhouse-131635"><a href="https://github.com/ClickHouse/ClickHouse/pull/131635" rel="noreferrer">PR #131635｜主线 / master</a></p>
+<p>为包含 Decimal32、Decimal64、DateTime64 或 Time64 的排序键启用行比较器 JIT 编译，减少多列排序、有序流合并及 MergeTree 合并中的逐列虚函数比较调用。</p>
+<p>重要性与适用范围：适用于含这些类型及其 Nullable 形式的排序键，且所有键列均须支持比较器编译；优化覆盖完整排序的多路合并和有序去重等路径，Decimal128、Decimal256 仍使用解释执行比较器。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<h3>Changelog entry (a <a href="https://github.com/ClickHouse/ClickHouse/blob/master/docs/changelog_entry_guidelines.md" rel="noreferrer">user-readable short description</a> of the changes that goes into CHANGELOG.md):</h3>
+<p>Sorting by several columns and merging sorted data, including merges of <code>MergeTree</code> tables, is faster when the sorting key contains a <code>Decimal32</code>, <code>Decimal64</code>, <code>DateTime64</code> or <code>Time64</code> column: the row comparator for such keys is now JIT-compiled, as it already was for integer and string keys.</p>
+<h3>Description</h3>
+<p>A sort description is JIT-compiled only when every key column returns <code>isComparatorCompilable()</code>. <code>ColumnDecimal</code> never overrode it, so a key containing <code>Decimal32</code>, <code>Decimal64</code>, <code>DateTime64</code> or <code>Time64</code> (or <code>Nullable</code> of one) made one virtual <code>compareAt</code> per column per comparison in the k-way merges of a full sort, in <code>MergingSortedAlgorithm</code> (merges of sorted streams, including MergeTree merges) and in <code>DistinctSortedAlgorithm</code>. The value loader already supports these types.</p>
+<p>Both sides of a compiled comparison have the same sort-key type, so the scales are equal and the comparison is a signed compare of the native integer, which is what <code>compareAt</code> does for equal scales. <code>ColumnDecimal</code> now opts in when its native type is a built-in integer; <code>Decimal128</code> and <code>Decimal256</code> keep the interpreted comparator, like 128/256-bit <code>ColumnVector</code> keys. The integer three-way compare moves from <code>ColumnVector::compileComparator</code> into <code>compileIntegerComparator</code> (<code>DataTypes/Native</code>)</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/pull/131635" rel="noreferrer">本日合并 PR #131635｜主线 / master｜2026-11-15T03:31:13Z</a></p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/releases/tag/v26.9.29.5-stable" rel="noreferrer">本日官方发布来源：v26.9.29.5-stable（正式发布）</a></p>
+<p><a href="https://github.com/ClickHouse/ClickHouse/releases/tag/v26.3.64.3-lts" rel="noreferrer">本日官方发布来源：v26.3.64.3-lts（正式发布）</a></p>
+<h2 id="digest-section-11">StarRocks</h2>
+<p>来源读取成功：12 条已合并 PR、0 条发布公告、0 条公开安全公告；开发默认分支 main。</p>
+<h3 id="digest-section-12">性能优化</h3>
+<p class="pr-title" id="digest-pr-starrocks-83233"><a href="https://github.com/StarRocks/starrocks/pull/83233" rel="noreferrer">PR #83233｜回移／维护分支 / branch-4.2</a></p>
+<p>通过依赖升级回移读取与缓存运行路径改进：starlet 远程读取调度器为 StarCache 未命中及 S3 读取共享缓存填充，starcache 将查询快照的释放移至解锁之后。</p>
+<p>重要性与适用范围：优化对象是远程读取的缓存填充路径及缓存查询的锁内工作；远程读取调度器默认关闭，需宿主显式启用。此项属于维护分支回移，不应视为新增功能，来源未提供量化性能收益。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<h2>Why I'm doing:</h2>
+<p>StarOS v4.3-rc2 is the next release candidate of the 4.3 line, which these branches consume. It brings starcache fixes for the disk cache and starlet read-path fixes.</p>
+<h2>What I'm doing:</h2>
+<p>Bump StarOS, starlet and starcache from v4.3-rc1 to v4.3-rc2:</p>
+<ul>
+<li><code>fe/pom.xml</code>, <code>fe/build.gradle.kts</code>: <code>staros.version</code> (StarOS Java client and manager).</li>
+<li><code>thirdparty/starlet-artifacts-version.sh</code>, <code>docker/dockerfiles/dev-env/dev-env.Dockerfile</code>: starlet artifacts tag.</li>
+<li><code>thirdparty/vars-x86_64.sh</code>, <code>vars-aarch64.sh</code>, <code>vars-ubuntu22-x86_64.sh</code>, <code>vars-ubuntu22-aarch64.sh</code>: starcache tarball URLs and MD5s.</li>
+</ul>
+<p>Main changes in v4.3-rc2:</p>
+<ul>
+<li>starlet: a remote read scheduler with shared cache fills for StarCache misses and S3 reads. It stays off until the host enables it.</li>
+<li>starlet: overlay files are read at the position sought, from the layer that holds the file. Empty and oversized S3 read ranges are fixed.</li>
+<li>starcache: drained LRU shards are refilled from over-capacity shards, so cache writes no longer fail while the disk cache is full. New gflags tune the refill.</li>
+<li>starcache: persisted metadata is cleared when the disk cache is removed, and stale block file versions are rejected when metadata is reloaded.</li>
+<li>starcache: lookup snapshots are released after unlocking, and a new gflag lets a write overwrite an existing cache entry (off by default).</li>
+</ul>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/83233" rel="noreferrer">本日合并 PR #83233｜回移／维护分支 / branch-4.2｜2026-11-15T01:35:53Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/83225" rel="noreferrer">关联原始 PR #83225（历史合并 2026-11-13T14:28:28Z，不是本日新功能）</a></p>
+<p class="pr-title" id="digest-pr-starrocks-83207"><a href="https://github.com/StarRocks/starrocks/pull/83207" rel="noreferrer">PR #83207｜回移／维护分支 / branch-4.2</a></p>
+<p>调整数据缓存内存监控的运行时路径，每轮同时调用扩容与收缩顾问，向空闲方向传零以清理残留状态，并在方向切换时保留顾问，恢复反复内存压力下的平滑容量调整。</p>
+<p>重要性与适用范围：适用于内存压力间歇出现、缓存增长被压力打断或压力在阈值附近振荡的场景，避免旧状态导致恢复调整时突然大幅收缩或增长；紧急释放、缓存容量上下限及调整周期保持不变。</p>
+<p>官方原文证据（保留基准及适用条件）：</p>
+<h2>Why I'm doing:</h2>
+<p><code>MemSpaceMonitor</code> stops calling an advisor while that direction is idle. <code>GCHelper</code> retains the previous excess in <code>_remained_bytes</code>, even across a long idle period. If a 10 GiB pressure episode ends abruptly and a later episode exceeds high by 5 GiB, the second episode releases the full 5 GiB in its first round. Growth interrupted by pressure has the same problem. This was found during review of.</p>
+<h2>What I'm doing:</h2>
+<p>Feed both advisors on each adjustment round, passing zero to the idle direction, including the urgent branch and rounds where the cache is already at its ceiling or the configured limit cannot be parsed. Keep the existing advisors across direction changes so oscillation near high still makes progress. Preserve the existing immediate release above urgent, cache floor/ceiling and adjustment period.</p>
+<p>状态：本日已合并；除下列明确发布证据外，未确认已进入发布版。</p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/83207" rel="noreferrer">本日合并 PR #83207｜回移／维护分支 / branch-4.2｜2026-11-15T01:38:58Z</a></p>
+<p><a href="https://github.com/StarRocks/starrocks/pull/83196" rel="noreferrer">关联原始 PR #83196（历史合并 2026-11-13T09:29:17Z，不是本日新功能）</a></p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
