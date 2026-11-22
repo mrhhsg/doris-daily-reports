@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="6945a73458b4677c6ba1628874a21aaa4887c60cb64c6e1735a758d101a2341f"><title>Apache Doris 合并日报｜2026-11-21（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">合并概览</a></li><li class="toc-level-2"><a href="#digest-section-3">master 主线（9 条）</a></li><li class="toc-level-3"><a href="#digest-section-4">功能（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70725">PR #70725</a></li><li class="toc-level-3"><a href="#digest-section-6">性能（3 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70265">PR #70265</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70266">PR #70266</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70780">PR #70780</a></li><li class="toc-level-3"><a href="#digest-section-10">修复（5 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70305">PR #70305</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70400">PR #70400</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70763">PR #70763</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70784">PR #70784</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70785">PR #70785</a></li><li class="toc-level-2"><a href="#digest-section-16">release 回移 / branch-4.1（2 条）</a></li><li class="toc-level-3"><a href="#digest-section-17">修复（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70468">PR #70468</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70828">PR #70828</a></li><li class="toc-level-2"><a href="#digest-section-20">release 回移 / branch-4.2（9 条）</a></li><li class="toc-level-3"><a href="#digest-section-21">修复（8 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70455">PR #70455</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70534">PR #70534</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70671">PR #70671</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70686">PR #70686</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70711">PR #70711</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70783">PR #70783</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70792">PR #70792</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70829">PR #70829</a></li><li class="toc-level-3"><a href="#digest-section-30">测试（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70756">PR #70756</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-11-21.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">Apache Doris 合并日报｜2026-11-21（北京时间）</h1><div class="meta">北京时间 2026-11-21</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">合并概览</a></li><li class="toc-level-2"><a href="#digest-section-3">master 主线（9 条）</a></li><li class="toc-level-3"><a href="#digest-section-4">功能（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70725">PR #70725</a></li><li class="toc-level-3"><a href="#digest-section-6">性能（3 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70265">PR #70265</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70266">PR #70266</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70780">PR #70780</a></li><li class="toc-level-3"><a href="#digest-section-10">修复（5 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70305">PR #70305</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70400">PR #70400</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70763">PR #70763</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70784">PR #70784</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70785">PR #70785</a></li><li class="toc-level-2"><a href="#digest-section-16">release 回移 / branch-4.1（2 条）</a></li><li class="toc-level-3"><a href="#digest-section-17">修复（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70468">PR #70468</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70828">PR #70828</a></li><li class="toc-level-2"><a href="#digest-section-20">release 回移 / branch-4.2（9 条）</a></li><li class="toc-level-3"><a href="#digest-section-21">修复（8 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70455">PR #70455</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70534">PR #70534</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70671">PR #70671</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70686">PR #70686</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70711">PR #70711</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70783">PR #70783</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70792">PR #70792</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70829">PR #70829</a></li><li class="toc-level-3"><a href="#digest-section-30">测试（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70756">PR #70756</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>本日覆盖20项PR。master主线聚焦分词与导入性能：standard/unicode及jieba在保持分词结果不变的前提下，摘要报告分别约有1.8倍、粗粒度3.2倍和细粒度2.3倍的速度提升；JSON读取减少拷贝与初始内存分配。Lance新增REST命名空间、下发凭证及OSS支持，减少静态凭证配置需求，暂不支持命名空间托管版本表。</p>
+<p>主线还修复Profile滞留、VARIANT变量重置及物化视图元数据与首次刷新问题；统计缓存加载引入有界队列，缓解积压，满载时可能降级为未知统计信息，禁止该降级的会话可能失败。</p>
+<p>release回移方面，branch-4.2集中修复云模式通知与退役状态、FDB日志死循环及OOM、空集导入任务滞留，并回移UUID、ANN、字符集查询及物化视图接口修复；branch-4.1回移单测信号处理与物化视图接口修复。云通知滚动升级须待接收端BE全部修复后再启用FE通知。部分改动补充单测、回归或适配测试，但Profile回归及UUID完整构建测试尚未执行；未提供文档更新信息，合入不代表已上线。</p>
+<h2 id="digest-section-2">合并概览</h2>
+<p>2026-11-21（北京时间）｜合并 PR：20。按实际 merged_at 筛选，主线与 release 回移分别统计。</p>
+<h2 id="digest-section-3">master 主线（9 条）</h2>
+<h3 id="digest-section-4">功能（1 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70725"><a href="https://github.com/apache/doris/pull/70725" rel="noreferrer">PR #70725</a></p>
+<p>Lance 插件新增 REST 命名空间、命名空间下发凭证及 OSS 存储支持，可无需在 Doris 配置静态数据凭证读取表；补充认证与请求头校验、敏感信息脱敏及存储凭证合并处理。文件系统目录默认行为保持不变，命名空间托管版本表暂不支持并显式报错。</p>
+<h3 id="digest-section-6">性能（3 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70265"><a href="https://github.com/apache/doris/pull/70265" rel="noreferrer">PR #70265</a></p>
+<p>BE 端 standard 和 unicode 分词改用单一扁平的 UAX#29 密集表，保持分词结果和行为不变。正文报告分词速度约为主分支的 1.8 倍，并标记已进行单元测试和手动测试。</p>
+<p class="pr-title" id="digest-pr-doris-70266"><a href="https://github.com/apache/doris/pull/70266" rel="noreferrer">PR #70266</a></p>
+<p>将 jieba 纳入 Doris 源码树，供中文解析器使用，并将基于哈希映射的字典树替换为扁平数组。在保持分词结果不变的同时，粗粒度与细粒度模式的分词速度分别提升至约 3.2 倍和 2.3 倍，字典内存占用降低。</p>
+<p class="pr-title" id="digest-pr-doris-70780"><a href="https://github.com/apache/doris/pull/70780" rel="noreferrer">PR #70780</a></p>
+<p>优化 v2 JSON 读取器，将管道消息和整文件文档直接读入填充缓冲区，减少重复拷贝；取消每个读取器预分配并清零 8 MB 缓冲区，改为随文档大小增长。适用于例行导入、流式导入及整文件 JSON 导入，解析结果和错误处理不变；按行模式保留单次拷贝，仅受益于更小的初始分配。</p>
+<h3 id="digest-section-10">修复（5 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70305"><a href="https://github.com/apache/doris/pull/70305" rel="noreferrer">PR #70305</a></p>
+<p>修复仅使用本地运行时过滤器的查询最终 Profile 可能滞留至超时的问题。FE 对无远程过滤目标、无递归 CTE 且无不同工作节点共用 BRPC 端点的查询省略无用合并元数据，避免额外持有 QueryContext；其他路径不变。相关 FE 单测通过，SQL/Profile 回归尚未执行。</p>
+<p class="pr-title" id="digest-pr-doris-70400"><a href="https://github.com/apache/doris/pull/70400" rel="noreferrer">PR #70400</a></p>
+<p>为 FE 列、分区列及直方图统计缓存加载设置共享有界队列，默认上限10万，可通过 stats_fetch_queue_size 配置并重启生效。队列满时新查询降级使用未知统计信息，自动刷新被拒保留旧值，显式刷新被拒使旧值失效；隔离缓存维护并增加拒绝计数。禁止未知列统计的会话可能失败。</p>
+<p class="pr-title" id="digest-pr-doris-70763"><a href="https://github.com/apache/doris/pull/70763" rel="noreferrer">PR #70763</a></p>
+<p>将8个仅供测试的 VARIANT 会话变量由 default_variant_* 重命名为 debug_variant_*，升级时忽略持久化旧值，修复未开启调试点时重置全部会话或全局变量失败的问题。显式设置旧名称将报未知变量，并同步更新相关测试。</p>
+<p class="pr-title" id="digest-pr-doris-70784"><a href="https://github.com/apache/doris/pull/70784" rel="noreferrer">PR #70784</a></p>
+<p>修复 FE 旧版元数据接口查询异步物化视图列信息时因索引 ID 选择错误触发空指针的问题，改用视图实际的基础索引，按定义顺序返回列名及别名，并新增回归测试验证旧路由返回结果。</p>
+<p class="pr-title" id="digest-pr-doris-70785"><a href="https://github.com/apache/doris/pull/70785" rel="noreferrer">PR #70785</a></p>
+<p>修复延迟创建的 MOW 增量物化视图首次刷新因写入侧类型转换导致布局签名误报不匹配的问题。签名改用规范化表写入计划及绑定列名、类型，首次成功写入建立基线，无需预先全量刷新；DRY RUN 跳过签名校验，EXPLAIN REFRESH 不修改已存签名。</p>
+<h2 id="digest-section-16">release 回移 / branch-4.1（2 条）</h2>
+<h3 id="digest-section-17">修复（2 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70468"><a href="https://github.com/apache/doris/pull/70468" rel="noreferrer">PR #70468</a></p>
+<p>修复 branch-4.1 分支 BE 在单元测试中安装 CDC SIGCHLD 信号处理器的问题，调整为单元测试时不安装该处理器。正文未提供问题表现及验证结果，具体影响待确认。</p>
+<p class="pr-title" id="digest-pr-doris-70828"><a href="https://github.com/apache/doris/pull/70828" rel="noreferrer">PR #70828</a></p>
+<p>修复 FE 旧版元数据 API 返回异步物化视图结构信息的问题，使接口包含相关 Schema；该修复已回移至 4.1 分支，具体影响待确认。</p>
+<h2 id="digest-section-20">release 回移 / branch-4.2（9 条）</h2>
+<h3 id="digest-section-21">修复（8 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70455"><a href="https://github.com/apache/doris/pull/70455" rel="noreferrer">PR #70455</a></p>
+<p>修复云模式 rowset 通知任务签名未释放和空 rowset 缓存残留，统一移除与过期处理。默认启用 FE/BE 通知，关闭 MoW 初始强制同步，移除冗余配置。跳过同步可能扩大本地快照新鲜度窗口；滚动升级需待接收端 BE 全部修复后再启用 FE 通知。</p>
+<p class="pr-title" id="digest-pr-doris-70534"><a href="https://github.com/apache/doris/pull/70534" rel="noreferrer">PR #70534</a></p>
+<p>向 branch-4.2 回移 UUID 数组修复：在 FE 分析阶段拒绝不兼容的 UUID 与整数数组参数，默认哈希及数组集合、映射函数改用 UUID 全部 128 位，避免低 64 位相同导致大量碰撞。补充适配测试覆盖，本地未运行完整构建和测试。</p>
+<p class="pr-title" id="digest-pr-doris-70671"><a href="https://github.com/apache/doris/pull/70671" rel="noreferrer">PR #70671</a></p>
+<p>修复云模式下节点退役状态更新问题，将状态更新调整为原子操作。本次改动回移至 branch-4.2 分支，正文未提供实现细节，具体影响待确认。</p>
+<p class="pr-title" id="digest-pr-doris-70686"><a href="https://github.com/apache/doris/pull/70686" rel="noreferrer">PR #70686</a></p>
+<p>修复云模式下 FDB 冲突日志记录中的无限循环和内存溢出（OOM）问题，并通过拣选合入 branch-4.2 分支。正文未提供实现细节，具体影响待确认。</p>
+<p class="pr-title" id="digest-pr-doris-70711"><a href="https://github.com/apache/doris/pull/70711" rel="noreferrer">PR #70711</a></p>
+<p>修复 branch-4.2 中 OLAP INSERT INTO ... SELECT 源被规划为空集时，已注册导入任务长期停留在 PENDING 的问题。提前返回时将任务标记为 FINISHED、行数记为 0，避免任务堆积导致堆内存泄漏及标签清理异常，并补充相关测试适配。</p>
+<p class="pr-title" id="digest-pr-doris-70783"><a href="https://github.com/apache/doris/pull/70783" rel="noreferrer">PR #70783</a></p>
+<p>向 branch-4.2 回移 SHOW CHARACTER SET 和 SHOW CHARSET 的 WHERE、LIKE 过滤支持，修复 MySQL 客户端相关语句被拒绝的问题。LIKE 按当前 SQL 模式解析字符串并忽略大小写匹配，WHERE 沿用会话设置；本分支不支持将客户端取消操作传递给内部过滤查询。</p>
+<p class="pr-title" id="digest-pr-doris-70792"><a href="https://github.com/apache/doris/pull/70792" rel="noreferrer">PR #70792</a></p>
+<p>向4.2分支回移两项ANN存储修复：当段无空值且区域映射上下界均等于谓词值时，裁剪非否定等值谓词，避免MOW ANN TopN查询不必要地退化为暴力搜索；普通及SNII历史索引构建逐段释放资源并封存重建索引文件，减少跨段资源累积和峰值内存。</p>
+<p class="pr-title" id="digest-pr-doris-70829"><a href="https://github.com/apache/doris/pull/70829" rel="noreferrer">PR #70829</a></p>
+<p>修复 FE 旧版元数据 API 未返回异步物化视图结构信息的问题，使该接口能够返回相关 schema。此修复已移植至 branch-4.2 分支，其他具体影响待确认。</p>
+<h3 id="digest-section-30">测试（1 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70756"><a href="https://github.com/apache/doris/pull/70756" rel="noreferrer">PR #70756</a></p>
+<p>在 branch-4.2 分支中，为 FE 的 NestedGroup 会话默认值测试启用调试点；解决 VariantEscapeTableTest.java 的合并冲突时，保留 enable_debug_points 所需的 Config 导入。</p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
