@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="digest-sha256" content="744c14b8594f1d1584f9c1f3175d8b2bacac959fab3375236f0f4e9048f337db"><title>Apache Doris 合并日报｜2026-11-27（北京时间）</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f6f2;color:#202b36;font:17px/1.9 -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}main{max-width:940px;margin:52px auto;padding:0 28px 64px}a{color:#126a70;text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}nav,.meta,footer{font-size:14px;color:#64717b}header{border-bottom:1px solid #d7dedb;padding-bottom:24px;margin-bottom:32px}h1{font-size:clamp(27px,5vw,39px);line-height:1.4;letter-spacing:-.03em}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{overflow-wrap:anywhere}ul{padding-left:24px}li{margin:10px 0}.card{background:white;border:1px solid #dde3df;border-radius:14px;padding:24px 28px;margin:20px 0}.tag{font-size:12px;letter-spacing:.15em;color:#126a70}footer{border-top:1px solid #d7dedb;margin-top:48px;padding-top:20px}@media(max-width:600px){main{margin:24px auto;padding:0 18px 40px}.card{padding:18px}body{font-size:16px}}code{font:0.88em/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#e9efeb;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#edf1ee;border:1px solid #d7dedb;border-radius:8px;padding:16px;overflow-x:auto;line-height:1.6}pre code{background:transparent;padding:0;white-space:pre;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:24px 0}table{border-collapse:collapse;width:100%;min-width:640px;font-size:15px;line-height:1.6;background:white}th,td{border:1px solid #d7dedb;padding:10px 14px;text-align:left;vertical-align:top}th{background:#e9efeb;font-weight:600}tbody tr:nth-child(even){background:#f6f8f6}blockquote{margin:20px 0;padding:0 20px;border-left:3px solid #b7cdc6;color:#53636d}li{margin:6px 0}hr{border:0;border-top:1px solid #d7dedb;margin:32px 0}
+html{scroll-behavior:smooth}
+.reading-layout{max-width:1240px;margin:52px auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding:0 28px}
+.reading-layout main{min-width:0;width:100%;margin:0;padding:0 0 64px}
+.toc-sidebar{align-self:start;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;padding:4px 16px 16px 0;border-right:1px solid #d7dedb;scrollbar-width:thin}
+.toc-title{font-size:13px;font-weight:700;letter-spacing:.12em;color:#64717b;margin:0 0 12px}
+.toc-nav{font-size:13px;line-height:1.6}.toc-nav ol{list-style:none;margin:10px 0 0;padding:0}
+.toc-nav li{margin:2px 0}.toc-nav a{display:block;padding:5px 8px;border-radius:5px;color:#53636d}
+.toc-nav a:hover,.toc-nav a:focus-visible{background:#e5efea;color:#126a70;text-decoration:none}
+.toc-nav .toc-level-2>a{font-weight:650;color:#202b36;margin-top:10px}
+.toc-nav .toc-level-3>a{padding-left:18px}.toc-nav .toc-level-4>a{padding-left:28px;font-size:12px;color:#64717b}
+.toc-mobile{display:none}.pr-title{font-weight:600;margin-top:28px}
+main [id]{scroll-margin-top:24px}main [id]:target{background:#e5efea;border-radius:5px}
+@media(max-width:1050px){
+ .reading-layout{display:block;max-width:940px}.toc-sidebar{display:none}
+ .toc-mobile{display:block;border:1px solid #d7dedb;border-radius:10px;margin:24px 0 32px;padding:12px 16px;background:#fff}
+ .toc-mobile summary{cursor:pointer;font-size:15px;font-weight:600;color:#126a70}
+ .toc-mobile .toc-nav{max-height:55dvh;overflow-y:auto;overscroll-behavior:contain;margin-top:12px}
+}
+@media(max-width:600px){.reading-layout{margin:24px auto;padding:0 18px}.reading-layout main{padding-bottom:40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><div class="reading-layout"><aside class="toc-sidebar"><p class="toc-title">本文目录</p><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">合并概览</a></li><li class="toc-level-2"><a href="#digest-section-3">master 主线（3 条）</a></li><li class="toc-level-3"><a href="#digest-section-4">功能（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70938">PR #70938</a></li><li class="toc-level-3"><a href="#digest-section-6">修复（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70288">PR #70288</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70895">PR #70895</a></li><li class="toc-level-2"><a href="#digest-section-9">release 回移 / branch-4.1（5 条）</a></li><li class="toc-level-3"><a href="#digest-section-10">修复（5 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70619">PR #70619</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70782">PR #70782</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70857">PR #70857</a></li><li class="toc-level-4"><a href="#digest-pr-doris-71039">PR #71039</a></li><li class="toc-level-4"><a href="#digest-pr-doris-71063">PR #71063</a></li><li class="toc-level-2"><a href="#digest-section-16">release 回移 / branch-4.2（5 条）</a></li><li class="toc-level-3"><a href="#digest-section-17">性能（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70311">PR #70311</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70860">PR #70860</a></li><li class="toc-level-3"><a href="#digest-section-20">修复（3 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70858">PR #70858</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70956">PR #70956</a></li><li class="toc-level-4"><a href="#digest-pr-doris-71060">PR #71060</a></li></ol></nav></aside><main><nav><a href="../index.html">← 日报归档</a> · <a href="2026-11-27.md">Markdown</a></nav><header><div class="tag">DAILY DIGEST</div><h1 id="digest-title">Apache Doris 合并日报｜2026-11-27（北京时间）</h1><div class="meta">北京时间 2026-11-27</div></header><details class="toc-mobile"><summary>本文目录</summary><nav class="toc-nav" aria-label="本文目录"><a href="#digest-title">↑ 返回开篇</a><ol><li class="toc-level-2"><a href="#digest-section-1">摘要</a></li><li class="toc-level-2"><a href="#digest-section-2">合并概览</a></li><li class="toc-level-2"><a href="#digest-section-3">master 主线（3 条）</a></li><li class="toc-level-3"><a href="#digest-section-4">功能（1 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70938">PR #70938</a></li><li class="toc-level-3"><a href="#digest-section-6">修复（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70288">PR #70288</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70895">PR #70895</a></li><li class="toc-level-2"><a href="#digest-section-9">release 回移 / branch-4.1（5 条）</a></li><li class="toc-level-3"><a href="#digest-section-10">修复（5 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70619">PR #70619</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70782">PR #70782</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70857">PR #70857</a></li><li class="toc-level-4"><a href="#digest-pr-doris-71039">PR #71039</a></li><li class="toc-level-4"><a href="#digest-pr-doris-71063">PR #71063</a></li><li class="toc-level-2"><a href="#digest-section-16">release 回移 / branch-4.2（5 条）</a></li><li class="toc-level-3"><a href="#digest-section-17">性能（2 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70311">PR #70311</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70860">PR #70860</a></li><li class="toc-level-3"><a href="#digest-section-20">修复（3 条）</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70858">PR #70858</a></li><li class="toc-level-4"><a href="#digest-pr-doris-70956">PR #70956</a></li><li class="toc-level-4"><a href="#digest-pr-doris-71060">PR #71060</a></li></ol></nav></details><h2 id="digest-section-1">摘要</h2>
+<p>本日报覆盖完整自然日的13项PR。master主线新增统计收集扫描并发的动态配置，仅对新建统计查询上下文生效，不影响普通查询；修复ADMIN COMPACT TABLE缺少分区子句时的空指针异常，并让Cloud模式在可选版本字段读取失败时保留已获取的tablet统计，减少整批统计丢失。</p>
+<p>release回移方面，branch-4.1纳入谓词合并、字符集查询筛选及协调器取消状态修复，并修正VARIANT路径缺失引发的score()报错和可空索引列取反查询漏行。Brotli安全修复需重建依赖并重新链接BE，完整BE构建及镜像复扫尚未验证。</p>
+<p>branch-4.2回移Hive分区与Iceberg清单处理优化，具体性能收益未披露；同时回移取消状态、物化视图与ANN改写、时区显示及VARIANT检索正确性修复。MongoDB依赖归档不代表启用目录或扫描器。测试覆盖包括主线分区参数异常、Cloud混合批次及4.2索引求值场景；未提供文档更新信息。上述回移不作为新增功能，合并也不代表已上线。</p>
+<h2 id="digest-section-2">合并概览</h2>
+<p>2026-11-27（北京时间）｜合并 PR：13。按实际 merged_at 筛选，主线与 release 回移分别统计。</p>
+<h2 id="digest-section-3">master 主线（3 条）</h2>
+<h3 id="digest-section-4">功能（1 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70938"><a href="https://github.com/apache/doris/pull/70938" rel="noreferrer">PR #70938</a></p>
+<p>新增两个可动态调整的 FE 配置，分别控制手动及自动统计收集 SQL 的普通扫描与文件扫描并发，范围为 0 至 256。默认每个扫描实例使用一个扫描器，设为 0 可恢复继承全局会话配置；变更对新建统计查询上下文生效，不影响普通查询。</p>
+<h3 id="digest-section-6">修复（2 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70288"><a href="https://github.com/apache/doris/pull/70288" rel="noreferrer">PR #70288</a></p>
+<p>修复 Nereids 中 ADMIN COMPACT TABLE 缺少 PARTITION 子句时触发空指针异常的问题，通过检查分区信息对象是否为空，恢复返回“未选择待压实分区”的预期错误，覆盖分区表和非分区表，并补充分区缺失、多分区及参数异常等单元测试。</p>
+<p class="pr-title" id="digest-pr-doris-70895"><a href="https://github.com/apache/doris/pull/70895" rel="noreferrer">PR #70895</a></p>
+<p>修复 Cloud 模式下可选的 changelog 行数版本读取或解析失败导致整批 tablet 统计被丢弃的问题。现保留已读取的统计，仅省略受影响的版本字段并记录错误，覆盖传统与版本化元数据读取路径；统计本身读取失败仍使 RPC 失败，并新增混合批次测试。</p>
+<h2 id="digest-section-9">release 回移 / branch-4.1（5 条）</h2>
+<h3 id="digest-section-10">修复（5 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70619"><a href="https://github.com/apache/doris/pull/70619" rel="noreferrer">PR #70619</a></p>
+<p>修复 4.1 分支中 Nereids 添加谓词时对已有过滤条件的处理，添加时合并现有过滤条件。该变更由原修复移植而来，具体影响待确认。</p>
+<p class="pr-title" id="digest-pr-doris-70782"><a href="https://github.com/apache/doris/pull/70782" rel="noreferrer">PR #70782</a></p>
+<p>在 4.1 分支修复 SHOW CHARACTER SET 对 WHERE 和 LIKE 子句的支持，使字符集查询能够按条件或名称模式筛选结果，完善该语句的筛选能力。</p>
+<p class="pr-title" id="digest-pr-doris-70857"><a href="https://github.com/apache/doris/pull/70857" rel="noreferrer">PR #70857</a></p>
+<p>将协调器设置前保留取消状态的修复挑选合入 4.1 分支，修正协调器尚未完成设置时的取消状态处理。正文未提供实现细节及影响范围，具体影响待确认。</p>
+<p class="pr-title" id="digest-pr-doris-71039"><a href="https://github.com/apache/doris/pull/71039" rel="noreferrer">PR #71039</a></p>
+<p>将 branch-4.1 静态链接的 Brotli 升级至 1.0.10，纳入 CVE-2026-111497 修复，同步 Arrow 24 的版本、归档校验信息及独立缓存补丁标记。不改变 API、数据格式或运行配置；需重建第三方依赖并重新链接 BE，完整 BE 构建及镜像复扫尚未验证。</p>
+<p class="pr-title" id="digest-pr-doris-71063"><a href="https://github.com/apache/doris/pull/71063" rel="noreferrer">PR #71063</a></p>
+<p>修复 4.1 分支中 VARIANT 路径在部分数据段缺失时，MATCH 与 AND/OR/NOT 组合导致 score() 报错的问题，复用路径缺失判定并兼容含点键；同时修正 AND 提前退出逻辑，避免关闭 SIMPLIFY_NOT_EXPR 时，可空索引列上的 NOT (a AND b) 查询漏行。</p>
+<h2 id="digest-section-16">release 回移 / branch-4.2（5 条）</h2>
+<h3 id="digest-section-17">性能（2 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70311"><a href="https://github.com/apache/doris/pull/70311" rel="noreferrer">PR #70311</a></p>
+<p>优化 Hive 分区处理，将分区元数据批次与目录任务解耦，并将该改动回移至 branch-4.2 分支。正文未提供实现细节或效果说明，具体影响待确认。</p>
+<p class="pr-title" id="digest-pr-doris-70860"><a href="https://github.com/apache/doris/pull/70860" rel="noreferrer">PR #70860</a></p>
+<p>在 branch-4.2 分支中优化 Iceberg 清单处理，将有界清单加载与解析结果缓存解耦。该改动移植自已有提交，正文未提供实现细节，具体影响待确认。</p>
+<h3 id="digest-section-20">修复（3 条）</h3>
+<p class="pr-title" id="digest-pr-doris-70858"><a href="https://github.com/apache/doris/pull/70858" rel="noreferrer">PR #70858</a></p>
+<p>修复协调器设置前取消状态的保留问题，并将相关修复移植至 branch-4.2 分支。正文未披露具体实现及受影响场景，具体影响待确认。</p>
+<p class="pr-title" id="digest-pr-doris-70956"><a href="https://github.com/apache/doris/pull/70956" rel="noreferrer">PR #70956</a></p>
+<p>向 4.2 分支回移更新：允许可空源查询使用 non_nullable 异步物化视图及符合条件的 ANN TopN 改写；修正 TIMESTAMPTZ 本地显示边界和历史时区偏移，保留 UTC 存储输入；云端 EXPLAIN 检查避免格式化结果；新增 MongoDB 依赖归档，但不启用目录或扫描器。</p>
+<p class="pr-title" id="digest-pr-doris-71060"><a href="https://github.com/apache/doris/pull/71060" rel="noreferrer">PR #71060</a></p>
+<p>修复 4.2 分支中 VARIANT 路径在部分数据段缺失时，MATCH 与 AND、OR、NOT 组合导致 score() 报错的问题，复用路径缺失判定并完善索引求值；同时修复关闭 SIMPLIFY_NOT_EXPR 时，可空索引列上 NOT (a AND b) 因提前退出而漏行的问题，补充相关测试。</p>
+<footer>基于开源项目官方公开来源生成的中文日报。合并不等同于已发布，release 回移不作为新增功能。</footer></main></div></body></html>
